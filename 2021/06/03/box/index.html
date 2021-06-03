@@ -545,35 +545,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><p><code>border-width</code>定义边框粗细，单位px</p>
-<p><code>border-style</code>边框样式</p>
-<ul>
-<li><p>none</p>
-</li>
-<li><p>solid 实线</p>
-</li>
-<li><p>dashed 虚线</p>
-</li>
-<li><p>dotted 点线</p>
-</li>
-</ul>
-<p><code>border-color</code>边框颜色</p>
-<p>简写：<code>border: 1px solid red;</code></p>
-<p><code>border-collapse:collapse;</code>表示相邻边框合并</p>
+  <h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">border-width/*定义边框粗细，单位px*/</span><br><span class="line">border-style /*边框样式 solid实先 dashed虚线 dotted点线 */</span><br><span class="line">border-color /*边框颜色*/</span><br><span class="line">border: 1px solid red; /*简写*/</span><br><span class="line">border-collapse:collapse; /*表示相邻边框合并*/</span><br></pre></td></tr></table></figure>
+
 <h2 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h2><p><code>padding</code>内边距，即边框和内容之间的距离</p>
-<p><code>padding:5px;</code>上下左右都有5像素内边距</p>
-<p><code>padding:5px 10px;</code>上下5px，左右10px</p>
-<p><code>padding:5px 10px 20px;</code>上内边距5px，左右10px，下20px</p>
-<p><code>padding:5px 10px 20px 30px;</code>上5，右10，下20，左30</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">padding:5px; /*上下左右都有5像素内边距*/</span><br><span class="line"></span><br><span class="line">padding:5px 10px; /*上下5px，左右10px*/</span><br><span class="line"></span><br><span class="line">padding:5px 10px 20px; /*上内边距5px，左右10px，下20px*/</span><br><span class="line"></span><br><span class="line">padding:5px 10px 20px 30px; /*上5，右10，下20，左30*/</span><br></pre></td></tr></table></figure>
+
 <h2 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h2><p><code>margin</code>  用于设置外边距，即控制盒子和盒子之间的距离。</p>
 <h3 id="块级盒子水平居中"><a href="#块级盒子水平居中" class="headerlink" title="块级盒子水平居中"></a>块级盒子水平居中</h3><p>外边距可以让块级盒子水平居中，但是必须满足两个条件：</p>
 <p>①盒子必须指定了宽度（width）。</p>
 <p>②盒子左右的外边距都设置为auto 。</p>
-<p><code>.header&#123; width:960px; margin:0 auto;&#125;</code></p>
-<p>常见写法：</p>
-<p><code>margin-left: auto;margin-right: auto;</code></p>
-<p><code>margin: auto;</code></p>
-<p><code>margin: 0 auto;</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.header&#123; width:960px; margin:0 auto;&#125;</span><br><span class="line"></span><br><span class="line">/*常见写法：*/</span><br><span class="line"></span><br><span class="line">margin-left: auto;margin-right: auto;</span><br><span class="line"></span><br><span class="line">margin: auto;</span><br><span class="line"></span><br><span class="line">margin: 0 auto;</span><br></pre></td></tr></table></figure>
+
 <h2 id="清除内外边距"><a href="#清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    padding:0;/*清除内边距*/</span><br><span class="line">    margin:0;/*清除外边距*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -610,7 +592,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-03T16:26:20+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-06-03T17:11:07+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年6月3日</p>
@@ -688,6 +670,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
     <div class="prev-next">
+      
+        <a class='prev' href='/2021/06/03/grandma/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>上大学第一次给姥姥打电话</p>
+          <p class='content'>昨天博客说今天一定给姥姥打个电话，我做到了！
+上大学后一直没和姥姥通过电话。一是性格原因，不爱表达；二是不知道说些什么，觉得有些尴尬。
+打电话前也想了很多，该说些啥呢。“吃了吗”“家天气咋样啊”...</p>
+        </a>
       
       
         <a class='next' href='/2021/06/02/new/'>

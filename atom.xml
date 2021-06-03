@@ -6,7 +6,7 @@
   <link href="https://blog.wangyouwu.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.wangyouwu.cn/"/>
-  <updated>2021-06-03T08:26:20.765Z</updated>
+  <updated>2021-06-03T10:41:53.994Z</updated>
   <id>https://blog.wangyouwu.cn/</id>
   
   <author>
@@ -17,19 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>上大学第一次给姥姥打电话</title>
+    <link href="https://blog.wangyouwu.cn/2021/06/03/grandma/"/>
+    <id>https://blog.wangyouwu.cn/2021/06/03/grandma/</id>
+    <published>2021-06-03T10:17:01.000Z</published>
+    <updated>2021-06-03T10:41:53.994Z</updated>
+    
+    <content type="html"><![CDATA[<p>昨天博客说今天一定给姥姥打个电话，我做到了！</p><p>上大学后一直没和姥姥通过电话。一是性格原因，不爱表达；二是不知道说些什么，觉得有些尴尬。</p><p>打电话前也想了很多，该说些啥呢。“吃了吗”“家天气咋样啊””又玩牌去着吗”“我还有一个多月就放假了”……但一打通电话，就什么都忘了。我问了句吃没吃饭，姥姥问我感没感冒，还没等我多说些什么，姥姥就说“该做饭了，先挂了”。</p><p>总共通话没到1分钟，却感到很开心。为听到姥姥👵声音而开心，为自己鼓起勇气给姥姥打电话而开心。</p><p><strong>越亲近的人越不需要说些什么。问候几句，听到双方熟悉的声音。只要让他们知道你在关心他们，你过的很好，这就够了。</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;昨天博客说今天一定给姥姥打个电话，我做到了！&lt;/p&gt;
+&lt;p&gt;上大学后一直没和姥姥通过电话。一是性格原因，不爱表达；二是不知道说些什么，觉得有些尴尬。&lt;/p&gt;
+&lt;p&gt;打电话前也想了很多，该说些啥呢。“吃了吗”“家天气咋样啊””又玩牌去着吗”“我还有一个多月就放假了”……但一打</summary>
+      
+    
+    
+    
+    <category term="日常" scheme="https://blog.wangyouwu.cn/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>盒子边框</title>
     <link href="https://blog.wangyouwu.cn/2021/06/03/box/"/>
     <id>https://blog.wangyouwu.cn/2021/06/03/box/</id>
     <published>2021-06-03T05:25:01.000Z</published>
-    <updated>2021-06-03T08:26:20.765Z</updated>
+    <updated>2021-06-03T09:11:07.121Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><p><code>border-width</code>定义边框粗细，单位px</p><p><code>border-style</code>边框样式</p><ul><li><p>none</p></li><li><p>solid 实线</p></li><li><p>dashed 虚线</p></li><li><p>dotted 点线</p></li></ul><p><code>border-color</code>边框颜色</p><p>简写：<code>border: 1px solid red;</code></p><p><code>border-collapse:collapse;</code>表示相邻边框合并</p><h2 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h2><p><code>padding</code>内边距，即边框和内容之间的距离</p><p><code>padding:5px;</code>上下左右都有5像素内边距</p><p><code>padding:5px 10px;</code>上下5px，左右10px</p><p><code>padding:5px 10px 20px;</code>上内边距5px，左右10px，下20px</p><p><code>padding:5px 10px 20px 30px;</code>上5，右10，下20，左30</p><h2 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h2><p><code>margin</code>  用于设置外边距，即控制盒子和盒子之间的距离。</p><h3 id="块级盒子水平居中"><a href="#块级盒子水平居中" class="headerlink" title="块级盒子水平居中"></a>块级盒子水平居中</h3><p>外边距可以让块级盒子水平居中，但是必须满足两个条件：</p><p>①盒子必须指定了宽度（width）。</p><p>②盒子左右的外边距都设置为auto 。</p><p><code>.header&#123; width:960px; margin:0 auto;&#125;</code></p><p>常见写法：</p><p><code>margin-left: auto;margin-right: auto;</code></p><p><code>margin: auto;</code></p><p><code>margin: 0 auto;</code></p><h2 id="清除内外边距"><a href="#清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    padding:0;/*清除内边距*/</span><br><span class="line">    margin:0;/*清除外边距*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">border-width/*定义边框粗细，单位px*/</span><br><span class="line">border-style /*边框样式 solid实先 dashed虚线 dotted点线 */</span><br><span class="line">border-color /*边框颜色*/</span><br><span class="line">border: 1px solid red; /*简写*/</span><br><span class="line">border-collapse:collapse; /*表示相邻边框合并*/</span><br></pre></td></tr></table></figure><h2 id="内边距"><a href="#内边距" class="headerlink" title="内边距"></a>内边距</h2><p><code>padding</code>内边距，即边框和内容之间的距离</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">padding:5px; /*上下左右都有5像素内边距*/</span><br><span class="line"></span><br><span class="line">padding:5px 10px; /*上下5px，左右10px*/</span><br><span class="line"></span><br><span class="line">padding:5px 10px 20px; /*上内边距5px，左右10px，下20px*/</span><br><span class="line"></span><br><span class="line">padding:5px 10px 20px 30px; /*上5，右10，下20，左30*/</span><br></pre></td></tr></table></figure><h2 id="外边距"><a href="#外边距" class="headerlink" title="外边距"></a>外边距</h2><p><code>margin</code>  用于设置外边距，即控制盒子和盒子之间的距离。</p><h3 id="块级盒子水平居中"><a href="#块级盒子水平居中" class="headerlink" title="块级盒子水平居中"></a>块级盒子水平居中</h3><p>外边距可以让块级盒子水平居中，但是必须满足两个条件：</p><p>①盒子必须指定了宽度（width）。</p><p>②盒子左右的外边距都设置为auto 。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.header&#123; width:960px; margin:0 auto;&#125;</span><br><span class="line"></span><br><span class="line">/*常见写法：*/</span><br><span class="line"></span><br><span class="line">margin-left: auto;margin-right: auto;</span><br><span class="line"></span><br><span class="line">margin: auto;</span><br><span class="line"></span><br><span class="line">margin: 0 auto;</span><br></pre></td></tr></table></figure><h2 id="清除内外边距"><a href="#清除内外边距" class="headerlink" title="清除内外边距"></a>清除内外边距</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    padding:0;/*清除内边距*/</span><br><span class="line">    margin:0;/*清除外边距*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;h2 id=&quot;边框&quot;&gt;&lt;a href=&quot;#边框&quot; class=&quot;headerlink&quot; title=&quot;边框&quot;&gt;&lt;/a&gt;边框&lt;/h2&gt;&lt;p&gt;&lt;code&gt;border-width&lt;/code&gt;定义边框粗细，单位px&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;border-style&lt;/code&gt;边</summary>
+    <summary type="html">&lt;h2 id=&quot;边框&quot;&gt;&lt;a href=&quot;#边框&quot; class=&quot;headerlink&quot; title=&quot;边框&quot;&gt;&lt;/a&gt;边框&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;s</summary>
       
     
     
@@ -486,32 +509,6 @@
     
     
     <category term="css" scheme="https://blog.wangyouwu.cn/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>罗翔老师打动人心的句子</title>
-    <link href="https://blog.wangyouwu.cn/2021/04/02/luoxiang/"/>
-    <id>https://blog.wangyouwu.cn/2021/04/02/luoxiang/</id>
-    <published>2021-04-02T00:36:01.000Z</published>
-    <updated>2021-04-02T09:41:43.344Z</updated>
-    
-    <content type="html"><![CDATA[<p>一直很喜欢张三（不是），张三的塑造者，罗翔老师，罗翔老师风趣幽默又严肃谦逊，不卖弄学识，不好为人师，学识渊博却无时不在强调自己的无知。</p><p>在罗祥老师身上总能看到两代人：年轻一代的理想与正义，老去一代慈祥与释怀。引用B站的一个评论：</p><blockquote><p>听罗老师的课，总能感受到一种年少才有的那种激进正义感，和年长了才会有的那种温暖的慈悲</p></blockquote><p>下面是转自B站的视频，与君共勉。</p><ul><li>所有的天资聪颖都需要艰苦的训练。</li><li>我们登上并非我们所选择的舞台，演出并非我们所选择的剧本。</li><li>你的剧本不是你选择的，你只有努力的吧你的剧本给演好。只要努力演好你的剧本，痛苦中也有精彩。</li><li>越能体现人性尊严的快乐，越是更高级的快乐。</li><li>当你觉得这个世界有大量的不正义，说明世上存在正义。如果这个世界上没有正义，那么不正义就毫无意义。</li><li>一个开放的社会就像一张张开的口，合下来的时候一定要咬住某种坚实的东西。天变地变，道义不变。</li><li>一次犯罪不过是污染了水源，而一次不公正的司法却是污染了水源。</li></ul><iframe src="//player.bilibili.com/player.html?aid=96219562&bvid=BV1uE411375k&cid=164695641&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;一直很喜欢张三（不是），张三的塑造者，罗翔老师，罗翔老师风趣幽默又严肃谦逊，不卖弄学识，不好为人师，学识渊博却无时不在强调自己的无知。&lt;/p&gt;
-&lt;p&gt;在罗祥老师身上总能看到两代人：年轻一代的理想与正义，老去一代慈祥与释怀。引用B站的一个评论：&lt;/p&gt;
-&lt;blockquote</summary>
-      
-    
-    
-    
-    <category term="分享" scheme="https://blog.wangyouwu.cn/categories/%E5%88%86%E4%BA%AB/"/>
-    
-    
-    <category term="罗翔" scheme="https://blog.wangyouwu.cn/tags/%E7%BD%97%E7%BF%94/"/>
     
   </entry>
   
