@@ -265,6 +265,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
           
           
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/photos/
+                  
+                  
+                  
+                    id="photos"
+                  >
+                  <i class='fas fa-images fa-fw'></i>相册
+                </a>
+                
+              </li>
+            
+          
+          
 				</ul>
 			</div>
 
@@ -405,6 +421,22 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
           
             
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/photos/
+                  
+                  
+                  
+                    id="photos"
+                  >
+                  <i class='fas fa-images fa-fw'></i>相册
+                </a>
+                
+              </li>
+            
+          
+            
           </ul>
         </li>
 			</ul>
@@ -485,6 +517,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <section class="post-list">
     
       
+        
+          
+        
+          
+        
+          
         
           
         
@@ -2130,7 +2168,7 @@ document.addEventListener("pjax:success", listennSidebarTOC);
       try {
         var currentUrl = window.location.pathname;
         var targetUrl = e.triggerElement.href;
-        var banUrl = ["/bb/"];
+        var banUrl = ["/bb/", "/photos/"];
         if (banUrl[0] != "") {
           banUrl.forEach(item => {
             if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
