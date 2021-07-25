@@ -6,7 +6,7 @@
   <link href="https://blog.wangyouwu.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.wangyouwu.cn/"/>
-  <updated>2021-07-21T07:17:25.155Z</updated>
+  <updated>2021-07-25T10:25:36.638Z</updated>
   <id>https://blog.wangyouwu.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>移动web开发</title>
+    <link href="https://blog.wangyouwu.cn/2021/07/25/viewport/"/>
+    <id>https://blog.wangyouwu.cn/2021/07/25/viewport/</id>
+    <published>2021-07-25T10:25:01.000Z</published>
+    <updated>2021-07-25T10:25:36.638Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="meta标签"><a href="#meta标签" class="headerlink" title="meta标签"></a>meta标签</h2><p>为使网站在移动端有理想的阅读宽度，需添加<code>meta</code>标签。</p><p>meta标签的目的：使布局视口的宽度与理想视口的宽度一致，简单理解就是设备有多宽，我们布局的视口就多宽。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0, user-scalable=no,maximum-scale=1.0,minimum-scale=1.0&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><ul><li>width - viewport的宽度，width=device-width页面适应设备宽度</li><li>initial-scale - 初始的缩放比</li><li>minimum-scale - 允许用户缩放到的最小比例</li><li>maximum-scale - 允许用户缩放到的最大比例</li><li>user-scalable - 用户是否可以手动缩放，yes or no（1或0）</li></ul><h2 id="二倍图"><a href="#二倍图" class="headerlink" title="二倍图"></a>二倍图</h2><h3 id="物理像素-amp-物理像素比"><a href="#物理像素-amp-物理像素比" class="headerlink" title="物理像素&amp;物理像素比"></a>物理像素&amp;物理像素比</h3><p><strong>CSS 像素</strong>：又称为虚拟像素、设备独立像素或逻辑像素，也可以理解为直觉像素。CSS 像素是 Web 编程的概念，指的是 CSS 样式代码中使用的逻辑像素。 iPhone 6 的 CSS 像素数为 375 x 667px。</p><p><strong>物理像素</strong>：指屏幕显示的最小颗粒从屏幕在工厂生产出的那天起，它上面设备像素点就固定不变了。 iPhone 6 的物理像素为 750 x 1334</p><p><strong>物理像素比</strong>：物理像素 / CSS 像素，这里的 CSS 像素其实是理想视口。iPhone 6 物理像素为 750 x 1334，理想视口 375 x 667 ，DPR = 2</p><p>对于一张 50px * 50px 的图片,在手机或 Retina 屏中打开，按照刚才的物理像素比会放大倍数，会造成图片模糊。在标准的viewport设置中，使用倍图来提高图片质量，解决在高清设备中的模糊问题。</p><h3 id="背景缩放background-size"><a href="#背景缩放background-size" class="headerlink" title="背景缩放background-size"></a>背景缩放background-size</h3><p>background-size 属性规定背景图像的尺寸</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">background-size</span>: 背景图片宽度 背景图片高度;</span><br></pre></td></tr></table></figure><p>单位可以是 长度、百分比、cover、contain;</p><h2 id="移动端开发"><a href="#移动端开发" class="headerlink" title="移动端开发"></a>移动端开发</h2><h3 id="常见布局"><a href="#常见布局" class="headerlink" title="常见布局"></a>常见布局</h3><p>移动端单独制作</p><ul><li>流式布局（百分比布局）</li><li>flex 弹性布局</li><li>less+rem+媒体查询布局</li><li>混合布局</li></ul><p>响应式</p><ul><li>媒体查询</li><li>bootstarp</li></ul><h3 id="css3盒子模型"><a href="#css3盒子模型" class="headerlink" title="css3盒子模型"></a>css3盒子模型</h3><p>传统模式宽度计算：盒子的宽度 = CSS中设置的width + border + padding </p><p>CSS3盒子模型：盒子的宽度=  CSS中设置的宽度width 里面包含了 border 和 padding </p><p><strong>CSS3中的盒子模型， padding 和 border 不会撑大盒子</strong></p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*CSS3盒子模型*/</span></span><br><span class="line"><span class="attribute">box-sizing</span>: border-box;</span><br><span class="line"><span class="comment">/*传统盒子模型*/</span></span><br><span class="line"><span class="attribute">box-sizing</span>: content-box;</span><br></pre></td></tr></table></figure><h3 id="特殊样式"><a href="#特殊样式" class="headerlink" title="特殊样式"></a>特殊样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*CSS3盒子模型*/</span></span><br><span class="line"> <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line"> -webkit-<span class="attribute">box-sizing</span>: border-box;</span><br><span class="line"> <span class="comment">/*清除高亮,设置为transparent 完成透明*/</span></span><br><span class="line"> -webkit-tap-highlight-<span class="attribute">color</span>: transparent;</span><br><span class="line"> <span class="comment">/*在移动端浏览器默认的外观在iOS上加上这个属性才能给按钮和输入框自定义样式*/</span></span><br><span class="line"> -webkit-appearance: none;</span><br><span class="line"> <span class="comment">/*禁用长按页面时的弹出菜单*/</span></span><br><span class="line"> <span class="selector-tag">img</span>,<span class="selector-tag">a</span> &#123; -webkit-touch-callout: none; &#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;meta标签&quot;&gt;&lt;a href=&quot;#meta标签&quot; class=&quot;headerlink&quot; title=&quot;meta标签&quot;&gt;&lt;/a&gt;meta标签&lt;/h2&gt;&lt;p&gt;为使网站在移动端有理想的阅读宽度，需添加&lt;code&gt;meta&lt;/code&gt;标签。&lt;/p&gt;
+&lt;p&gt;meta标签</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="css" scheme="https://blog.wangyouwu.cn/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>暑假，目的论，自卑情结</title>
@@ -470,31 +495,6 @@
       
     <summary type="html">&lt;p&gt;通过CSS 背景属性，可以给页面元素添加背景样式。&lt;br&gt;背景属性可以设置背景颜色、背景图片、背景平铺、&lt;code&gt;背景图片位置&lt;/code&gt;、背景图像固定等。&lt;/p&gt;
 &lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td c</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="css" scheme="https://blog.wangyouwu.cn/tags/css/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>元素显示模式及转换</title>
-    <link href="https://blog.wangyouwu.cn/2021/04/09/display/"/>
-    <id>https://blog.wangyouwu.cn/2021/04/09/display/</id>
-    <published>2021-04-09T05:00:01.000Z</published>
-    <updated>2021-04-09T05:04:04.596Z</updated>
-    
-    <content type="html"><![CDATA[<p>元素显示模式就是元素（标签）以什么方式进行显示。比如<code>&lt;div&gt;</code>自己占一行，比如一行可以放多个<code>&lt;span&gt;</code>。<strong>HTML元素一般分为块元素和行内元素两种类型</strong></p><h2 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h2><p><code>常见的块元素有&lt;h1&gt;~&lt;h6&gt;、&lt;p&gt;、&lt;div&gt;、&lt;ul&gt;、&lt;ol&gt;、&lt;li&gt;等，其中&lt;div&gt;标签是最典型的块元素。</code></p><p>特点：</p><ul><li>自己独占一行。</li><li>高度，宽度、外边距以及内边距都可以控制。</li><li>宽度默认是容器（父级宽度）的100%。</li><li>是一个容器及盒子，里面可以放行内或者块级元素。</li></ul><p>注意：</p><p><strong>文字类的元素内不能使用块级元素</strong></p><ul><li><code>&lt;p&gt;</code>标签主要用于存放文字，因此<code>&lt;p&gt;</code>里面不能放块级元素，特别是不能放<code>&lt;div&gt;</code></li><li><code>&lt;h1&gt;~&lt;h6&gt;</code>等都是文字类块级标签，里面也不能放其他块级元素</li></ul><h2 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h2><p><code>常见的行内元素有&lt;a&gt;、&lt;strong&gt;、&lt;b&gt;、&lt;em&gt;、&lt;i&gt;、&lt;del&gt;、&lt;s&gt;、&lt;ins&gt;、&lt;u&gt;、&lt;span&gt;等，其中&lt;span&gt; 标签是最典型的行内元素。有的地方也将行内元素称为内联元素。</code></p><p>特点：</p><ul><li>相邻行内元素在一行上，一行可以显示多个。</li><li>高、宽直接设置是无效的。</li><li>默认宽度就是它本身内容的宽度。</li><li>行内元素只能容纳文本或其他行内元素。</li></ul><p>注意：</p><ul><li>链接里面不能再放链接</li><li>特殊情况链接<code>&lt;a&gt;</code> 里面可以放块级元素，但是给<code>&lt;a&gt;</code>转换一下块级模式最安全</li></ul><h2 id="行内块元素"><a href="#行内块元素" class="headerlink" title="行内块元素"></a>行内块元素</h2><p><code>在行内元素中有几个特殊的标签——&lt;img /&gt;、&lt;input /&gt;、&lt;td&gt;，它们同时具有块元素和行内元素的特点。有些资料称它们为行内块元素。</code></p><p>特点：</p><ul><li>和相邻行内元素（行内块）在一行上，但是他们之间会有空白缝隙。一行可以显示多个（行内元素特点）。</li><li>默认宽度就是它本身内容的宽度（行内元素特点）。</li><li>高度，行高、外边距以及内边距都可以控制（块级元素特点）</li></ul><h2 id="元素转换"><a href="#元素转换" class="headerlink" title="元素转换"></a>元素转换</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">display: block;    /*转换为块元素*/</span><br><span class="line">display: inline;    /*转换为行内元素*/</span><br><span class="line">display: inline-block;    /*转换为行内块*/</span><br></pre></td></tr></table></figure><h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-tag">a</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">display</span>: block;</span></span><br><span class="line"><span class="css">        <span class="attribute">width</span>: <span class="number">230px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">height</span>: <span class="number">40px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">background-color</span>: <span class="number">#55585a</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">font-size</span>: <span class="number">14px</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">color</span>: <span class="number">#fff</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">text-decoration</span>: none;</span></span><br><span class="line"><span class="css">        <span class="attribute">text-indent</span>: <span class="number">2em</span>;</span></span><br><span class="line"><span class="css">        <span class="attribute">line-height</span>: <span class="number">40px</span>;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">background-color</span>: <span class="number">#ff6700</span>;</span></span><br><span class="line"><span class="css">&#125;</span></span><br><span class="line"><span class="css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span>手机 电话卡<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span>电视<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span>笔记本<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span>穿戴<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210409130014.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210409130014.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="小米商城简易导航栏"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;元素显示模式就是元素（标签）以什么方式进行显示。比如&lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;自己占一行，比如一行可以放多个&lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt;。&lt;strong&gt;HTML元素一般分为块元素和行内元素两种类型&lt;/strong&gt;&lt;/p&gt;
-&lt;h</summary>
       
     
     
