@@ -6,7 +6,7 @@
   <link href="https://blog.wangyouwu.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.wangyouwu.cn/"/>
-  <updated>2021-07-25T10:25:36.638Z</updated>
+  <updated>2021-07-26T10:44:47.549Z</updated>
   <id>https://blog.wangyouwu.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>移动web开发——flex布局</title>
+    <link href="https://blog.wangyouwu.cn/2021/07/26/flex/"/>
+    <id>https://blog.wangyouwu.cn/2021/07/26/flex/</id>
+    <published>2021-07-26T10:25:01.000Z</published>
+    <updated>2021-07-26T10:44:47.549Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>flex 是 flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性，任何一个容器都可以指定为 flex 布局。</li><li>当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效。</li><li>给父盒子添加flex属性，来控制子盒子的位置和排列方式</li></ul><h2 id="父项常见属性"><a href="#父项常见属性" class="headerlink" title="父项常见属性"></a>父项常见属性</h2><ul><li>flex-direction：设置主轴的方向</li><li>justify-content：设置主轴上的子元素排列方式</li><li>flex-wrap：设置子元素是否换行  </li><li>align-content：设置侧轴上的子元素的排列方式（多行）</li><li>align-items：设置侧轴上的子元素排列方式（单行）</li><li>flex-flow：复合属性，相当于同时设置了 flex-direction 和 flex-wrap</li></ul><h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>设置主轴方向，在flex布局中分为主轴和侧轴（x、y轴），默认主轴是x轴，水平向右。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex-direction</span>: row; <span class="comment">/*主轴为x轴，从左到右*/</span></span><br><span class="line"><span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/*，主轴为x轴，从右到左*/</span></span><br><span class="line"><span class="attribute">flex-direction</span>: column; <span class="comment">/*主轴为y轴，从上到下*/</span></span><br><span class="line"><span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/*，主轴为y轴，从下到上*/</span></span><br></pre></td></tr></table></figure><h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>设置<strong>主轴</strong>上子元素的排列方式，使用该属性前要先定好主轴。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">justify-content</span>: flex-start;<span class="comment">/*从前开始*/</span></span><br><span class="line"><span class="attribute">justify-content</span>: flex-end;<span class="comment">/*从后开始*/</span></span><br><span class="line"><span class="attribute">justify-content</span>: center;<span class="comment">/*居中对齐*/</span></span><br><span class="line"><span class="attribute">justify-content</span>: space-around;<span class="comment">/*平分剩余空间*/</span></span><br><span class="line"><span class="attribute">justify-content</span>: space-between;<span class="comment">/*★两边贴边后再平分剩余空间*/</span></span><br></pre></td></tr></table></figure><h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>flex中项目默认都排列在一行，通过flex-wrap属性可换行</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex-wrap</span>: nowrap;<span class="comment">/*默认值，不换行*/</span></span><br><span class="line"><span class="attribute">flex-wrap</span>: wrap;<span class="comment">/*换行*/</span></span><br></pre></td></tr></table></figure><h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>设置<strong>侧轴</strong>上子元素的排列方式，在子项为<strong>单行</strong>时使用</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">align-items</span>: flex-start;(<span class="attribute">flex</span>-end/center/streth)</span><br><span class="line"><span class="comment">/*flex-start 从头部开始</span></span><br><span class="line"><span class="comment">flex-end 从尾部开始</span></span><br><span class="line"><span class="comment">center 居中显示</span></span><br><span class="line"><span class="comment">stretch 拉伸*/</span></span><br></pre></td></tr></table></figure><h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3><p>设置<strong>侧轴</strong>上子元素的排列方式，在子项为<strong>多行</strong>时使用</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">align-content</span>: flex-start;</span><br></pre></td></tr></table></figure><img src="https://gitee.com/panghutx/tuchuang/raw/master/align-content.jpg" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/align-content.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><ul><li>align-items  适用于单行情况下， 只有上对齐、下对齐、居中和 拉伸</li><li>align-content适应于换行（多行）的情况下（单行情况下无效）， 可以设置 上对齐、下对齐、居中、拉伸以及平均分配剩余空间等属性值。 </li><li>总结:单行用align-items，多行用 align-content</li></ul><h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>flex-direction和flex-wrap的符合属性</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex-flow</span>: row wrap;<span class="comment">/*主轴为x轴，换行*/</span></span><br></pre></td></tr></table></figure><h2 id="子项常见属性"><a href="#子项常见属性" class="headerlink" title="子项常见属性"></a>子项常见属性</h2><ul><li>flex子项目占的份数</li><li>align-self控制子项自己在侧轴的排列方式</li><li>order属性定义子项的排列顺序（前后顺序）</li></ul><h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>flex 属性定义子项目分配剩余空间，用flex来表示占多少份数。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: &lt;number&gt;; <span class="comment">/* 默认值 0 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>align-self 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖 align-items 属性。</p><p>默认值为 auto，表示继承父元素的 align-items 属性，如果没有父元素，则等同于 stretch。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">      <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>order属性定义项目的排列顺序，数值越小，排列越靠前，默认为0。和 z-index 不同。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">order</span>: &lt;number&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;flex 是 flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性，任何一个容器都可以指定为 flex 布局。&lt;/li&gt;
+&lt;li&gt;当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-ali</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="css" scheme="https://blog.wangyouwu.cn/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>移动web开发</title>
@@ -478,31 +504,6 @@
     
     <category term="日常" scheme="https://blog.wangyouwu.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>css背景</title>
-    <link href="https://blog.wangyouwu.cn/2021/04/10/background/"/>
-    <id>https://blog.wangyouwu.cn/2021/04/10/background/</id>
-    <published>2021-04-10T05:25:01.000Z</published>
-    <updated>2021-04-11T03:06:11.464Z</updated>
-    
-    <content type="html"><![CDATA[<p>通过CSS 背景属性，可以给页面元素添加背景样式。<br>背景属性可以设置背景颜色、背景图片、背景平铺、<code>背景图片位置</code>、背景图像固定等。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">background-color: 颜色值;    /*背景颜色*/</span><br><span class="line">background-image: url();    /*背景图片*/</span><br><span class="line">background-repeat: repeat |no-repeat |repeat-x |repeat-y ;    /*背景平铺*/</span><br><span class="line">background-position: x y;    /*背景位置*/</span><br><span class="line">background-attachment: fixed|scroll;    /*背景附着*/</span><br><span class="line">background: rgba(0,0,0,0.3)    /*背景色半透明*/</span><br></pre></td></tr></table></figure><h2 id="背景图片位置"><a href="#背景图片位置" class="headerlink" title="背景图片位置"></a>背景图片位置</h2><ol><li>参数是方位名词</li></ol><ul><li>如果指定的两个值都是方位名词，则两个值前后顺序无关，比如left  top和top  left效果一致</li><li>如果只指定了一个方位名词，另一个值省略，则第二个值默认居中对齐</li></ul><ol start="2"><li>参数是精确单位</li></ol><ul><li>如果参数值是精确坐标，那么第一个肯定是x 坐标，第二个一定是y坐标</li><li>如果只指定一个数值，那该数值一定是x坐标，另一个默认垂直居中</li></ul><ol start="3"><li>参数是混合单位</li></ol><ul><li>如果指定的两个值是精确单位和方位名词混合使用，则第一个值是x坐标，第二个值是y坐标</li></ul><h2 id="背景复合写法"><a href="#背景复合写法" class="headerlink" title="背景复合写法"></a>背景复合写法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: transparent url(image.jpg) repeat-y  fixed  top ;</span><br></pre></td></tr></table></figure><p>为了简化背景属性的代码，我们可以将这些属性合并简写在同一个属性background 中。从而节约代码量.当使用简写属性时，没有特定的书写顺序,一般习惯约定顺序为：<code>background: 背景颜色 背景图片地址 背景平铺 背景图像滚动 背景图片位置;</code></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;通过CSS 背景属性，可以给页面元素添加背景样式。&lt;br&gt;背景属性可以设置背景颜色、背景图片、背景平铺、&lt;code&gt;背景图片位置&lt;/code&gt;、背景图像固定等。&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td c</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="css" scheme="https://blog.wangyouwu.cn/tags/css/"/>
     
   </entry>
   
