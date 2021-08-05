@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,7 +22,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2021/3 - 胖虎同学|生活学习类个人博客</title>
+  <title>移动web开发——rem布局 - 胖虎同学|生活学习类个人博客</title>
+  
+    <meta name="keywords" content="css">
   
 
   
@@ -108,7 +108,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -411,7 +411,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/panghutx/CDN@1.0/logo-fly.jpg"></div>
           
@@ -475,183 +475,302 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
-      
+    
+    
+      <h1 class="title">
+        移动web开发——rem布局
+      </h1>
+      <div class='new-meta-box'>
         
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg">
+    <p>胖虎</p>
+  </a>
+</div>
+
           
         
           
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/03/31/html/">
-        HTML速查手册
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>HTML 是超文本标记语言 (Hyper Text Markup Language)，标记语言是一套标记标签 (markup tag)，HTML 使用标记标签来描述网页。本篇是HTML速查手册，主要列举的是HTML一些常用的标签。</p>
-    
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年8月5日</p>
+  </a>
+</div>
+
+          
         
-        <time>2021-03-31</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="移动web开发——rem布局" data-path="/2021/08/05/rem/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <h2 id="rem基础"><a href="#rem基础" class="headerlink" title="rem基础"></a>rem基础</h2><p>rem (root em)是一个相对单位，类似于em，em是父元素字体大小。</p>
+<p>不同的是rem的基准是相对于html元素的字体大小。</p>
+<p>比如，根元素（html）设置font-size=12px; 非根元素设置width:2rem; 则换成px表示就是24px。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/* 根html 为 12px */</span><br><span class="line">html &#123;</span><br><span class="line">   font-size: 12px;</span><br><span class="line">&#125;</span><br><span class="line">/* 此时 div 的字体大小就是 24px */       </span><br><span class="line">div &#123;</span><br><span class="line">    font-size: 2rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>rem的优势：父元素文字大小可能不一致， 但是整个页面只有一个html，可以很好来控制整个页面的元素大小。</p>
+<h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><h3 id="什么是媒体查询"><a href="#什么是媒体查询" class="headerlink" title="什么是媒体查询"></a>什么是媒体查询</h3><p>媒体查询（Media Query）是CSS3新语法。</p>
+<ul>
+<li>使用 @media查询，可以针对不同的媒体类型定义不同的样式</li>
+<li>@media 可以针对不同的屏幕尺寸设置不同的样式</li>
+<li>当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面 </li>
+<li>目前针对很多苹果手机、Android手机，平板等设备都用得到多媒体查询</li>
+</ul>
+<h3 id="媒体查询语法规范"><a href="#媒体查询语法规范" class="headerlink" title="媒体查询语法规范"></a>媒体查询语法规范</h3><ul>
+<li>用 @media开头 注意@符号</li>
+<li>mediatype  媒体类型</li>
+<li>关键字 and  not  only</li>
+<li>media feature 媒体特性必须有小括号包含</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media mediatype and|not|only (media feature) &#123;</span><br><span class="line">    CSS-Code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="mediatype-查询类型"><a href="#mediatype-查询类型" class="headerlink" title="mediatype 查询类型"></a>mediatype 查询类型</h4><p>​       将不同的终端设备划分成不同的类型，称为媒体类型</p>
+<img src="https://gitee.com/panghutx/tuchuang/raw/master/rem1.jpg" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/rem1.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+
+<h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p>​       关键字将媒体类型或多个媒体特性连接到一起做为媒体查询的条件。</p>
+<ul>
+<li>and：可以将多个媒体特性连接到一起，相当于“且”的意思。</li>
+<li>not：排除某个媒体类型，相当于“非”的意思，可以省略。</li>
+<li>only：指定某个特定的媒体类型，可以省略。    </li>
+</ul>
+<h4 id="媒体特性"><a href="#媒体特性" class="headerlink" title="媒体特性"></a>媒体特性</h4><p>   每种媒体类型都具有各自不同的特性，根据不同媒体类型的媒体特性设置不同的展示风格。我们暂且了解三个。</p>
+<p>   注意他们要加小括号包含</p>
+   <img src="https://gitee.com/panghutx/tuchuang/raw/master/rem2.jpg" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/rem2.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+
+   
+
+<h4 id="媒体查询书写规则"><a href="#媒体查询书写规则" class="headerlink" title="媒体查询书写规则"></a>媒体查询书写规则</h4><p>   注意： 为了防止混乱，媒体查询我们要按照从小到大或者从大到小的顺序来写,但是我们最喜欢的还是从小到大来写，这样代码更简洁</p>
+   <img src="https://gitee.com/panghutx/tuchuang/raw/master/rem3.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/rem3.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+
+ 
+
+<h2 id="less-基础"><a href="#less-基础" class="headerlink" title="less 基础"></a>less 基础</h2><h3 id="维护css弊端"><a href="#维护css弊端" class="headerlink" title="维护css弊端"></a>维护css弊端</h3><p>CSS 是一门非程序式语言，没有变量、函数、SCOPE（作用域）等概念。</p>
+<ul>
+<li>CSS 需要书写大量看似没有逻辑的代码，CSS 冗余度是比较高的。</li>
+<li>不方便维护及扩展，不利于复用。</li>
+<li>CSS 没有很好的计算能力</li>
+<li>非前端开发工程师来讲，往往会因为缺少 CSS 编写经验而很难写出组织良好且易于维护的 CSS 代码项目。 </li>
+</ul>
+<h3 id="less-介绍"><a href="#less-介绍" class="headerlink" title="less 介绍"></a>less 介绍</h3><p>Less（LeanerStyle Sheets 的缩写）是一门 CSS扩展语言，也成为CSS预处理器。<br>它在CSS 的语法基础之上，引入了变量，Mixin（混入），运算以及函数等功能，大大简化了 CSS 的编写，并且降低了 CSS的维护成本，就像它的名称所说的那样，Less可以让我们用更少的代码做更多的事情。</p>
+<p>Less中文网址：<a target="_blank" rel="noopener" href="http://lesscss.cn/">http://</a><a target="_blank" rel="noopener" href="http://lesscss.cn/">less</a><a target="_blank" rel="noopener" href="http://lesscss.cn/">css.cn/</a></p>
+<p>常见的CSS预处理器：Sass、Less、Stylus</p>
+<h3 id="less安装"><a href="#less安装" class="headerlink" title="less安装"></a>less安装</h3><p>①安装nodejs，可选择版本(8.0)，网址：<a target="_blank" rel="noopener" href="http://nodejs.cn/download/">http://nodejs.cn/download/</a></p>
+<p>②检查是否安装成功，使用cmd命令（win10是window+r 打开运行输入cmd）  —输入“node –v”查看版本即可</p>
+<p>③基于nodejs在线安装Less，使用cmd命令“npm install -g less”即可</p>
+<p>④检查是否安装成功，使用cmd命令“ lessc -v ”查看版本即可</p>
+<h3 id="less使用"><a href="#less使用" class="headerlink" title="less使用"></a>less使用</h3><h4 id="less变量"><a href="#less变量" class="headerlink" title="less变量"></a>less变量</h4><p>变量是指没有固定的值，可以改变的。因为我们CSS中的一些颜色和数值等经常使用。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@变量名:值;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>必须有@为前缀</li>
+<li>不能包含特殊字符</li>
+<li>不能以数字开头</li>
+<li>大小写敏感</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@color: pink;</span><br></pre></td></tr></table></figure>
+
+<h4 id="less嵌套"><a href="#less嵌套" class="headerlink" title="less嵌套"></a>less嵌套</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 将css改为less</span><br><span class="line">#header .logo &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#header &#123;</span><br><span class="line">    .logo &#123;</span><br><span class="line">       width: 300px;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>如果遇见 （交集|伪类|伪元素选择器） ，利用&amp;进行连接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a:hover&#123;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">a&#123;</span><br><span class="line">  &amp;:hover&#123;</span><br><span class="line">      color:red;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="less运算"><a href="#less运算" class="headerlink" title="less运算"></a>less运算</h4><p>任何数字、颜色或者变量都可以参与运算。就是Less提供了加（+）、减（-）、乘（*）、除（/）算术运算。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/*Less 里面写*/</span><br><span class="line">@witdh: 10px + 5;</span><br><span class="line">div &#123;</span><br><span class="line">    border: @witdh solid red;</span><br><span class="line">&#125;</span><br><span class="line">/*生成的css*/</span><br><span class="line">div &#123;</span><br><span class="line">  border: 15px solid red;</span><br><span class="line">&#125;</span><br><span class="line">/*Less 甚至还可以这样 */</span><br><span class="line">width: (@width + 5) * 2;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>乘号（*）和除号（/）的写法  </li>
+<li>运算符中间左右有个空格隔开 1px + 5</li>
+<li>对于两个不同的单位的值之间的运算，运算结果的值取第一个值的单位 </li>
+<li>如果两个值之间只有一个值有单位，则运算结果就取该单位</li>
+</ul>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/03/31/html/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/08/05/rem/>https://blog.wangyouwu.cn/2021/08/05/rem/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-05T15:36:48+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年8月5日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/03/29/yaml/">
-        yaml基础语法
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/css/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>css</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        yaml简介YAML 是 “YAML Ain’t a Markup Language”（YAML 不是一种标记语言）的递归缩写。在开发的这种语言时，YAML 的意思其实是：”Yet Another Markup Language”（仍是一种标记语言）。yaml是能够被电脑识别的数据序列化格式。
-基本语法
-大小写敏感
-使用缩进表示层级关系
-缩进禁止用Tab，只允许用空格
-空格数不重要，只要相同...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/08/05/rem/&title=移动web开发——rem布局 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/08/05/rem/&title=移动web开发——rem布局 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/08/05/rem/&title=移动web开发——rem布局 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-03-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/03/29/yaml/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
+
+
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/03/29/go-school/">
-        新学期，新博客，新开始！
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        前言新学期要开始了，把旧站关了，建个新站。本站用Hexo搭建，部署在github和vercel。
-改用Hexo缘起幼稚园园长的博客，陷进去了（沈腾语气）。搭建博客出了些问题，感谢小茗同学的教程和小T同学的帮助。
-博客内容博客主要记录我的学习笔记、日常生活和想要分享的内容。
-一直对编程感兴趣，尤其是前端。我想学的是计算机相关专业，憧憬的职业是程序员👨‍💻，无奈被调剂到了应用物理学。没关系，...
-      
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-03-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2021/03/29/go-school/'>
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/2021/08/02/words/'>
+          <p class='title'>我爱记单词🙂<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>7.29boastv.自夸、吹嘘
+n.自吹自擂
+boat 船 把气船吹炸了
+cartn.手推车、运货马车
+v.用车运送
+clientn.委托人、客户
+climb–&gt;攀爬、攀关系、巴结客户 ...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -659,136 +778,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">胖虎同学|生活学习类个人博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:2367897284@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/panghutx/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop，mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%88%86%E4%BA%AB/" href="/categories/%E5%88%86%E4%BA%AB/"
-            id="categoriesE58886E4BAAB"
-            ><div class='name'>分享</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE5ADA6E4B9A0"
-            ><div class='name'>学习</div><div class='badge'>(23)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E5%B8%B8/" href="/categories/%E6%97%A5%E5%B8%B8/"
-            id="categoriesE697A5E5B8B8"
-            ><div class='name'>日常</div><div class='badge'>(6)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#rem%E5%9F%BA%E7%A1%80"><span class="toc-text">rem基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2"><span class="toc-text">媒体查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2"><span class="toc-text">什么是媒体查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83"><span class="toc-text">媒体查询语法规范</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mediatype-%E6%9F%A5%E8%AF%A2%E7%B1%BB%E5%9E%8B"><span class="toc-text">mediatype 查询类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E7%89%B9%E6%80%A7"><span class="toc-text">媒体特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E4%B9%A6%E5%86%99%E8%A7%84%E5%88%99"><span class="toc-text">媒体查询书写规则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less-%E5%9F%BA%E7%A1%80"><span class="toc-text">less 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E6%8A%A4css%E5%BC%8A%E7%AB%AF"><span class="toc-text">维护css弊端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less-%E4%BB%8B%E7%BB%8D"><span class="toc-text">less 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less%E5%AE%89%E8%A3%85"><span class="toc-text">less安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less%E4%BD%BF%E7%94%A8"><span class="toc-text">less使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#less%E5%8F%98%E9%87%8F"><span class="toc-text">less变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#less%E5%B5%8C%E5%A5%97"><span class="toc-text">less嵌套</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#less%E8%BF%90%E7%AE%97"><span class="toc-text">less运算</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/c/" style="font-size: 14px; color: #999">c</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/html/" style="font-size: 17.33px; color: #828282">html</a> <a href="/tags/linux/" style="font-size: 20.67px; color: #6c6c6c">linux</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 14px; color: #999">图床</a> <a href="/tags/%E7%BD%97%E7%BF%94/" style="font-size: 14px; color: #999">罗翔</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 14px; color: #999">英语</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
 		  
@@ -797,21 +808,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="移动web开发——rem布局";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
