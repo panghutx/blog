@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,7 +22,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2021 - 胖虎同学|生活学习类个人博客</title>
+  <title>js基础Ⅰ：变量和数据类型 - 胖虎同学|生活学习类个人博客</title>
+  
+    <meta name="keywords" content="JavaScript">
   
 
   
@@ -108,7 +108,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -411,7 +411,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/panghutx/CDN@1.0/logo-fly.jpg"></div>
           
@@ -475,634 +475,442 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/15/js2/">
-        js基础Ⅱ：数组和函数
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1-数组数组是指一组数据的集合，其中的每个数据被称作元素，在数组中可以存放任意类型的元素。
-1-1创建数组JS 中创建数组有两种方式：
-利用  new 创建数组12var 数组名 = new Array() ；var arr = new Array();   // 创建一个新的空数组
 
-注意 Array () ，A 要大写    
-利用数组字面量创建数组1234//1. 使用数组字面量方式创...
-      
-    
-  </div>
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        js基础Ⅰ：变量和数据类型
+      </h1>
+      <div class='new-meta-box'>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg">
+    <p>胖虎</p>
+  </a>
+</div>
+
+          
         
-        <time>2021-08-15</time>
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </a>
+  </div>
+
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年8月12日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="js基础Ⅰ：变量和数据类型" data-path="/2021/08/12/js1/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <h2 id="JavaScript输入输出语句"><a href="#JavaScript输入输出语句" class="headerlink" title="JavaScript输入输出语句"></a>JavaScript输入输出语句</h2><p>为了方便信息的输入输出，JS中提供了一些输入输出语句，其常用的语句如下：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+<th>归属</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>alert(msg)</td>
+<td>浏览器弹出警示框</td>
+<td>浏览器</td>
+</tr>
+<tr>
+<td>console.log(msg)</td>
+<td>浏览器控制台打印输出信息</td>
+<td>浏览器</td>
+</tr>
+<tr>
+<td>prompt(info)</td>
+<td>浏览器弹出输入框，用户可以输入</td>
+<td>浏览器</td>
+</tr>
+</tbody></table>
+<ul>
+<li>注意：alert() 主要用来显示消息给用户，console.log() 用来给程序员自己看运行时的消息。</li>
+</ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="什么是变量"><a href="#什么是变量" class="headerlink" title="什么是变量"></a>什么是变量</h3><p>白话：变量就是一个装东西的盒子。</p>
+<p>通俗：变量是用于存放数据的容器。 我们通过 变量名 获取数据，甚至数据可以修改。<br><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210813082344.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210813082344.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h3 id="变量的使用"><a href="#变量的使用" class="headerlink" title="变量的使用"></a>变量的使用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age; <span class="comment">//  声明一个 名称为age 的变量 </span></span><br><span class="line">age = <span class="number">10</span>; <span class="comment">// 给 age  这个变量赋值为 10  </span></span><br><span class="line"><span class="keyword">var</span> age  = <span class="number">18</span>;  <span class="comment">// 声明变量同时赋值为 18</span></span><br><span class="line"><span class="comment">// 声明一个变量并赋值， 我们称之为变量的初始化。</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">10</span>,  name = <span class="string">&#x27;zs&#x27;</span>, sex = <span class="number">2</span>; <span class="comment">//同时声明多个变量</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>声明变量特殊情况</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>情况</th>
+<th>说明</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>var  age ; console.log (age);</td>
+<td>只声明 不赋值</td>
+<td>undefined</td>
+</tr>
+<tr>
+<td>console.log(age)</td>
+<td>不声明 不赋值  直接使用</td>
+<td>报错</td>
+</tr>
+<tr>
+<td>age   = 10; console.log (age);</td>
+<td>不声明   只赋值</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数据类型简介"><a href="#数据类型简介" class="headerlink" title="数据类型简介"></a>数据类型简介</h3><ul>
+<li><p>变量的数据类型</p>
+<pre><code>        变量是用来存储值的所在处，它们有名字和数据类型。变量的数据类型决定了如何将代表这些值的位存储到计算机的内存中。JavaScript 是一种弱类型或者说动态语言。这意味着不用提前声明变量的类型，在程序运行过程中，类型会被自动确定：
+</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">10</span>;        <span class="comment">// 这是一个数字型</span></span><br><span class="line"><span class="keyword">var</span> areYouOk = <span class="string">&#x27;是的&#x27;</span>;   <span class="comment">// 这是一个字符串     </span></span><br></pre></td></tr></table></figure>
+
+<p>​        在代码运行时，变量的数据类型是由 JS引擎 根据 = 右边变量值的数据类型来判断 的，运行完毕之后， 变量就确定了数据类型。JavaScript 拥有动态类型，同时也意味着相同的变量可用作不同的类型：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">6</span>;           <span class="comment">// x 为数字</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="string">&quot;Bill&quot;</span>;      <span class="comment">// x 为字符串    </span></span><br></pre></td></tr></table></figure></li>
+<li><p>数据类型的分类</p>
+<pre><code>JS 把数据类型分为两类：
+</code></pre>
+<ul>
+<li><p>简单数据类型 （Number,String,Boolean,Undefined,Null）</p>
+</li>
+<li><p>复杂数据类型 （object)    </p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="简单数据类型"><a href="#简单数据类型" class="headerlink" title="简单数据类型"></a>简单数据类型</h3><p>简单数据类型（基本数据类型）</p>
+<p>JavaScript 中的简单数据类型及其说明如下：</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210813082852.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210813082852.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h4 id="数字型-Number"><a href="#数字型-Number" class="headerlink" title="数字型 Number"></a>数字型 Number</h4><p>​        JavaScript 数字类型既可以保存整数，也可以保存小数(浮点数）。  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> age = <span class="number">21</span>;       <span class="comment">// 整数</span></span><br><span class="line"><span class="keyword">var</span> Age = <span class="number">21.3747</span>;  <span class="comment">// 小数     </span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p>数字型进制</p>
+<p>最常见的进制有二进制、八进制、十进制、十六进制。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 1.八进制数字序列范围：0~7</span></span><br><span class="line"><span class="keyword">var</span> num1 = <span class="number">07</span>;   <span class="comment">// 对应十进制的7</span></span><br><span class="line"><span class="keyword">var</span> num2 = <span class="number">019</span>;  <span class="comment">// 对应十进制的19</span></span><br><span class="line"><span class="keyword">var</span> num3 = <span class="number">08</span>;   <span class="comment">// 对应十进制的8</span></span><br><span class="line"> <span class="comment">// 2.十六进制数字序列范围：0~9以及A~F</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">0xA</span>;   </span><br></pre></td></tr></table></figure>
+
+<p>现阶段我们只需要记住，在JS中八进制前面加0，十六进制前面加 0x  </p>
+</li>
+<li><p>数字型范围</p>
+<p>JavaScript中数值的最大和最小值</p>
+<ul>
+<li><p>最大值：Number.MAX_VALUE，这个值为： 1.7976931348623157e+308</p>
+</li>
+<li><p>最小值：Number.MIN_VALUE，这个值为：5e-32</p>
+</li>
+</ul>
+</li>
+<li><p>数字型三个特殊值</p>
+<ul>
+<li>Infinity ，代表无穷大，大于任何数值</li>
+<li>-Infinity ，代表无穷小，小于任何数值</li>
+<li>NaN ，Not a number，代表一个非数值</li>
+</ul>
+</li>
+<li><p>isNaN</p>
+<p>用来判断一个变量是否为非数字的类型，返回 true 或者 false</p>
+</li>
+</ol>
+<p>   <img src="https://gitee.com/panghutx/tuchuang/raw/master/20210813082934.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210813082934.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">var</span> usrAge = <span class="number">21</span>;</span><br><span class="line"><span class="keyword">var</span> isOk = <span class="built_in">isNaN</span>(userAge);</span><br><span class="line">  <span class="built_in">console</span>.log(isNum);          <span class="comment">// false ，21 不是一个非数字</span></span><br><span class="line"><span class="keyword">var</span> usrName = <span class="string">&quot;andy&quot;</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(userName));<span class="comment">// true ，&quot;andy&quot;是一个非数字</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串型-String"><a href="#字符串型-String" class="headerlink" title="字符串型 String"></a>字符串型 String</h4><p>​        字符串型可以是引号中的任意文本，其语法为 双引号 “” 和 单引号’’</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strMsg = <span class="string">&quot;胖虎同学panghutx&quot;</span>;  <span class="comment">// 使用双引号表示字符串</span></span><br><span class="line"><span class="keyword">var</span> strMsg2 = <span class="string">&#x27;胖虎同学panghutx&#x27;</span>;    <span class="comment">// 使用单引号表示字符串</span></span><br><span class="line"><span class="comment">// 常见错误</span></span><br><span class="line"><span class="keyword">var</span> strMsg3 = 胖虎同学;       <span class="comment">// 报错，没使用引号，会被认为是js代码，但js没有这些语法</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>字符串转义符</li>
+</ul>
+<p>​        类似HTML里面的特殊字符，字符串中也有特殊字符，我们称之为转义符。</p>
+<p>​        转义符都是 \ 开头的，常用的转义符及其说明如下：</p>
+<table>
+<thead>
+<tr>
+<th>转义符</th>
+<th>解释说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\n</td>
+<td>换行符，n   是   newline   的意思</td>
+</tr>
+<tr>
+<td>\ \</td>
+<td>斜杠   \</td>
+</tr>
+<tr>
+<td>\‘</td>
+<td>‘   单引号</td>
+</tr>
+<tr>
+<td>\“</td>
+<td>”双引号</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>tab  缩进</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>空格 ，b   是   blank  的意思</td>
+</tr>
+</tbody></table>
+<ol start="3">
+<li><p>字符串长度</p>
+<pre><code>        字符串是由若干字符组成的，这些字符的数量就是字符串的长度。通过字符串的 length 属性可以获取整个字符串的长度。
+</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> strMsg = <span class="string">&quot;我是胖虎同学！&quot;</span>;</span><br><span class="line">alert(strMsg.length); <span class="comment">// 显示 7</span></span><br></pre></td></tr></table></figure></li>
+<li><p>字符串拼接</p>
+<ul>
+<li><p>多个字符串之间可以使用 + 进行拼接，其拼接方式为 字符串 + 任何类型 = 拼接之后的新字符串</p>
+</li>
+<li><p>拼接前会把与字符串相加的任何类型转成字符串，再拼接成一个新的字符串</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.1 字符串 &quot;相加&quot;</span></span><br><span class="line">alert(<span class="string">&#x27;hello&#x27;</span> + <span class="string">&#x27; &#x27;</span> + <span class="string">&#x27;world&#x27;</span>); <span class="comment">// hello world</span></span><br><span class="line"><span class="comment">//1.2 数值字符串 &quot;相加&quot;</span></span><br><span class="line">alert(<span class="string">&#x27;100&#x27;</span> + <span class="string">&#x27;100&#x27;</span>); <span class="comment">// 100100</span></span><br><span class="line"><span class="comment">//1.3 数值字符串 + 数值</span></span><br><span class="line">alert(<span class="string">&#x27;11&#x27;</span> + <span class="number">12</span>);     <span class="comment">// 1112 </span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><em><strong>+ 号总结口诀：数值相加 ，字符相连</strong></em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>字符串拼接加强</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;胖虎同学&#x27;</span> + <span class="number">20</span>);        <span class="comment">// 只要有字符就会相连 </span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">20</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;胖虎同学age岁&#x27;</span>);      <span class="comment">// 这样不行哦</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;胖虎同学&#x27;</span> + age);         <span class="comment">// 胖虎同学20</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;胖虎同学&#x27;</span> + age + <span class="string">&#x27;岁啦&#x27;</span>); <span class="comment">// 胖虎同学20岁啦</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>经常会将字符串和变量来拼接，变量可以很方便地修改里面的值</li>
+<li>变量是不能添加引号的，因为加引号的变量会变成字符串</li>
+<li>如果变量两侧都有字符串拼接，口诀“<strong>引引加加</strong> ”，删掉数字，变量写加中间</li>
+</ul>
+</li>
+</ol>
+<h4 id="布尔型Boolean"><a href="#布尔型Boolean" class="headerlink" title="布尔型Boolean"></a>布尔型Boolean</h4><p>​        布尔类型有两个值：true 和 false ，其中 true 表示真（对），而 false 表示假（错）。</p>
+<p>​        布尔型和数字型相加的时候， true 的值为 1 ，false 的值为 0。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> + <span class="number">1</span>);  <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">false</span> + <span class="number">1</span>); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Undefined和-Null"><a href="#Undefined和-Null" class="headerlink" title="Undefined和 Null"></a>Undefined和 Null</h4><p>​        一个声明后没有被赋值的变量会有一个默认值undefined ( 如果进行相连或者相加时，注意结果）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> variable;</span><br><span class="line"><span class="built_in">console</span>.log(variable);           <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;你好&#x27;</span> + variable);  <span class="comment">// 你好undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">11</span> + variable);     <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> + variable);   <span class="comment">//  NaN</span></span><br></pre></td></tr></table></figure>
+
+<p>​        一个声明变量给 null 值，里面存的值为空（学习对象时，我们继续研究null)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vari = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;你好&#x27;</span> + vari);  <span class="comment">// 你好null</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">11</span> + vari);     <span class="comment">// 11</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">true</span> + vari);   <span class="comment">//  1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="获取变量数据类型"><a href="#获取变量数据类型" class="headerlink" title="获取变量数据类型"></a>获取变量数据类型</h3><ul>
+<li><p>获取检测变量的数据类型</p>
+<p>​        typeof 可用来获取检测变量的数据类型</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">18</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> num) <span class="comment">// 结果 number      </span></span><br></pre></td></tr></table></figure>
+
+<p>​        不同类型的返回值</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210813083544.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210813083544.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+</li>
+</ul>
+<h3 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h3><p>​        什么是数据类型转换？</p>
+<p>​        使用表单、prompt 获取过来的数据默认是字符串类型的，此时就不能直接简单的进行加法运算，而需要转换变量的数据类型。通俗来说，就是把一种数据类型的变量转换成另一种数据类型，通常会实现3种方式的转换：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">转换为字符串类型</span><br><span class="line">转换为数字型</span><br><span class="line">转换为布尔型</span><br></pre></td></tr></table></figure>
+
+<h5 id="转换为字符串"><a href="#转换为字符串" class="headerlink" title="转换为字符串"></a>转换为字符串</h5><p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210813083649.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210813083649.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h5 id="转换为数字型"><a href="#转换为数字型" class="headerlink" title="转换为数字型"></a>转换为数字型</h5><p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210813083720.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210813083720.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h5 id="转换为布尔型"><a href="#转换为布尔型" class="headerlink" title="转换为布尔型"></a>转换为布尔型</h5><p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210813083747.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210813083747.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<ul>
+<li><p>代表空、否定的值会被转换为 false  ，如 ‘’、0、NaN、null、undefined  </p>
+</li>
+<li><p>其余值都会被转换为 true</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">&#x27;&#x27;</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">0</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">NaN</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">null</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="literal">undefined</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="string">&#x27;小白&#x27;</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Boolean</span>(<span class="number">12</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/08/15/js2/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/08/12/js1/>https://blog.wangyouwu.cn/2021/08/12/js1/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-15T11:28:15+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年8月15日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/14/js-exercise/">
-        js练习Ⅰ：循环、数组、函数
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>JavaScript</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        🙂循环
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/08/12/js1/&title=js基础Ⅰ：变量和数据类型 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/08/12/js1/&title=js基础Ⅰ：变量和数据类型 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/08/12/js1/&title=js基础Ⅰ：变量和数据类型 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2021/08/14/js-exercise/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>js练习Ⅰ：循环、数组、函数</p>
+          <p class='content'>🙂循环
 一行打印★★★★★
 
-12345var str = &#x27;&#x27;;for (var i = 1;i&lt;=5;i++) &#123;    str = str + &#x27;★&#x27;; //追加字符串&#125;     console.log(str);
-
-
-倒序打印★ 第一行9个，第九行1个
-
-
-12345678var str = &#x27;&#x27;...
+12345var str = &#x27;&#x27;;for (var i = 1;i&lt;=5;i++) &#123;    str = str + &#x...</p>
+        </a>
       
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2021/08/14/js-exercise/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/12/js1/">
-        js基础Ⅰ：变量和数据类型
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        JavaScript输入输出语句为了方便信息的输入输出，JS中提供了一些输入输出语句，其常用的语句如下：
-
-
-
-方法
-说明
-归属
-
-
-
-alert(msg)
-浏览器弹出警示框
-浏览器
-
-
-console.log(msg)
-浏览器控制台打印输出信息
-浏览器
-
-
-prompt(info)
-浏览器弹出输入框，用户可以输入
-浏览器
-
-
-
-注意：alert() 主要用来显示消息给用户，console....
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/12/js1/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/10/c-function/">
-        c语言：函数
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        函数是一块代码，接收零个或多个参数，做一件事情，并返回零个或一个值。
+        <a class='next' href='/2021/08/10/c-function/'>
+          <p class='title'>c语言：函数<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>函数是一块代码，接收零个或多个参数，做一件事情，并返回零个或一个值。
 
 
 调用函数函数名()
-()起到了表示函数调用的作用，即使没有参数也需要()；如果有参数，则需要给出正确的数量和顺序，这些值会被按照顺序依次用来初始化函数中的参数。
-123456789101112131415#include&lt;stdio.h&gt;void sum(int begain, int end)&#123;...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-10</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/10/c-function/'>
-            阅读全文
-          </a>
-        </div>
+()起到了表示函数调用的作用，即使没有参数也需要()；如果有参数，则需要给出正确的数量和顺序，这些值...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/09/c-date-type/">
-        c语言：数据类型
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        整数
-char：1字节（8比特） -128~127
-
-short：2字节 -32768~32767
-
-int：取决于编译器（CPU），通常意义是“1个字”
-
-long：取决于编译器（CPU），通常意义是“1个字”
-
-long long：8字节
+  </article>
 
 
-整数的内部表达都是二进制
-补码补码的意义就是拿补码和原码可以加出一个溢出的“零”
-0-1=-1(1)00000000 - 00000001 –&g...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/09/c-date-type/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/05/rem/">
-        移动web开发——rem布局
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        rem基础rem (root em)是一个相对单位，类似于em，em是父元素字体大小。
-不同的是rem的基准是相对于html元素的字体大小。
-比如，根元素（html）设置font-size=12px; 非根元素设置width:2rem; 则换成px表示就是24px。
-12345678/* 根html 为 12px */html &#123;   font-size: 12px;&#125;/...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-05</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/05/rem/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/02/words/">
-        我爱记单词🙂
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        7.29boastv.自夸、吹嘘
-n.自吹自擂
-boat 船 把气船吹炸了
-cartn.手推车、运货马车
-v.用车运送
-clientn.委托人、客户
-climb–&gt;攀爬、攀关系、巴结客户 climb client
-cruisen.航游
-v.乘船游览
-considerableadj.相当大的、相当多的、重大的considerate adj.考虑周到的 considerable thing...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/02/words/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/07/26/flex/">
-        移动web开发——flex布局
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-flex 是 flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性，任何一个容器都可以指定为 flex 布局。
-当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效。
-给父盒子添加flex属性，来控制子盒子的位置和排列方式
-
-父项常见属性
-flex-direction：设置主轴的方向
-justi...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-07-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/07/26/flex/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/07/25/viewport/">
-        移动web开发
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        meta标签为使网站在移动端有理想的阅读宽度，需添加meta标签。
-meta标签的目的：使布局视口的宽度与理想视口的宽度一致，简单理解就是设备有多宽，我们布局的视口就多宽。
-1&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no,maxi...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-07-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/07/25/viewport/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/07/21/summer/">
-        暑假，目的论，自卑情结
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        7月7日回到家，8.26号返校，不知不觉已经在家呆14天了，还有一个月就大二了……
-正如李宗盛《给自己的歌》中写道：“等你发现时间是贼了，它早已偷光你的选择”。想到第一次去学校的场景，现在还历历在目，一年的时间已经溜走，大学已完成了1/4，大学中能做的选择也已被偷走了1/4。
-沉湎于过去毫无意义，过去已经不属于我了，我拥有的只有现在。我的人生就取决于当下。
-《被讨厌的勇气》里有这样一段：
-
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-07-21</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/07/21/summer/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 4
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2021/page/2/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
 
 
-	
+
+
 </div>
 <aside class='l_side'>
   
@@ -1110,136 +918,28 @@ meta标签的目的：使布局视口的宽度与理想视口的宽度一致，�
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">胖虎同学|生活学习类个人博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:2367897284@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/panghutx/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop，mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%88%86%E4%BA%AB/" href="/categories/%E5%88%86%E4%BA%AB/"
-            id="categoriesE58886E4BAAB"
-            ><div class='name'>分享</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE5ADA6E4B9A0"
-            ><div class='name'>学习</div><div class='badge'>(28)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E5%B8%B8/" href="/categories/%E6%97%A5%E5%B8%B8/"
-            id="categoriesE697A5E5B8B8"
-            ><div class='name'>日常</div><div class='badge'>(6)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%AD%E5%8F%A5"><span class="toc-text">JavaScript输入输出语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E9%87%8F"><span class="toc-text">变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8F%98%E9%87%8F"><span class="toc-text">什么是变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">变量的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%AE%80%E4%BB%8B"><span class="toc-text">数据类型简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">简单数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%9E%8B-Number"><span class="toc-text">数字型 Number</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9E%8B-String"><span class="toc-text">字符串型 String</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E5%9E%8BBoolean"><span class="toc-text">布尔型Boolean</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Undefined%E5%92%8C-Null"><span class="toc-text">Undefined和 Null</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%8F%98%E9%87%8F%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">获取变量数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">数据类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">转换为字符串</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E4%B8%BA%E6%95%B0%E5%AD%97%E5%9E%8B"><span class="toc-text">转换为数字型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%B8%83%E5%B0%94%E5%9E%8B"><span class="toc-text">转换为布尔型</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/JavaScript/" style="font-size: 17.33px; color: #828282">JavaScript</a> <a href="/tags/c/" style="font-size: 17.33px; color: #828282">c</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/html/" style="font-size: 17.33px; color: #828282">html</a> <a href="/tags/linux/" style="font-size: 20.67px; color: #6c6c6c">linux</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 14px; color: #999">图床</a> <a href="/tags/%E7%BD%97%E7%BF%94/" style="font-size: 14px; color: #999">罗翔</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 14px; color: #999">英语</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
 		  
@@ -1248,21 +948,21 @@ meta标签的目的：使布局视口的宽度与理想视口的宽度一致，�
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="js基础Ⅰ：变量和数据类型";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>

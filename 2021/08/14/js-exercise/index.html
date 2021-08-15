@@ -22,9 +22,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>移动web开发——rem布局 - 胖虎同学|生活学习类个人博客</title>
+  <title>js练习Ⅰ：循环、数组、函数 - 胖虎同学|生活学习类个人博客</title>
   
-    <meta name="keywords" content="css">
+    <meta name="keywords" content="JavaScript">
   
 
   
@@ -485,7 +485,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title">
-        移动web开发——rem布局
+        js练习Ⅰ：循环、数组、函数
       </h1>
       <div class='new-meta-box'>
         
@@ -516,7 +516,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年8月5日</p>
+    <p>发布于：2021年8月14日</p>
   </a>
 </div>
 
@@ -527,7 +527,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="移动web开发——rem布局" data-path="/2021/08/05/rem/">
+      <div id="lc-pv" data-title="js练习Ⅰ：循环、数组、函数" data-path="/2021/08/14/js-exercise/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -545,86 +545,130 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <h2 id="rem基础"><a href="#rem基础" class="headerlink" title="rem基础"></a>rem基础</h2><p>rem (root em)是一个相对单位，类似于em，em是父元素字体大小。</p>
-<p>不同的是rem的基准是相对于html元素的字体大小。</p>
-<p>比如，根元素（html）设置font-size=12px; 非根元素设置width:2rem; 则换成px表示就是24px。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/* 根html 为 12px */</span><br><span class="line">html &#123;</span><br><span class="line">   font-size: 12px;</span><br><span class="line">&#125;</span><br><span class="line">/* 此时 div 的字体大小就是 24px */       </span><br><span class="line">div &#123;</span><br><span class="line">    font-size: 2rem;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>rem的优势：父元素文字大小可能不一致， 但是整个页面只有一个html，可以很好来控制整个页面的元素大小。</p>
-<h2 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h2><h3 id="什么是媒体查询"><a href="#什么是媒体查询" class="headerlink" title="什么是媒体查询"></a>什么是媒体查询</h3><p>媒体查询（Media Query）是CSS3新语法。</p>
-<ul>
-<li>使用 @media查询，可以针对不同的媒体类型定义不同的样式</li>
-<li>@media 可以针对不同的屏幕尺寸设置不同的样式</li>
-<li>当你重置浏览器大小的过程中，页面也会根据浏览器的宽度和高度重新渲染页面 </li>
-<li>目前针对很多苹果手机、Android手机，平板等设备都用得到多媒体查询</li>
+  <h3 id="🙂循环"><a href="#🙂循环" class="headerlink" title="🙂循环"></a>🙂循环</h3><ul>
+<li>一行打印★★★★★</li>
 </ul>
-<h3 id="媒体查询语法规范"><a href="#媒体查询语法规范" class="headerlink" title="媒体查询语法规范"></a>媒体查询语法规范</h3><ul>
-<li>用 @media开头 注意@符号</li>
-<li>mediatype  媒体类型</li>
-<li>关键字 and  not  only</li>
-<li>media feature 媒体特性必须有小括号包含</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media mediatype and|not|only (media feature) &#123;</span><br><span class="line">    CSS-Code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="mediatype-查询类型"><a href="#mediatype-查询类型" class="headerlink" title="mediatype 查询类型"></a>mediatype 查询类型</h4><p>​       将不同的终端设备划分成不同的类型，称为媒体类型</p>
-<img src="https://gitee.com/panghutx/tuchuang/raw/master/rem1.jpg" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/rem1.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
-
-<h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p>​       关键字将媒体类型或多个媒体特性连接到一起做为媒体查询的条件。</p>
-<ul>
-<li>and：可以将多个媒体特性连接到一起，相当于“且”的意思。</li>
-<li>not：排除某个媒体类型，相当于“非”的意思，可以省略。</li>
-<li>only：指定某个特定的媒体类型，可以省略。    </li>
-</ul>
-<h4 id="媒体特性"><a href="#媒体特性" class="headerlink" title="媒体特性"></a>媒体特性</h4><p>   每种媒体类型都具有各自不同的特性，根据不同媒体类型的媒体特性设置不同的展示风格。我们暂且了解三个。</p>
-<p>   注意他们要加小括号包含</p>
-   <img src="https://gitee.com/panghutx/tuchuang/raw/master/rem2.jpg" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/rem2.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
-
-   
-
-<h4 id="媒体查询书写规则"><a href="#媒体查询书写规则" class="headerlink" title="媒体查询书写规则"></a>媒体查询书写规则</h4><p>   注意： 为了防止混乱，媒体查询我们要按照从小到大或者从大到小的顺序来写,但是我们最喜欢的还是从小到大来写，这样代码更简洁</p>
-   <img src="https://gitee.com/panghutx/tuchuang/raw/master/rem3.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/rem3.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
-
- 
-
-<h2 id="less-基础"><a href="#less-基础" class="headerlink" title="less 基础"></a>less 基础</h2><h3 id="维护css弊端"><a href="#维护css弊端" class="headerlink" title="维护css弊端"></a>维护css弊端</h3><p>CSS 是一门非程序式语言，没有变量、函数、SCOPE（作用域）等概念。</p>
-<ul>
-<li>CSS 需要书写大量看似没有逻辑的代码，CSS 冗余度是比较高的。</li>
-<li>不方便维护及扩展，不利于复用。</li>
-<li>CSS 没有很好的计算能力</li>
-<li>非前端开发工程师来讲，往往会因为缺少 CSS 编写经验而很难写出组织良好且易于维护的 CSS 代码项目。 </li>
-</ul>
-<h3 id="less-介绍"><a href="#less-介绍" class="headerlink" title="less 介绍"></a>less 介绍</h3><p>Less（LeanerStyle Sheets 的缩写）是一门 CSS扩展语言，也成为CSS预处理器。<br>它在CSS 的语法基础之上，引入了变量，Mixin（混入），运算以及函数等功能，大大简化了 CSS 的编写，并且降低了 CSS的维护成本，就像它的名称所说的那样，Less可以让我们用更少的代码做更多的事情。</p>
-<p>Less中文网址：<a target="_blank" rel="noopener" href="http://lesscss.cn/">http://</a><a target="_blank" rel="noopener" href="http://lesscss.cn/">less</a><a target="_blank" rel="noopener" href="http://lesscss.cn/">css.cn/</a></p>
-<p>常见的CSS预处理器：Sass、Less、Stylus</p>
-<h3 id="less安装"><a href="#less安装" class="headerlink" title="less安装"></a>less安装</h3><p>①安装nodejs，可选择版本(8.0)，网址：<a target="_blank" rel="noopener" href="http://nodejs.cn/download/">http://nodejs.cn/download/</a></p>
-<p>②检查是否安装成功，使用cmd命令（win10是window+r 打开运行输入cmd）  —输入“node –v”查看版本即可</p>
-<p>③基于nodejs在线安装Less，使用cmd命令“npm install -g less”即可</p>
-<p>④检查是否安装成功，使用cmd命令“ lessc -v ”查看版本即可</p>
-<h3 id="less使用"><a href="#less使用" class="headerlink" title="less使用"></a>less使用</h3><h4 id="less变量"><a href="#less变量" class="headerlink" title="less变量"></a>less变量</h4><p>变量是指没有固定的值，可以改变的。因为我们CSS中的一些颜色和数值等经常使用。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@变量名:值;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>;i&lt;=<span class="number">5</span>;i++) &#123;</span><br><span class="line">    str = str + <span class="string">&#x27;★&#x27;</span>; <span class="comment">//追加字符串</span></span><br><span class="line">&#125; </span><br><span class="line">    <span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>必须有@为前缀</li>
-<li>不能包含特殊字符</li>
-<li>不能以数字开头</li>
-<li>大小写敏感</li>
+<li>倒序打印★ 第一行9个，第九行1个</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@color: pink;</span><br></pre></td></tr></table></figure>
-
-<h4 id="less嵌套"><a href="#less嵌套" class="headerlink" title="less嵌套"></a>less嵌套</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 将css改为less</span><br><span class="line">#header .logo &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#header &#123;</span><br><span class="line">    .logo &#123;</span><br><span class="line">       width: 300px;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>如果遇见 （交集|伪类|伪元素选择器） ，利用&amp;进行连接</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a:hover&#123;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">a&#123;</span><br><span class="line">  &amp;:hover&#123;</span><br><span class="line">      color:red;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="less运算"><a href="#less运算" class="headerlink" title="less运算"></a>less运算</h4><p>任何数字、颜色或者变量都可以参与运算。就是Less提供了加（+）、减（-）、乘（*）、除（/）算术运算。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/*Less 里面写*/</span><br><span class="line">@witdh: 10px + 5;</span><br><span class="line">div &#123;</span><br><span class="line">    border: @witdh solid red;</span><br><span class="line">&#125;</span><br><span class="line">/*生成的css*/</span><br><span class="line">div &#123;</span><br><span class="line">  border: 15px solid red;</span><br><span class="line">&#125;</span><br><span class="line">/*Less 甚至还可以这样 */</span><br><span class="line">width: (@width + 5) * 2;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210814205845.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210814205845.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210814104944001"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;<span class="number">10</span>; i++) &#123;  <span class="comment">// 控制行数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j=i;j&lt;<span class="number">10</span>;j++) &#123; <span class="comment">// 控制每一行★个数</span></span><br><span class="line">        str = str + <span class="string">&#x27;★&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    str = str + <span class="string">&#x27;\n&#x27;</span>; <span class="comment">// 每行结尾换行</span></span><br><span class="line">&#125;</span><br><span class="line">    <span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>乘号（*）和除号（/）的写法  </li>
-<li>运算符中间左右有个空格隔开 1px + 5</li>
-<li>对于两个不同的单位的值之间的运算，运算结果的值取第一个值的单位 </li>
-<li>如果两个值之间只有一个值有单位，则运算结果就取该单位</li>
+<li>正序打印★ 第一行1个，第九行9个</li>
 </ul>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210814205852.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210814205852.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210814105003430"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;<span class="number">10</span>;i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j =<span class="number">1</span> ;j&lt;=i;j++) &#123;</span><br><span class="line">        str = str + <span class="string">&#x27;★&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">        str = str + <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>打印九九乘法表</li>
+</ul>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210814205858.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210814205858.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210814104842263"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str =<span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span> ; i&lt;<span class="number">10</span>;i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j=<span class="number">1</span>;j&lt;=i;j++) &#123;</span><br><span class="line">        str = str + j + <span class="string">&#x27;x&#x27;</span> +i + <span class="string">&#x27;=&#x27;</span> + j*i + <span class="string">&#x27;\t&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    str = str + <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接收用户输入的用户名和密码，若用户名为 “admin” ,且密码为 “123456” ,则提示用户登录成功! 否则，让用户一直输入。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> name = prompt(<span class="string">&#x27;请输入用户名&#x27;</span>);</span><br><span class="line">    <span class="keyword">var</span> password = prompt(<span class="string">&#x27;请输入密码&#x27;</span>);</span><br><span class="line">&#125;<span class="keyword">while</span> (name != <span class="string">&#x27;admin&#x27;</span> || password != <span class="string">&#x27;123456&#x27;</span>); <span class="comment">//两个有一个不满足就要进入循环，切忌写成&amp;&amp;</span></span><br><span class="line">alert(<span class="string">&#x27;登陆成功&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>求整数1～100的累加值，但要求跳过所有个位为3的数。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=<span class="number">100</span>;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i%<span class="number">10</span>==<span class="number">3</span>) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        sum = sum + i;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(sum);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var sum = 0;</span><br><span class="line">for (var i=1;i&lt;=100;i++) &#123;</span><br><span class="line">        if(i%10!=3) &#123;</span><br><span class="line">            sum = sum + i;</span><br><span class="line">        &#125;     </span><br><span class="line">&#125;</span><br><span class="line">console.log(sum);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>ATM机</li>
+</ul>
+<img src="https://gitee.com/panghutx/tuchuang/raw/master/20210814210104.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210814210104.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20210814210102914" style="zoom:50%;" />
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum =<span class="number">100</span>;</span><br><span class="line"><span class="keyword">do</span>&#123;</span><br><span class="line"><span class="keyword">var</span> choice = prompt(<span class="string">&#x27;请输入你要的操作：\n1.存钱 \n2.取钱\n3.显示余额\n4.退出\n &#x27;</span>);</span><br><span class="line"><span class="keyword">if</span>(choice==<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> num1 = prompt(<span class="string">&#x27;请输入存入金额：&#x27;</span>)</span><br><span class="line">    <span class="keyword">var</span> sum = <span class="built_in">parseInt</span>(sum) + <span class="built_in">parseInt</span>(num1);</span><br><span class="line">    alert(<span class="string">&#x27;你的余额是&#x27;</span>+ sum +<span class="string">&#x27;元&#x27;</span>)</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(choice == <span class="number">2</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> num2 = prompt(<span class="string">&#x27;请输入取出金额：&#x27;</span>)</span><br><span class="line">    <span class="keyword">var</span> sum = <span class="built_in">parseInt</span>(sum) - <span class="built_in">parseInt</span>(num2);</span><br><span class="line">    alert(<span class="string">&#x27;你的余额是&#x27;</span>+ sum +<span class="string">&#x27;元&#x27;</span>)</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(choice == <span class="number">3</span>)&#123;</span><br><span class="line">    alert(<span class="string">&#x27;你的余额是&#x27;</span>+ sum +<span class="string">&#x27;元&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="keyword">while</span>(choice!=<span class="number">4</span>)</span><br><span class="line">alert(<span class="string">&#x27;退出成功&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>求从1开始第35个能被7和3整除的整数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">1</span>; count&lt;<span class="number">35</span>;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i%<span class="number">3</span>==<span class="number">0</span>&amp;&amp;i%<span class="number">7</span>==<span class="number">0</span>)&#123; </span><br><span class="line">        count++;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="🙂数组"><a href="#🙂数组" class="headerlink" title="🙂数组"></a>🙂数组</h3><ul>
+<li>求出数组总和和平均数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">4</span>];</span><br><span class="line">        <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">var</span> average = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i &lt; arr.length ; i++)&#123;</span><br><span class="line">            sum =sum +arr[i] <span class="comment">// 求和是加数组元素arr[i]，不是数组下标i</span></span><br><span class="line">        &#125;</span><br><span class="line">        average = sum/arr.length;</span><br><span class="line">        <span class="built_in">console</span>.log(sum,average); <span class="comment">// 输出多个变量，用，逗号隔开即可</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>求数组[2,6,1,77,52,25,7]中的最大值</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">77</span>,<span class="number">52</span>,<span class="number">25</span>,<span class="number">7</span>];</span><br><span class="line"><span class="keyword">var</span> max =arr[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(max&lt;arr[i])&#123;</span><br><span class="line">        max=arr[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(max);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将数组[‘red’,’green’,’blue’,’pink’]转换为字符串，并使用|分割</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;green&#x27;</span>,<span class="string">&#x27;blue&#x27;</span>,<span class="string">&#x27;pink&#x27;</span>];</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++) &#123;</span><br><span class="line">    str = str + arr[i] + <span class="string">&#x27;|&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>新建一个数组，里面存放10个整数（1-10）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ar arr = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">    <span class="comment">// arr = 1  x  不要直接给数组名赋值</span></span><br><span class="line">    arr[i]=i+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将数组[2,0,6,1,77,0,52,0,25,7]中大于等于10的元素选出来，放入新数组</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">0</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">77</span>,<span class="number">0</span>,<span class="number">52</span>,<span class="number">0</span>,<span class="number">25</span>,<span class="number">7</span>];</span><br><span class="line"><span class="keyword">var</span> arr1=[];</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[i]&gt;=<span class="number">10</span>)&#123;</span><br><span class="line">        arr1[a]=arr[i]</span><br><span class="line">        a++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="built_in">console</span>.log(arr1);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">0</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">77</span>,<span class="number">0</span>,<span class="number">52</span>,<span class="number">0</span>,<span class="number">25</span>,<span class="number">7</span>];</span><br><span class="line"><span class="keyword">var</span> arr1=[]; <span class="comment">//arr1.length就是0</span></span><br><span class="line"><span class="keyword">var</span> a=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[i]&gt;=<span class="number">10</span>)&#123;</span><br><span class="line">        arr1[arr1.length]=arr[i]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    <span class="built_in">console</span>.log(arr1);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将数组[2,0,6,1,77,0,52,0,25,7]中的0去掉，形成一个新数组</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">0</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">77</span>,<span class="number">0</span>,<span class="number">52</span>,<span class="number">0</span>,<span class="number">25</span>,<span class="number">7</span>];</span><br><span class="line"><span class="keyword">var</span> arr1 = [];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;arr.length;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[i]!=<span class="number">0</span> )&#123;</span><br><span class="line">        arr1[arr1.length]=arr[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将数组[1,2,3,4,5,6]内容反过来存放</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="keyword">var</span> arr1 = [];</span><br><span class="line"><span class="keyword">var</span> num = arr.length;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;arr.length;i++)&#123;</span><br><span class="line">        num--;</span><br><span class="line">        arr1[arr1.length]=arr[num];</span><br><span class="line">        </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr1);</span><br></pre></td></tr></table></figure>
+
+<p>★★★冒泡排序★★★</p>
+<ul>
+<li>将数组[2,1,3,5,4]元素由大到小排列</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i &lt;= arr.length-<span class="number">1</span>;i++)&#123; <span class="comment">// 趟数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;=arr.length-<span class="number">1</span>-i;j++) &#123; <span class="comment">//每趟的次数w</span></span><br><span class="line">        <span class="keyword">if</span>(arr[j]&lt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">            <span class="keyword">var</span> temp =<span class="number">0</span>;</span><br><span class="line">            temp = arr[j];</span><br><span class="line">            arr[j]=arr[j+<span class="number">1</span>];</span><br><span class="line">            arr[j+<span class="number">1</span>]=temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(arr);</span><br></pre></td></tr></table></figure>
+
+<h3 id="🙂函数"><a href="#🙂函数" class="headerlink" title="🙂函数"></a>🙂函数</h3><ul>
+<li>利用函数求两个数的最大值</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Getmax</span> (<span class="params">num1,num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> max = num1;</span><br><span class="line">    <span class="keyword">if</span>(num1&gt;num2)&#123;</span><br><span class="line">        max = num1;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        max = num2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Getmax(<span class="number">6</span>,<span class="number">9</span>));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Getmax</span> (<span class="params">num1,num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1&gt;num2 ? num1 : num2; <span class="comment">//三元运算符</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Getmax(<span class="number">6</span>,<span class="number">9</span>));</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>利用函数求数组中的最大值</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Getmax</span> (<span class="params">arr</span>) </span>&#123; <span class="comment">//接收一个数组</span></span><br><span class="line">    <span class="keyword">var</span> max = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(max&lt;arr[i])&#123;</span><br><span class="line">            max=arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> re = Getmax([<span class="number">5</span>,<span class="number">2</span>,<span class="number">99</span>,<span class="number">101</span>,<span class="number">67</span>,<span class="number">77</span>]); <span class="comment">//实参是一个数组传过去</span></span><br><span class="line"><span class="built_in">console</span>.log(re);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>利用函数求<strong>任意个数</strong>中的最大值</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getMax</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> max = <span class="built_in">arguments</span>[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="built_in">arguments</span>.length;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(max&lt;<span class="built_in">arguments</span>[i])&#123;</span><br><span class="line">            max=<span class="built_in">arguments</span>[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> re=getMax(<span class="number">3</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">76</span>,<span class="number">34</span>);</span><br><span class="line"><span class="built_in">console</span>.log(re);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>利用函数,翻转任意一个数组</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reverse</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> newArr=[];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++)&#123;</span><br><span class="line">        newArr[newArr.length]=arr[arr.length-<span class="number">1</span>-i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr1 = reverse([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(arr1);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>利用函数,对数组从小到大排序—冒泡排序</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort</span>(<span class="params">arr</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;arr.length-<span class="number">1</span>-i;j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(arr[j]&gt;arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">                <span class="keyword">var</span> temp = arr[j];</span><br><span class="line">                arr[j]=arr[j+<span class="number">1</span>];</span><br><span class="line">                arr[j+<span class="number">1</span>]=temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> arr1=sort([<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">5</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(arr1);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用户输入年份，输出当前年份2月份的天数</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">backDay</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> year = prompt(<span class="string">&#x27;请输入年份：&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(isRunYear(year))&#123;</span><br><span class="line">        alert(year+<span class="string">&#x27;是闰年，2月份有29天&#x27;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        alert(year+<span class="string">&#x27;是平年，2月份有28天&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line">backDay();</span><br><span class="line">     </span><br><span class="line"><span class="comment">// 判断是否是闰年</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isRunYear</span>(<span class="params">year</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//如果是闰年返回true，否则else</span></span><br><span class="line">    <span class="keyword">var</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>||year%<span class="number">400</span>==<span class="number">0</span>) &#123; <span class="comment">//能被4整除且不能被100整除或者能被400整除</span></span><br><span class="line">        flag=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
   
   
@@ -642,7 +686,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/08/05/rem/>https://blog.wangyouwu.cn/2021/08/05/rem/</a></p>
+                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/08/14/js-exercise/>https://blog.wangyouwu.cn/2021/08/14/js-exercise/</a></p>
               
             
           </blockquote>
@@ -659,10 +703,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-05T15:36:48+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-15T11:12:53+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年8月5日</p>
+    <p>更新于：2021年8月15日</p>
   </a>
 </div>
 
@@ -671,7 +715,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/css/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>css</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>JavaScript</p></a></div>
 
 
         
@@ -684,7 +728,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/08/05/rem/&title=移动web开发——rem布局 - 胖虎同学|生活学习类个人博客&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/08/14/js-exercise/&title=js练习Ⅰ：循环、数组、函数 - 胖虎同学|生活学习类个人博客&summary="
           
           >
           
@@ -696,7 +740,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/08/05/rem/&title=移动web开发——rem布局 - 胖虎同学|生活学习类个人博客&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/08/14/js-exercise/&title=js练习Ⅰ：循环、数组、函数 - 胖虎同学|生活学习类个人博客&summary="
           
           >
           
@@ -708,7 +752,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/08/05/rem/&title=移动web开发——rem布局 - 胖虎同学|生活学习类个人博客&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/08/14/js-exercise/&title=js练习Ⅰ：循环、数组、函数 - 胖虎同学|生活学习类个人博客&summary="
           
           >
           
@@ -738,28 +782,32 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/08/09/c-date-type/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>c语言：数据类型</p>
-          <p class='content'>整数
-char：1字节（8比特） -128~127
-
-short：2字节 -32768~32767
-
-int：取决于编译器（CPU），通常意义是“1个字”
-
-long：取决于编译器（CPU），通...</p>
+        <a class='prev' href='/2021/08/15/js2/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>js基础Ⅱ：数组和函数</p>
+          <p class='content'>1-数组数组是指一组数据的集合，其中的每个数据被称作元素，在数组中可以存放任意类型的元素。
+1-1创建数组JS 中创建数组有两种方式：
+利用  new 创建数组12var 数组名 = new A...</p>
         </a>
       
       
-        <a class='next' href='/2021/08/02/words/'>
-          <p class='title'>我爱记单词🙂<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>7.29boastv.自夸、吹嘘
-n.自吹自擂
-boat 船 把气船吹炸了
-cartn.手推车、运货马车
-v.用车运送
-clientn.委托人、客户
-climb–&gt;攀爬、攀关系、巴结客户 ...</p>
+        <a class='next' href='/2021/08/12/js1/'>
+          <p class='title'>js基础Ⅰ：变量和数据类型<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>JavaScript输入输出语句为了方便信息的输入输出，JS中提供了一些输入输出语句，其常用的语句如下：
+
+
+
+方法
+说明
+归属
+
+
+
+alert(msg)
+浏览器弹出警示框
+浏览器
+
+
+con...</p>
         </a>
       
     </div>
@@ -802,7 +850,7 @@ climb–&gt;攀爬、攀关系、巴结客户 ...</p>
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#rem%E5%9F%BA%E7%A1%80"><span class="toc-text">rem基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2"><span class="toc-text">媒体查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2"><span class="toc-text">什么是媒体查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83"><span class="toc-text">媒体查询语法规范</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#mediatype-%E6%9F%A5%E8%AF%A2%E7%B1%BB%E5%9E%8B"><span class="toc-text">mediatype 查询类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="toc-text">关键字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E7%89%B9%E6%80%A7"><span class="toc-text">媒体特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E4%B9%A6%E5%86%99%E8%A7%84%E5%88%99"><span class="toc-text">媒体查询书写规则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less-%E5%9F%BA%E7%A1%80"><span class="toc-text">less 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E6%8A%A4css%E5%BC%8A%E7%AB%AF"><span class="toc-text">维护css弊端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less-%E4%BB%8B%E7%BB%8D"><span class="toc-text">less 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less%E5%AE%89%E8%A3%85"><span class="toc-text">less安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less%E4%BD%BF%E7%94%A8"><span class="toc-text">less使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#less%E5%8F%98%E9%87%8F"><span class="toc-text">less变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#less%E5%B5%8C%E5%A5%97"><span class="toc-text">less嵌套</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#less%E8%BF%90%E7%AE%97"><span class="toc-text">less运算</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%99%82%E5%BE%AA%E7%8E%AF"><span class="toc-text">🙂循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%99%82%E6%95%B0%E7%BB%84"><span class="toc-text">🙂数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%99%82%E5%87%BD%E6%95%B0"><span class="toc-text">🙂函数</span></a></li></ol>
     </div>
   </section>
 
@@ -821,7 +869,7 @@ climb–&gt;攀爬、攀关系、巴结客户 ...</p>
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="移动web开发——rem布局";
+  pdata.postTitle="js练习Ⅰ：循环、数组、函数";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要

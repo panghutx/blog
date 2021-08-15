@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,7 +22,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2021 - 胖虎同学|生活学习类个人博客</title>
+  <title>js基础Ⅱ：数组和函数 - 胖虎同学|生活学习类个人博客</title>
+  
+    <meta name="keywords" content="JavaScript">
   
 
   
@@ -108,7 +108,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -411,7 +411,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/panghutx/CDN@1.0/logo-fly.jpg"></div>
           
@@ -475,634 +475,343 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/15/js2/">
-        js基础Ⅱ：数组和函数
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        1-数组数组是指一组数据的集合，其中的每个数据被称作元素，在数组中可以存放任意类型的元素。
-1-1创建数组JS 中创建数组有两种方式：
-利用  new 创建数组12var 数组名 = new Array() ；var arr = new Array();   // 创建一个新的空数组
 
-注意 Array () ，A 要大写    
-利用数组字面量创建数组1234//1. 使用数组字面量方式创...
-      
-    
-  </div>
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        js基础Ⅱ：数组和函数
+      </h1>
+      <div class='new-meta-box'>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg">
+    <p>胖虎</p>
+  </a>
+</div>
+
+          
         
-        <time>2021-08-15</time>
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </a>
+  </div>
+
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年8月15日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="js基础Ⅱ：数组和函数" data-path="/2021/08/15/js2/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1-数组"></a>1-数组</h2><p>数组是指<strong>一组数据的集合</strong>，其中的每个数据被称作<strong>元素</strong>，在数组中可以<strong>存放任意类型的元素</strong>。</p>
+<h3 id="1-1创建数组"><a href="#1-1创建数组" class="headerlink" title="1-1创建数组"></a>1-1创建数组</h3><p>JS 中创建数组有两种方式：</p>
+<h4 id="利用-new-创建数组"><a href="#利用-new-创建数组" class="headerlink" title="利用  new 创建数组"></a>利用  new 创建数组</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 数组名 = <span class="keyword">new</span> <span class="built_in">Array</span>() ；</span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();   <span class="comment">// 创建一个新的空数组</span></span><br></pre></td></tr></table></figure>
+
+<p>注意 Array () ，A 要大写    </p>
+<h4 id="利用数组字面量创建数组"><a href="#利用数组字面量创建数组" class="headerlink" title="利用数组字面量创建数组"></a>利用数组字面量创建数组</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 使用数组字面量方式创建空的数组</span></span><br><span class="line"><span class="keyword">var</span>  数组名 = []；</span><br><span class="line"><span class="comment">//2. 使用数组字面量方式创建带初始值的数组</span></span><br><span class="line"><span class="keyword">var</span>  数组名 = [<span class="string">&#x27;胖虎&#x27;</span>,<span class="string">&#x27;panghutx&#x27;</span>,<span class="string">&#x27;blog.wangyouwu.cn&#x27;</span>];</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>数组的字面量是方括号 [ ] </p>
+</li>
+<li><p>声明数组并赋值称为数组的初始化</p>
+</li>
+<li><p>数组元素的类型</p>
+<p>数组中可以存放任意类型的数据，例如字符串，数字，布尔值等。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrStus = [<span class="string">&#x27;小白&#x27;</span>,<span class="number">12</span>,<span class="literal">true</span>,<span class="number">28.9</span>];</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="1-2获取数组中的元素"><a href="#1-2获取数组中的元素" class="headerlink" title="1-2获取数组中的元素"></a>1-2获取数组中的元素</h3><p>​        索引 (下标) ：用来访问数组元素的序号（数组下标从 0 开始）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="keyword">var</span> arrStus = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="comment">// 获取数组中的第2个元素</span></span><br><span class="line">alert(arrStus[<span class="number">1</span>]);    </span><br></pre></td></tr></table></figure>
+
+<p>注意：如果访问时数组没有和索引值对应的元素，则得到的值是undefined</p>
+<h3 id="1-3遍历数组"><a href="#1-3遍历数组" class="headerlink" title="1-3遍历数组"></a>1-3遍历数组</h3><h4 id="数组遍历"><a href="#数组遍历" class="headerlink" title="数组遍历"></a>数组遍历</h4><p>​        把数组中的每个元素从头到尾都访问一次，可以通过 for 循环索引遍历数组中的每一项</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arrStus[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组的长度"><a href="#数组的长度" class="headerlink" title="数组的长度"></a>数组的长度</h4><p>数组的长度：默认情况下表示数组中元素的个数</p>
+<p>使用“数组名.length”可以访问数组元素的数量（数组长度）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrStus = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">alert(arrStus.length);  <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+
+<p>  <strong>注意</strong>：</p>
+<ul>
+<li><p>此处数组的长度是数组元素的个数 ，不要和数组的索引号混淆。</p>
+</li>
+<li><p>当数组元素个数发生变化， length 属性跟着一起变化</p>
+</li>
+</ul>
+<h2 id="2-函数"><a href="#2-函数" class="headerlink" title="2-函数"></a>2-函数</h2><p>​        函数：<strong>封装一段可被重复调用执行的代码块</strong>。通过此代码块可以<strong>实现大量代码的重复使用</strong>。  </p>
+<h3 id="2-1函数的声明调用"><a href="#2-1函数的声明调用" class="headerlink" title="2-1函数的声明调用"></a>2-1函数的声明调用</h3><h4 id="声明函数"><a href="#声明函数" class="headerlink" title="声明函数"></a>声明函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//函数体代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>function 是声明函数的关键字,必须小写</p>
+</li>
+<li><p>由于函数一般是为了实现某个功能才定义的， 所以通常我们将函数名命名为动词，比如 getSum</p>
+</li>
+</ul>
+<h4 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line">函数名();  <span class="comment">// 通过调用函数名来执行函数体代码</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><strong>调用的时候千万不要忘记添加小括号</strong></p>
+</li>
+<li><p>口诀：函数不调用，自己不执行</p>
+<p>注意：声明函数本身并不会执行代码，只有调用函数时才会执行函数体代码。</p>
+</li>
+</ul>
+<p>例子：封装计算1-100累加和</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">   计算1-100之间值的函数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 声明函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> sumNum = <span class="number">0</span>;<span class="comment">// 准备一个变量，保存数字和</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">    sumNum += i;<span class="comment">// 把每个数值 都累加 到变量中</span></span><br><span class="line">  &#125;</span><br><span class="line">  alert(sumNum);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line">getSum();</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2函数的参数"><a href="#2-2函数的参数" class="headerlink" title="2-2函数的参数"></a>2-2函数的参数</h3><h4 id="函数参数语法"><a href="#函数参数语法" class="headerlink" title="函数参数语法"></a>函数参数语法</h4><ul>
+<li><p>形参：函数定义时设置接收调用时传入</p>
+</li>
+<li><p>实参：函数调用时传入小括号内的真实数据</p>
+<p>函数参数的运用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 带参数的函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">形参<span class="number">1</span>, 形参<span class="number">2</span> , 形参<span class="number">3.</span>..</span>) </span>&#123; <span class="comment">// 可以定义任意多的参数，用逗号分隔</span></span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 带参数的函数调用</span></span><br><span class="line">函数名(实参<span class="number">1</span>, 实参<span class="number">2</span>, 实参<span class="number">3.</span>..); </span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>调用的时候实参值是传递给形参的</li>
+<li>形参简单理解为：不用声明的变量</li>
+<li>实参和形参的多个参数之间用逗号（,）分隔</li>
+</ol>
+</li>
+</ul>
+<h4 id="函数形参和实参数量不匹配时"><a href="#函数形参和实参数量不匹配时" class="headerlink" title="函数形参和实参数量不匹配时"></a>函数形参和实参数量不匹配时</h4><p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210815112030.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210815112030.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<pre><code>注意：在JavaScript中，形参的默认值是undefined。
+</code></pre>
+<p>小结：</p>
+<ul>
+<li> 函数可以带参数也可以不带参数</li>
+<li> 声明函数的时候，函数名括号里面的是形参，形参的默认值为 undefined</li>
+<li> 调用函数的时候，函数名括号里面的是实参</li>
+<li>多个参数中间用逗号分隔</li>
+</ul>
+<h3 id="2-3函数的返回值"><a href="#2-3函数的返回值" class="headerlink" title="2-3函数的返回值"></a>2-3函数的返回值</h3><h4 id="return-语句"><a href="#return-语句" class="headerlink" title="return 语句"></a>return 语句</h4><pre><code>返回值：函数调用整体代表的数据；函数执行完成后可以通过return语句将指定数据返回 。
+</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 函数名（）</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span>  需要返回的值；</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line">函数名();    <span class="comment">// 此时调用函数就可以得到函数体内return 后面的值</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li> 在使用 return 语句时，函数会停止执行，并返回指定的值</li>
+<li> 如果函数没有 return ，返回的值是 undefined</li>
+</ul>
+<h4 id="break-continue-return-的区别"><a href="#break-continue-return-的区别" class="headerlink" title="break ,continue ,return 的区别"></a>break ,continue ,return 的区别</h4><ul>
+<li>break ：结束当前的循环体（如 for、while）</li>
+<li>continue ：跳出本次循环，继续执行下次循环（如 for、while）</li>
+<li>return ：不仅可以退出循环，还能够返回 return 语句中的值，同时还可以结束当前的函数体内的代码</li>
+</ul>
+<h3 id="2-4arguments的使用"><a href="#2-4arguments的使用" class="headerlink" title="2-4arguments的使用"></a>2-4arguments的使用</h3><p>​        <strong>当不确定有多少个参数传递的时候，可以用 arguments 来获取。</strong>JavaScript 中，arguments实际上它是当前函数的一个内置对象。所有函数都内置了一个 arguments 对象，arguments 对象中存储了传递的所有实参。arguments展示形式是一个伪数组，因此可以进行遍历。伪数组具有以下特点：</p>
+<ul>
+<li><p>具有 length 属性</p>
+</li>
+<li><p>按索引方式储存数据</p>
+</li>
+<li><p>不具有数组的 push , pop 等方法</p>
+<p>注意：在函数内部使用该对象，用此对象获取函数调用时传的实参。</p>
+</li>
+</ul>
+<h3 id="2-5函数案例"><a href="#2-5函数案例" class="headerlink" title="2-5函数案例"></a>2-5函数案例</h3><pre><code>    函数内部可以调用另一个函数，在同一作用域代码中，函数名即代表封装的操作，使用函数名加括号即可以将封装的操作执行。
+</code></pre>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用户输入年份，输出当前年份2月份的天数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">backDay</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> year = prompt(<span class="string">&#x27;请输入年份：&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(isRunYear(year))&#123;</span><br><span class="line">        alert(year+<span class="string">&#x27;是闰年，2月份有29天&#x27;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        alert(year+<span class="string">&#x27;是平年，2月份有28天&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line">backDay();</span><br><span class="line">     </span><br><span class="line"><span class="comment">// 判断是否是闰年</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isRunYear</span>(<span class="params">year</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//如果是闰年返回true，否则else</span></span><br><span class="line">    <span class="keyword">var</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>||year%<span class="number">400</span>==<span class="number">0</span>) &#123; <span class="comment">//能被4整除且不能被100整除或者能被400整除</span></span><br><span class="line">        flag=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-6函数的两种声明方式"><a href="#2-6函数的两种声明方式" class="headerlink" title="2-6函数的两种声明方式"></a>2-6函数的两种声明方式</h3><h4 id="自定义函数方式-命名函数"><a href="#自定义函数方式-命名函数" class="headerlink" title="自定义函数方式(命名函数)"></a>自定义函数方式(命名函数)</h4><p>利用函数关键字 function 自定义函数方式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明定义方式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;...&#125;</span><br><span class="line"><span class="comment">// 调用  </span></span><br><span class="line">fn();  </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>因为有名字，所以也被称为命名函数</li>
+<li>调用函数的代码既可以放到声明函数的前面，也可以放在声明函数的后面</li>
+</ul>
+<h4 id="函数表达式方式-匿名函数）"><a href="#函数表达式方式-匿名函数）" class="headerlink" title="函数表达式方式(匿名函数）"></a>函数表达式方式(匿名函数）</h4><p>利用函数表达式方式的写法如下： </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是函数表达式写法，匿名函数后面跟分号结束</span></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;；</span><br><span class="line"><span class="comment">// 调用的方式，函数调用必须写到函数体下面</span></span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>因为函数没有名字，所以也被称为匿名函数</li>
+<li>这个fn 里面存储的是一个函数  </li>
+<li>函数表达式方式原理跟声明变量方式是一致的</li>
+<li>函数调用的代码必须写到函数体后面</li>
+</ul>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/08/15/js2/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/08/15/js2/>https://blog.wangyouwu.cn/2021/08/15/js2/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-15T11:28:24+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年8月15日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/14/js-exercise/">
-        js练习Ⅰ：循环、数组、函数
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>JavaScript</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        🙂循环
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/08/15/js2/&title=js基础Ⅱ：数组和函数 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/08/15/js2/&title=js基础Ⅱ：数组和函数 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/08/15/js2/&title=js基础Ⅱ：数组和函数 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/08/14/js-exercise/'>
+          <p class='title'>js练习Ⅰ：循环、数组、函数<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>🙂循环
 一行打印★★★★★
 
-12345var str = &#x27;&#x27;;for (var i = 1;i&lt;=5;i++) &#123;    str = str + &#x27;★&#x27;; //追加字符串&#125;     console.log(str);
-
-
-倒序打印★ 第一行9个，第九行1个
-
-
-12345678var str = &#x27;&#x27;...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/14/js-exercise/'>
-            阅读全文
-          </a>
-        </div>
+12345var str = &#x27;&#x27;;for (var i = 1;i&lt;=5;i++) &#123;    str = str + &#x...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/12/js1/">
-        js基础Ⅰ：变量和数据类型
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        JavaScript输入输出语句为了方便信息的输入输出，JS中提供了一些输入输出语句，其常用的语句如下：
+  </article>
 
 
 
-方法
-说明
-归属
 
 
 
-alert(msg)
-浏览器弹出警示框
-浏览器
-
-
-console.log(msg)
-浏览器控制台打印输出信息
-浏览器
-
-
-prompt(info)
-浏览器弹出输入框，用户可以输入
-浏览器
-
-
-
-注意：alert() 主要用来显示消息给用户，console....
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-12</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/12/js1/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/10/c-function/">
-        c语言：函数
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        函数是一块代码，接收零个或多个参数，做一件事情，并返回零个或一个值。
-
-
-调用函数函数名()
-()起到了表示函数调用的作用，即使没有参数也需要()；如果有参数，则需要给出正确的数量和顺序，这些值会被按照顺序依次用来初始化函数中的参数。
-123456789101112131415#include&lt;stdio.h&gt;void sum(int begain, int end)&#123;...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-10</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/10/c-function/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/09/c-date-type/">
-        c语言：数据类型
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        整数
-char：1字节（8比特） -128~127
-
-short：2字节 -32768~32767
-
-int：取决于编译器（CPU），通常意义是“1个字”
-
-long：取决于编译器（CPU），通常意义是“1个字”
-
-long long：8字节
-
-
-整数的内部表达都是二进制
-补码补码的意义就是拿补码和原码可以加出一个溢出的“零”
-0-1=-1(1)00000000 - 00000001 –&g...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/09/c-date-type/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/05/rem/">
-        移动web开发——rem布局
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        rem基础rem (root em)是一个相对单位，类似于em，em是父元素字体大小。
-不同的是rem的基准是相对于html元素的字体大小。
-比如，根元素（html）设置font-size=12px; 非根元素设置width:2rem; 则换成px表示就是24px。
-12345678/* 根html 为 12px */html &#123;   font-size: 12px;&#125;/...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-05</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/05/rem/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/02/words/">
-        我爱记单词🙂
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        7.29boastv.自夸、吹嘘
-n.自吹自擂
-boat 船 把气船吹炸了
-cartn.手推车、运货马车
-v.用车运送
-clientn.委托人、客户
-climb–&gt;攀爬、攀关系、巴结客户 climb client
-cruisen.航游
-v.乘船游览
-considerableadj.相当大的、相当多的、重大的considerate adj.考虑周到的 considerable thing...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-08-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/02/words/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/07/26/flex/">
-        移动web开发——flex布局
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-flex 是 flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性，任何一个容器都可以指定为 flex 布局。
-当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效。
-给父盒子添加flex属性，来控制子盒子的位置和排列方式
-
-父项常见属性
-flex-direction：设置主轴的方向
-justi...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-07-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/07/26/flex/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/07/25/viewport/">
-        移动web开发
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        meta标签为使网站在移动端有理想的阅读宽度，需添加meta标签。
-meta标签的目的：使布局视口的宽度与理想视口的宽度一致，简单理解就是设备有多宽，我们布局的视口就多宽。
-1&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no,maxi...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-07-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/07/25/viewport/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/07/21/summer/">
-        暑假，目的论，自卑情结
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        7月7日回到家，8.26号返校，不知不觉已经在家呆14天了，还有一个月就大二了……
-正如李宗盛《给自己的歌》中写道：“等你发现时间是贼了，它早已偷光你的选择”。想到第一次去学校的场景，现在还历历在目，一年的时间已经溜走，大学已完成了1/4，大学中能做的选择也已被偷走了1/4。
-沉湎于过去毫无意义，过去已经不属于我了，我拥有的只有现在。我的人生就取决于当下。
-《被讨厌的勇气》里有这样一段：
-
-...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-07-21</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/07/21/summer/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-        <p class="current">
-          1 / 4
-        </p>
-        
-          <a class="next" rel="next" href="/archives/2021/page/2/">
-            <section class="post next white-box shadow">
-              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
-        
-      </div>
-    
-  
-
-
-	
 </div>
 <aside class='l_side'>
   
@@ -1110,136 +819,28 @@ meta标签的目的：使布局视口的宽度与理想视口的宽度一致，�
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">胖虎同学|生活学习类个人博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:2367897284@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/panghutx/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop，mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%88%86%E4%BA%AB/" href="/categories/%E5%88%86%E4%BA%AB/"
-            id="categoriesE58886E4BAAB"
-            ><div class='name'>分享</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE5ADA6E4B9A0"
-            ><div class='name'>学习</div><div class='badge'>(28)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E5%B8%B8/" href="/categories/%E6%97%A5%E5%B8%B8/"
-            id="categoriesE697A5E5B8B8"
-            ><div class='name'>日常</div><div class='badge'>(6)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E7%BB%84"><span class="toc-text">1-数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84"><span class="toc-text">1-1创建数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-new-%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84"><span class="toc-text">利用  new 创建数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%95%B0%E7%BB%84%E5%AD%97%E9%9D%A2%E9%87%8F%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84"><span class="toc-text">利用数组字面量创建数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-text">1-2获取数组中的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84"><span class="toc-text">1-3遍历数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86"><span class="toc-text">数组遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-text">数组的长度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%87%BD%E6%95%B0"><span class="toc-text">2-函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E5%87%BD%E6%95%B0%E7%9A%84%E5%A3%B0%E6%98%8E%E8%B0%83%E7%94%A8"><span class="toc-text">2-1函数的声明调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%87%BD%E6%95%B0"><span class="toc-text">声明函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">调用函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">2-2函数的参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E8%AF%AD%E6%B3%95"><span class="toc-text">函数参数语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82%E6%95%B0%E9%87%8F%E4%B8%8D%E5%8C%B9%E9%85%8D%E6%97%B6"><span class="toc-text">函数形参和实参数量不匹配时</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">2-3函数的返回值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#return-%E8%AF%AD%E5%8F%A5"><span class="toc-text">return 语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#break-continue-return-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">break ,continue ,return 的区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4arguments%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">2-4arguments的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5%E5%87%BD%E6%95%B0%E6%A1%88%E4%BE%8B"><span class="toc-text">2-5函数案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F"><span class="toc-text">2-6函数的两种声明方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E6%96%B9%E5%BC%8F-%E5%91%BD%E5%90%8D%E5%87%BD%E6%95%B0"><span class="toc-text">自定义函数方式(命名函数)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%96%B9%E5%BC%8F-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%89"><span class="toc-text">函数表达式方式(匿名函数）</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/JavaScript/" style="font-size: 17.33px; color: #828282">JavaScript</a> <a href="/tags/c/" style="font-size: 17.33px; color: #828282">c</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/html/" style="font-size: 17.33px; color: #828282">html</a> <a href="/tags/linux/" style="font-size: 20.67px; color: #6c6c6c">linux</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 14px; color: #999">图床</a> <a href="/tags/%E7%BD%97%E7%BF%94/" style="font-size: 14px; color: #999">罗翔</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 14px; color: #999">英语</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
 		  
@@ -1248,21 +849,21 @@ meta标签的目的：使布局视口的宽度与理想视口的宽度一致，�
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="js基础Ⅱ：数组和函数";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
