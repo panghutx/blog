@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,7 +22,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：英语 - 胖虎同学|生活学习类个人博客</title>
+  <title>js基础Ⅲ：作用域和对象 - 胖虎同学|生活学习类个人博客</title>
+  
+    <meta name="keywords" content="JavaScript">
   
 
   
@@ -411,7 +411,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/panghutx/CDN@1.0/logo-fly.jpg"></div>
           
@@ -474,88 +474,383 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper" id="pjax-container">
           
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        js基础Ⅲ：作用域和对象
+      </h1>
+      <div class='new-meta-box'>
         
           
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg">
+    <p>胖虎</p>
+  </a>
+</div>
+
+          
         
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/02/words/">
-        我爱记单词🙂
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        7.29boastv.自夸、吹嘘
-n.自吹自擂
-boat 船 把气船吹炸了
-cartn.手推车、运货马车
-v.用车运送
-clientn.委托人、客户
-climb–&gt;攀爬、攀关系、巴结客户 climb client
-cruisen.航游
-v.乘船游览
-considerableadj.相当大的、相当多的、重大的considerate adj.考虑周到的 considerable thing...
-      
-    
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年8月15日</p>
+  </a>
+</div>
+
+          
         
-        <time>2021-08-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="js基础Ⅲ：作用域和对象" data-path="/2021/08/15/js3/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <h2 id="1-作用域"><a href="#1-作用域" class="headerlink" title="1 - 作用域"></a>1 - 作用域</h2><p>​        通常来说，一段程序代码中所用到的名字并不总是有效和可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域。作用域的使用提高了程序逻辑的局部性，增强了程序的可靠性，减少了名字冲突。</p>
+<p>JavaScript（es6前）中的作用域有两种：</p>
+<ul>
+<li>全局作用域：作用于所有代码执行的环境(整个script标签内部)或独立的js文件。</li>
+<li>局部作用域（函数作用域）：作用于函数内的代码环境，就是局部作用域。 因为跟函数有关系，所以也称为函数作用域。    </li>
+</ul>
+<p>❗ <strong>jS没有块级作用域</strong></p>
+<ul>
+<li><p>块作用域由 { } 包括。</p>
+</li>
+<li><p>在其他编程语言中（如 java、c#等），在 if 语句、循环语句中创建的变量，仅仅只能在本 if 语句、本循环语句中使用，如下面的Java代码：    </p>
+<p>java有块级作用域：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">  <span class="keyword">int</span> num = <span class="number">123</span>;</span><br><span class="line">  system.out.print(num);  <span class="comment">// 123</span></span><br><span class="line">&#125;</span><br><span class="line">system.out.print(num);    <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+
+<p>​        以上java代码会报错，是因为代码中 { } 即一块作用域，其中声明的变量 num，在 “{ }” 之外不能使用；而与之类似的JavaScript代码，则不会报错。</p>
+<p>js中没有块级作用域（在ES6之前）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> num = <span class="number">123</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">123</span>); <span class="comment">//123</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">123</span>);   <span class="comment">//123</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="2-变量的作用域"><a href="#2-变量的作用域" class="headerlink" title="2 - 变量的作用域"></a>2 - 变量的作用域</h2><p>在JavaScript中，根据作用域的不同，变量可以分为两种：</p>
+<ul>
+<li>全局变量</li>
+<li>局部变量</li>
+</ul>
+<p>2.1 全局变量</p>
+<p>在全局作用域下声明的变量叫做全局变量（在函数外部定义的变量）。</p>
+<ul>
+<li>全局变量在代码的任何位置都可以使用</li>
+<li>在全局作用域下 var 声明的变量 是全局变量</li>
+<li>特殊情况下，<strong>在函数内不使用 var 声明的变量也是全局变量</strong>（不建议使用）</li>
+</ul>
+<p>2.2 局部变量</p>
+<p>在局部作用域下声明的变量叫做局部变量（在函数内部定义的变量）</p>
+<ul>
+<li>局部变量只能在该函数内部使用</li>
+<li><strong>在函数内部 var 声明的变量是局部变量</strong></li>
+<li>函数的形参实际上就是局部变量</li>
+</ul>
+<p>2.3 全局变量和局部变量的区别</p>
+<ul>
+<li>全局变量：在任何一个地方都可以使用，只有在浏览器关闭时才会被销毁，因此比较占内存</li>
+<li>局部变量：只在函数内部使用，当其所在的代码块被执行时，会被初始化；当代码块运行结束后，就会被销毁，因此更节省内存空间</li>
+</ul>
+<h2 id="3-作用域链"><a href="#3-作用域链" class="headerlink" title="3 - 作用域链"></a>3 - 作用域链</h2><p>​        写在函数内部的是局部作用域，未写在任何函数内部即在全局作用域中；如果函数中还有函数，那么在这个作用域中就又可以诞生一个作用域；根据在**[内部函数可以访问外部函数变量]**的这种机制，用链式查找决定哪些数据能被内部函数访问，就称作作用域链。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">案例分析<span class="number">1</span>：</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">123</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log( num );</span><br><span class="line">    &#125;</span><br><span class="line">    f2();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> num = <span class="number">456</span>;</span><br><span class="line">f1();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210815183848.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210815183848.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">作用域链：采取就近原则的方式来查找变量最终的值</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="string">&#x27;22&#x27;</span>;</span><br><span class="line">    fn2();</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">        fn3();</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> a = <span class="number">4</span>;</span><br><span class="line">            <span class="built_in">console</span>.log(a); <span class="comment">//a的值 ?</span></span><br><span class="line">            <span class="built_in">console</span>.log(b); <span class="comment">//b的值 ?</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">fn1();</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210815183956.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210815183956.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h2 id="4-预解析"><a href="#4-预解析" class="headerlink" title="4 - 预解析"></a>4 - 预解析</h2><p>JavaScript 代码是由浏览器中的 JavaScript 解析器来执行的。JavaScript 解析器在运行 JavaScript 代码的时候分为两步：<strong>预解析和代码执行</strong>。</p>
+<ul>
+<li><p>预解析：在当前作用域下, JS 代码执行之前，浏览器会默认把带有 var 和 function 声明的变量在内存中进行提前声明或者定义，预解析也叫做变量、函数提升。</p>
+</li>
+<li><p>代码执行： 从上到下执行JS语句。</p>
+<p>注意：<strong>预解析会把变量和函数的声明在代码执行之前执行完成。</strong></p>
+</li>
+</ul>
+<ol start="4">
+<li>1变量预解析</li>
+</ol>
+<p>​    变量的声明会被提升到当前作用域的最上面，变量的赋值不会提升。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(num);  <span class="comment">// 结果是多少？</span></span><br><span class="line"><span class="keyword">var</span> num = <span class="number">10</span>;      <span class="comment">// ？</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：undefined<br>★注意：<strong>变量提升只提升声明，不提升赋值</strong></p>
+<p>4.3 函数预解析</p>
+<p>​     函数的声明会被提升到当前作用域的最上面，但是不会调用函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fn();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;打印&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果：控制台打印字符串 — ”打印“ </p>
+<p>注意：函数声明代表函数整体，所以函数提升后，函数名代表整个函数，但是函数并没有被调用！    </p>
+<p>4.4 函数表达式声明函数问题</p>
+<p>函数表达式创建函数，会执行变量提升</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fn();</span><br><span class="line"><span class="keyword">var</span>  fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;想不到吧&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果：报错提示 ”fn is not a function”</p>
+<p>解释：该段代码执行之前，会做变量声明提升，fn在提升之后的值是undefined；而fn调用是在fn被赋值为函数体之前，此时fn的值是undefined，所以无法正确调用</p>
+<h2 id="5-对象"><a href="#5-对象" class="headerlink" title="5 - 对象"></a>5 - 对象</h2><p>对象：在 JavaScript 中，对象是一组无序的相关属性和方法的集合，所有的事物都是对象，例如字符串、数值、数组、函数等。<br>    对象是由属性和方法组成的。</p>
+<ul>
+<li><p>属性：事物的特征，在对象中用属性来表示（常用名词）</p>
+</li>
+<li><p>方法：事物的行为，在对象中用方法来表示（常用动词）</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [‘吴签’, ‘30&#x27;, &#x27;选妃&#x27;];</span><br></pre></td></tr></table></figure>
+
+<p>​        上述例子中用数组保存数据的缺点是：数据只能通过索引值访问，开发者需要清晰的清除所有的数据的排行才能准确地获取数据，而当数据量庞大时，不可能做到记忆所有数据的索引值。</p>
+<p>​        为了让更好地存储一组数据，对象应运而生：对象中为每项数据设置了属性名称，可以访问数据更语义化，数据结构清晰，表意明显，方便开发者使用。</p>
+<p>使用对象记录上组数据为：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&#x27;吴签&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>:<span class="number">30</span>,</span><br><span class="line">    <span class="attr">works</span>:<span class="string">&#x27;选妃&#x27;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>JS中的对象表达结构更清晰，更强大。</p>
+<h3 id="创建对象的三种方式"><a href="#创建对象的三种方式" class="headerlink" title="创建对象的三种方式"></a>创建对象的三种方式</h3><h4 id="利用字面量创建对象"><a href="#利用字面量创建对象" class="headerlink" title="利用字面量创建对象"></a>利用字面量创建对象</h4><ul>
+<li><p>键：相当于属性名</p>
+</li>
+<li><p>值：相当于属性值，可以是任意类型的值（数字类型、字符串类型、布尔类型，函数类型等）</p>
+<p>代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> star = &#123;</span><br><span class="line">    <span class="attr">name</span> : <span class="string">&#x27;张哲瀚&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span> : <span class="number">30</span>,</span><br><span class="line">    <span class="attr">sex</span> : <span class="string">&#x27;男&#x27;</span>,</span><br><span class="line">    <span class="attr">sayLove</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">&#x27;我很爱国&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(star.name)     <span class="comment">// 调用名字属性</span></span><br><span class="line"><span class="built_in">console</span>.log(star[<span class="string">&#x27;name&#x27;</span>])  <span class="comment">// 调用名字属性</span></span><br><span class="line">star.sayLove(); <span class="comment">// 调用 sayLove 方法,注意一定要带后面的括号</span></span><br></pre></td></tr></table></figure>
+
+<p>上述代码中 star即是创建的对象。</p>
+<ul>
+<li><p>变量、属性、函数、方法总结</p>
+<pre><code>    - 变量：单独声明赋值，单独存在
+</code></pre>
+<ul>
+<li><p>属性：对象里面的变量称为属性，不需要声明</p>
+</li>
+<li><p>函数：单独存在的，通过“函数名()”的方式就可以调用</p>
+</li>
+<li><p>方法：对象里面的函数称为方法，方法不需要声明，使用“对象.方法名()”的方式就可以调用</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="利用-new-Object-创建对象"><a href="#利用-new-Object-创建对象" class="headerlink" title="利用 new Object 创建对象"></a>利用 new Object 创建对象</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Star = <span class="keyword">new</span> <span class="built_in">Object</span>(); <span class="comment">//创建空对象</span></span><br><span class="line">Star.name=<span class="string">&#x27;吴亦凡&#x27;</span>; <span class="comment">// 给空对象添加属性</span></span><br><span class="line">Star.age=<span class="number">30</span>;</span><br><span class="line">Star.works=<span class="string">&#x27;选妃&#x27;</span>;</span><br><span class="line">Star.sayHi=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 给空对象添加方法</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;我的很大，你要忍一下~&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(Star.name);</span><br><span class="line"><span class="built_in">console</span>.log(Star[<span class="string">&#x27;age&#x27;</span>]);</span><br><span class="line">Star.sayHi();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Object() ：第一个字母大写   </li>
+<li>使用的格式：对象.属性 =  值;     </li>
+</ul>
+<h4 id="利用构造函数创建对象"><a href="#利用构造函数创建对象" class="headerlink" title="利用构造函数创建对象"></a>利用构造函数创建对象</h4><ul>
+<li><p>构造函数</p>
+<ul>
+<li><p>构造函数：是一种特殊的函数，主要用来初始化对象，即为对象成员变量赋初始值，它总与 new 运算符一起使用。我们可以把对象中一些公共的属性和方法抽取出来，然后封装到这个函数里面。</p>
+</li>
+<li><p>构造函数的封装格式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 构造函数名(<span class="params">形参<span class="number">1</span>,形参<span class="number">2</span>,形参<span class="number">3</span></span>) </span>&#123;</span><br><span class="line">     <span class="built_in">this</span>.属性名<span class="number">1</span> = 参数<span class="number">1</span>;</span><br><span class="line">     <span class="built_in">this</span>.属性名<span class="number">2</span> = 参数<span class="number">2</span>;</span><br><span class="line">     <span class="built_in">this</span>.属性名<span class="number">3</span> = 参数<span class="number">3</span>;</span><br><span class="line">     <span class="built_in">this</span>.方法名 = 函数体;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>构造函数的调用格式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = new 构造函数名(实参1，实参2，实参3)</span><br></pre></td></tr></table></figure></li>
+<li><p>示例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 封装</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Star</span>(<span class="params">name,age,works</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name=name;</span><br><span class="line">    <span class="built_in">this</span>.age=age;</span><br><span class="line">    <span class="built_in">this</span>.works=works;</span><br><span class="line">    <span class="built_in">this</span>.result = <span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123; <span class="comment">//方法</span></span><br><span class="line">        <span class="built_in">console</span>.log(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用</span></span><br><span class="line"><span class="keyword">var</span> wyf = <span class="keyword">new</span> Star(<span class="string">&#x27;吴亦凡&#x27;</span>,<span class="number">30</span>,<span class="string">&#x27;选妃&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> lzx = <span class="keyword">new</span> Star(<span class="string">&#x27;罗志祥&#x27;</span>,<span class="number">42</span>,<span class="string">&#x27;时间管理&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> zzh = <span class="keyword">new</span> Star(<span class="string">&#x27;张哲瀚&#x27;</span>,<span class="number">30</span>,<span class="string">&#x27;靖国神社&#x27;</span>);</span><br><span class="line">wyf.result(<span class="string">&#x27;坐牢&#x27;</span>);</span><br><span class="line">lzx.result(<span class="string">&#x27;退圈&#x27;</span>);</span><br><span class="line">zzh.result(<span class="string">&#x27;封杀&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(wyf.works);</span><br><span class="line"><span class="built_in">console</span>.log(zzh[<span class="string">&#x27;works&#x27;</span>]);</span><br></pre></td></tr></table></figure></li>
+<li><p>注意事项</p>
+<ol>
+<li>  构造函数约定<strong>首字母大写</strong>。</li>
+<li>  函数内的属性和方法前面需要添加 <strong>this</strong> ，表示当前对象的属性和方法。</li>
+<li>  构造函数中<strong>不需要 return 返回结果</strong>。</li>
+<li>  当我们创建对象的时候，<strong>必须用 new 来调用构造函数</strong>。</li>
+</ol>
+</li>
+<li><p>其他</p>
+<p> 构造函数，如 Stars()，抽象了对象的公共部分，封装到了函数里面，它泛指某一大类（class）<br> 创建对象，如 new Stars()，特指某一个，通过 new 关键字创建对象的过程我们也称为对象实例化</p>
+</li>
+</ul>
+</li>
+<li><p>new关键字的作用</p>
+<ol>
+<li>在构造函数代码开始执行之前，创建一个空对象；</li>
+<li>修改this的指向，把this指向创建出来的空对象；</li>
+<li>执行函数的代码</li>
+<li>在函数完成之后，返回this—即创建出来的对象</li>
+</ol>
+<h3 id="5-3-遍历对象"><a href="#5-3-遍历对象" class="headerlink" title="5.3 遍历对象"></a>5.3 遍历对象</h3><p>​        for…in 语句用于对数组或者对象的属性进行循环操作。</p>
+<p>​        其语法如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (变量 <span class="keyword">in</span> 对象名字) &#123;</span><br><span class="line">    <span class="comment">// 在此执行代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>​        语法中的变量是自定义的，它需要符合命名规范，通常我们会将这个变量写为 k 或者 key。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(k);      <span class="comment">// 这里的 k 是属性名</span></span><br><span class="line">    <span class="built_in">console</span>.log(obj[k]); <span class="comment">// 这里的 obj[k] 是属性值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/08/02/words/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/08/15/js3/>https://blog.wangyouwu.cn/2021/08/15/js3/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-15T19:44:30+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年8月15日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
-    
-  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>JavaScript</p></a></div>
 
 
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/08/15/js3/&title=js基础Ⅲ：作用域和对象 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/08/15/js3/&title=js基础Ⅲ：作用域和对象 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/08/15/js3/&title=js基础Ⅲ：作用域和对象 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2021/08/16/js4/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>js基础Ⅳ：内置对象</p>
+          <p class='content'>1 - 内置对象1.1 内置对象​         JavaScript 中的对象分为3种：自定义对象 、内置对象、 浏览器对象​        前面两种对象是JS 基础 内容，属于 ECMAS...</p>
+        </a>
+      
+      
+        <a class='next' href='/2021/08/15/js2/'>
+          <p class='title'>js基础Ⅱ：数组和函数<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>1-数组数组是指一组数据的集合，其中的每个数据被称作元素，在数组中可以存放任意类型的元素。
+1-1创建数组JS 中创建数组有两种方式：
+利用  new 创建数组12var 数组名 = new A...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -563,136 +858,28 @@ considerableadj.相当大的、相当多的、重大的considerate adj.考虑周
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">胖虎同学|生活学习类个人博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:2367897284@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/panghutx/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop，mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%88%86%E4%BA%AB/" href="/categories/%E5%88%86%E4%BA%AB/"
-            id="categoriesE58886E4BAAB"
-            ><div class='name'>分享</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE5ADA6E4B9A0"
-            ><div class='name'>学习</div><div class='badge'>(30)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E5%B8%B8/" href="/categories/%E6%97%A5%E5%B8%B8/"
-            id="categoriesE697A5E5B8B8"
-            ><div class='name'>日常</div><div class='badge'>(6)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">1 - 作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="toc-text">2 - 变量的作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE"><span class="toc-text">3 - 作用域链</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%A2%84%E8%A7%A3%E6%9E%90"><span class="toc-text">4 - 预解析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%AF%B9%E8%B1%A1"><span class="toc-text">5 - 对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-text">创建对象的三种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%AD%97%E9%9D%A2%E9%87%8F%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="toc-text">利用字面量创建对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-new-Object-%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="toc-text">利用 new Object 创建对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="toc-text">利用构造函数创建对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-%E9%81%8D%E5%8E%86%E5%AF%B9%E8%B1%A1"><span class="toc-text">5.3 遍历对象</span></a></li></ol></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/JavaScript/" style="font-size: 20.67px; color: #6c6c6c">JavaScript</a> <a href="/tags/c/" style="font-size: 17.33px; color: #828282">c</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/html/" style="font-size: 17.33px; color: #828282">html</a> <a href="/tags/linux/" style="font-size: 20.67px; color: #6c6c6c">linux</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E5%9B%BE%E5%BA%8A/" style="font-size: 14px; color: #999">图床</a> <a href="/tags/%E7%BD%97%E7%BF%94/" style="font-size: 14px; color: #999">罗翔</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 14px; color: #999">英语</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
 		  
@@ -701,8 +888,8 @@ considerableadj.相当大的、相当多的、重大的considerate adj.考虑周
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="js基础Ⅲ：作用域和对象";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要

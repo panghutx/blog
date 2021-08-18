@@ -22,7 +22,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>js基础Ⅱ：数组和函数 - 胖虎同学|生活学习类个人博客</title>
+  <title>js基础Ⅳ：内置对象 - 胖虎同学|生活学习类个人博客</title>
   
     <meta name="keywords" content="JavaScript">
   
@@ -485,7 +485,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title">
-        js基础Ⅱ：数组和函数
+        js基础Ⅳ：内置对象
       </h1>
       <div class='new-meta-box'>
         
@@ -516,7 +516,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年8月15日</p>
+    <p>发布于：2021年8月16日</p>
   </a>
 </div>
 
@@ -527,7 +527,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="js基础Ⅱ：数组和函数" data-path="/2021/08/15/js2/">
+      <div id="lc-pv" data-title="js基础Ⅳ：内置对象" data-path="/2021/08/16/js4/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -545,130 +545,225 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <h2 id="1-数组"><a href="#1-数组" class="headerlink" title="1-数组"></a>1-数组</h2><p>数组是指<strong>一组数据的集合</strong>，其中的每个数据被称作<strong>元素</strong>，在数组中可以<strong>存放任意类型的元素</strong>。</p>
-<h3 id="1-1创建数组"><a href="#1-1创建数组" class="headerlink" title="1-1创建数组"></a>1-1创建数组</h3><p>JS 中创建数组有两种方式：</p>
-<h4 id="利用-new-创建数组"><a href="#利用-new-创建数组" class="headerlink" title="利用  new 创建数组"></a>利用  new 创建数组</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 数组名 = <span class="keyword">new</span> <span class="built_in">Array</span>() ；</span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();   <span class="comment">// 创建一个新的空数组</span></span><br></pre></td></tr></table></figure>
+  <h2 id="1-内置对象"><a href="#1-内置对象" class="headerlink" title="1 - 内置对象"></a>1 - 内置对象</h2><h3 id="1-1-内置对象"><a href="#1-1-内置对象" class="headerlink" title="1.1 内置对象"></a>1.1 内置对象</h3><p>​         JavaScript 中的对象分为3种：<strong>自定义对象 、内置对象、 浏览器对象</strong><br>​        前面两种对象是JS 基础 内容，属于 ECMAScript；  第三个浏览器对象属于 JS 独有的， JS API 讲解内置对象就是指 JS 语言自带的一些对象，这些对象供开发者使用，并提供了一些常用的或是<strong>最基本而必要的功能</strong>（属性和方法），内置对象最大的优点就是帮助我们快速开发</p>
+<p>​         JavaScript 提供了多个内置对象：Math、 Date 、Array、String等    </p>
+<h3 id="1-2-查文档"><a href="#1-2-查文档" class="headerlink" title="1.2 查文档"></a>1.2 查文档</h3><p>Mozilla 开发者网络（MDN）提供了有关开放网络技术（Open Web）的信息，包括 HTML、CSS 和万维网及 HTML5 应用的 API。<br>​        MDN:<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/">https://developer.mozilla.org/zh-CN/</a></p>
+<h3 id="1-3-Math对象"><a href="#1-3-Math对象" class="headerlink" title="1.3 Math对象"></a>1.3 Math对象</h3><p>​        Math 对象不是构造函数，它具有数学常数和函数的属性和方法。跟数学相关的运算（求绝对值，取整、最大值等）可以使用 Math 中的成员。</p>
+<table>
+<thead>
+<tr>
+<th>属性、方法名</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Math.PI</td>
+<td>圆周率</td>
+</tr>
+<tr>
+<td>Math.floor()</td>
+<td>向下取整</td>
+</tr>
+<tr>
+<td>Math.ceil()</td>
+<td>向上取整</td>
+</tr>
+<tr>
+<td>Math.round()</td>
+<td>四舍五入版 就近取整   注意 -3.5   结果是  -3</td>
+</tr>
+<tr>
+<td>Math.abs()</td>
+<td>绝对值</td>
+</tr>
+<tr>
+<td>Math.max()/Math.min()</td>
+<td>求最大和最小值</td>
+</tr>
+<tr>
+<td>Math.random()</td>
+<td>获取范围在[0,1)内的随机值</td>
+</tr>
+</tbody></table>
+<p>​    注意：上面的方法使用时必须带括号</p>
+<p>​    <strong>获取指定范围内的随机整数</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getRandom</span>(<span class="params">min, max</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min + <span class="number">1</span>)) + min; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>注意 Array () ，A 要大写    </p>
-<h4 id="利用数组字面量创建数组"><a href="#利用数组字面量创建数组" class="headerlink" title="利用数组字面量创建数组"></a>利用数组字面量创建数组</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 使用数组字面量方式创建空的数组</span></span><br><span class="line"><span class="keyword">var</span>  数组名 = []；</span><br><span class="line"><span class="comment">//2. 使用数组字面量方式创建带初始值的数组</span></span><br><span class="line"><span class="keyword">var</span>  数组名 = [<span class="string">&#x27;胖虎&#x27;</span>,<span class="string">&#x27;panghutx&#x27;</span>,<span class="string">&#x27;blog.wangyouwu.cn&#x27;</span>];</span><br></pre></td></tr></table></figure>
+<h3 id="1-4-Date对象"><a href="#1-4-Date对象" class="headerlink" title="1.4 Date对象"></a>1.4 Date对象</h3><p>​         Date 对象和 Math 对象不一样，Date是一个<strong>构造函数</strong>，使用时需要实例化后才能使用其中具体方法和属性。Date 实例用来处理日期和时间</p>
+<ul>
+<li><p>使用Date实例化日期对象</p>
+<ul>
+<li>获取当前时间必须实例化：</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p>数组的字面量是方括号 [ ] </p>
-</li>
-<li><p>声明数组并赋值称为数组的初始化</p>
-</li>
-<li><p>数组元素的类型</p>
-<p>数组中可以存放任意类型的数据，例如字符串，数字，布尔值等。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrStus = [<span class="string">&#x27;小白&#x27;</span>,<span class="number">12</span>,<span class="literal">true</span>,<span class="number">28.9</span>];</span><br></pre></td></tr></table></figure></li>
+<li>获取指定时间的日期对象</li>
 </ul>
-<h3 id="1-2获取数组中的元素"><a href="#1-2获取数组中的元素" class="headerlink" title="1-2获取数组中的元素"></a>1-2获取数组中的元素</h3><p>​        索引 (下标) ：用来访问数组元素的序号（数组下标从 0 开始）。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义数组</span></span><br><span class="line"><span class="keyword">var</span> arrStus = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="comment">// 获取数组中的第2个元素</span></span><br><span class="line">alert(arrStus[<span class="number">1</span>]);    </span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> future = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">&#x27;2022-8-16 16:50:00&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
-<p>注意：如果访问时数组没有和索引值对应的元素，则得到的值是undefined</p>
-<h3 id="1-3遍历数组"><a href="#1-3遍历数组" class="headerlink" title="1-3遍历数组"></a>1-3遍历数组</h3><h4 id="数组遍历"><a href="#数组遍历" class="headerlink" title="数组遍历"></a>数组遍历</h4><p>​        把数组中的每个元素从头到尾都访问一次，可以通过 for 循环索引遍历数组中的每一项</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">&#x27;red&#x27;</span>,<span class="string">&#x27;green&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(arrStus[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="数组的长度"><a href="#数组的长度" class="headerlink" title="数组的长度"></a>数组的长度</h4><p>数组的长度：默认情况下表示数组中元素的个数</p>
-<p>使用“数组名.length”可以访问数组元素的数量（数组长度）。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arrStus = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">alert(arrStus.length);  <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
-
-<p>  <strong>注意</strong>：</p>
+<p>注意：如果创建实例时并未传入参数，则得到的日期对象是当前时间对应的日期对象</p>
+</li>
+<li><p>使用Date实例的方法和属性    </p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816165653.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816165653.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+</li>
+<li><p>通过Date实例获取总毫秒数</p>
 <ul>
-<li><p>此处数组的长度是数组元素的个数 ，不要和数组的索引号混淆。</p>
+<li><p>总毫秒数的含义</p>
+<p>​    基于1970年1月1日（世界标准时间）起的毫秒数</p>
 </li>
-<li><p>当数组元素个数发生变化， length 属性跟着一起变化</p>
+<li><p>获取总毫秒数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实例化Date对象</span></span><br><span class="line"><span class="keyword">var</span> now = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="comment">// 1. 用于获取对象的原始值</span></span><br><span class="line"><span class="built_in">console</span>.log(date.valueOf())	</span><br><span class="line"><span class="built_in">console</span>.log(date.getTime())	</span><br><span class="line"><span class="comment">// 2. ★简单写可以这么做</span></span><br><span class="line"><span class="keyword">var</span> now = + <span class="keyword">new</span> <span class="built_in">Date</span>();			</span><br><span class="line"><span class="comment">// 3. HTML5中提供的方法，有兼容性问题</span></span><br><span class="line"><span class="keyword">var</span> now = <span class="built_in">Date</span>.now();</span><br></pre></td></tr></table></figure></li>
+</ul>
 </li>
 </ul>
-<h2 id="2-函数"><a href="#2-函数" class="headerlink" title="2-函数"></a>2-函数</h2><p>​        函数：<strong>封装一段可被重复调用执行的代码块</strong>。通过此代码块可以<strong>实现大量代码的重复使用</strong>。  </p>
-<h3 id="2-1函数的声明调用"><a href="#2-1函数的声明调用" class="headerlink" title="2-1函数的声明调用"></a>2-1函数的声明调用</h3><h4 id="声明函数"><a href="#声明函数" class="headerlink" title="声明函数"></a>声明函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//函数体代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h3 id="1-5-数组对象"><a href="#1-5-数组对象" class="headerlink" title="1.5 数组对象"></a>1.5 数组对象</h3><h4 id="创建数组的两种方式"><a href="#创建数组的两种方式" class="headerlink" title="创建数组的两种方式"></a>创建数组的两种方式</h4><ul>
+<li><p>字面量方式</p>
 <ul>
-<li><p>function 是声明函数的关键字,必须小写</p>
-</li>
-<li><p>由于函数一般是为了实现某个功能才定义的， 所以通常我们将函数名命名为动词，比如 getSum</p>
-</li>
+<li><p>示例代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="string">&quot;test&quot;</span>,<span class="literal">true</span>];</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line">函数名();  <span class="comment">// 通过调用函数名来执行函数体代码</span></span><br></pre></td></tr></table></figure>
-
+</li>
+<li><p>new Array()</p>
 <ul>
-<li><p><strong>调用的时候千万不要忘记添加小括号</strong></p>
+<li><p>示例代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = new Array();</span><br></pre></td></tr></table></figure>
+
+<p>注意：上面代码中arr创建出的是一个空数组，如果需要使用构造函数Array创建非空数组，可以在创建数组时传入参数</p>
+<p>​    参数传递规则如下：</p>
+<ul>
+<li><p>如果只传入一个参数，则参数规定了数组的长度</p>
 </li>
-<li><p>口诀：函数不调用，自己不执行</p>
-<p>注意：声明函数本身并不会执行代码，只有调用函数时才会执行函数体代码。</p>
+<li><p>如果传入了多个参数，则参数称为数组的元素</p>
 </li>
 </ul>
-<p>例子：封装计算1-100累加和</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">   计算1-100之间值的函数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 声明函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSum</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> sumNum = <span class="number">0</span>;<span class="comment">// 准备一个变量，保存数字和</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">    sumNum += i;<span class="comment">// 把每个数值 都累加 到变量中</span></span><br><span class="line">  &#125;</span><br><span class="line">  alert(sumNum);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line">getSum();</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2函数的参数"><a href="#2-2函数的参数" class="headerlink" title="2-2函数的参数"></a>2-2函数的参数</h3><h4 id="函数参数语法"><a href="#函数参数语法" class="headerlink" title="函数参数语法"></a>函数参数语法</h4><ul>
-<li><p>形参：函数定义时设置接收调用时传入</p>
 </li>
-<li><p>实参：函数调用时传入小括号内的真实数据</p>
-<p>函数参数的运用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 带参数的函数声明</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">形参<span class="number">1</span>, 形参<span class="number">2</span> , 形参<span class="number">3.</span>..</span>) </span>&#123; <span class="comment">// 可以定义任意多的参数，用逗号分隔</span></span><br><span class="line">  <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 带参数的函数调用</span></span><br><span class="line">函数名(实参<span class="number">1</span>, 实参<span class="number">2</span>, 实参<span class="number">3.</span>..); </span><br></pre></td></tr></table></figure>
+</ul>
+</li>
+</ul>
+<h4 id="检测是否为数组"><a href="#检测是否为数组" class="headerlink" title="检测是否为数组"></a>检测是否为数组</h4><ul>
+<li><p>instanceof 运算符</p>
+<ul>
+<li><p>instanceof 可以判断一个对象是否是某个构造函数的实例</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">23</span>];</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(obj <span class="keyword">instanceof</span> <span class="built_in">Array</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>Array.isArray()</p>
+<ul>
+<li><p>Array.isArray()用于判断一个对象是否为数组，isArray() 是 HTML5 中提供的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">23</span>];</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(arr));   <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.isArray(obj));   <span class="comment">// false</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="添加删除数组元素的方法"><a href="#添加删除数组元素的方法" class="headerlink" title="添加删除数组元素的方法"></a>添加删除数组元素的方法</h4><ul>
+<li><p>数组中有进行增加、删除元素的方法，部分方法如下表</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816165706.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816165706.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>注意：push、unshift为增加元素方法；pop、shift为删除元素的方法</p>
+</li>
+</ul>
+<h4 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h4><ul>
+<li><p>数组中有对数组本身排序的方法，部分方法如下表</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816165713.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816165713.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>注意：sort方法需要传入参数来设置升序、降序排序</p>
+<ul>
+<li><p>如果传入“function(a,b){ return a-b;}”，则为升序</p>
+</li>
+<li><p>如果传入“function(a,b){ return b-a;}”，则为降序</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">12</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123; <span class="comment">//sort(函数)</span></span><br><span class="line">    <span class="keyword">return</span> a-b; <span class="comment">//升序</span></span><br><span class="line">&#125;)</span><br><span class="line"> <span class="built_in">console</span>.log(arr); <span class="comment">//1,3,4,12</span></span><br></pre></td></tr></table></figure>
 
+<h4 id="数组索引方法"><a href="#数组索引方法" class="headerlink" title="数组索引方法"></a>数组索引方法</h4><ul>
+<li><p>数组中有获取数组指定元素索引值的方法，部分方法如下表</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816165720.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816165720.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+</li>
+</ul>
+<h4 id="数组转换为字符串"><a href="#数组转换为字符串" class="headerlink" title="数组转换为字符串"></a>数组转换为字符串</h4><ul>
+<li><p>数组中有把数组转化为字符串的方法，部分方法如下表</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816165759.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816165759.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>注意：join方法如果不传入参数，则按照 “ , ”拼接元素</p>
+</li>
+</ul>
+<h4 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h4><p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816165818.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816165818.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h3 id="1-6-字符串对象"><a href="#1-6-字符串对象" class="headerlink" title="1.6 字符串对象"></a>1.6 字符串对象</h3><h4 id="基本包装类型"><a href="#基本包装类型" class="headerlink" title="基本包装类型"></a>基本包装类型</h4><p>​        为了方便操作基本数据类型，JavaScript 还提供了三个特殊的引用类型：String、Number和 Boolean。</p>
+<p>​        基本包装类型就是把简单数据类型包装成为复杂数据类型，这样基本数据类型就有了属性和方法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 下面代码有什么问题？</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;andy&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(str.length);</span><br></pre></td></tr></table></figure>
+
+<p>​        按道理基本数据类型是没有属性和方法的，而对象才有属性和方法，但上面代码却可以执行，这是因为</p>
+<p>​        js 会把基本数据类型包装为复杂数据类型，其执行过程如下 ：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 生成临时变量，把简单类型包装为复杂数据类型</span></span><br><span class="line"><span class="keyword">var</span> temp = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">&#x27;andy&#x27;</span>);</span><br><span class="line"><span class="comment">// 2. 赋值给我们声明的字符变量</span></span><br><span class="line">str = temp;</span><br><span class="line"><span class="comment">// 3. 销毁临时变量</span></span><br><span class="line">temp = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串的不可变"><a href="#字符串的不可变" class="headerlink" title="字符串的不可变"></a>字符串的不可变</h4><p>​        指的是里面的值不可变，虽然看上去可以改变内容，但其实是地址变了，内存中新开辟了一个内存空间。</p>
+<p>​        当重新给字符串变量赋值的时候，变量之前保存的字符串不会被修改，依然在内存中重新给字符串赋值，会重新在内存中开辟空间，这个特点就是字符串的不可变。<br>​        由于字符串的不可变，在<strong>大量拼接字符串</strong>的时候会有效率问题</p>
+<h4 id="根据字符返回位置"><a href="#根据字符返回位置" class="headerlink" title="根据字符返回位置"></a>根据字符返回位置</h4><p>​        字符串通过基本包装类型可以调用部分方法来操作字符串，以下是返回指定字符的位置的方法：</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816165949.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816165949.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>​        案例：查找字符串”abcoefoxyozzopp”中所有o出现的位置以及次数</p>
 <ol>
-<li>调用的时候实参值是传递给形参的</li>
-<li>形参简单理解为：不用声明的变量</li>
-<li>实参和形参的多个参数之间用逗号（,）分隔</li>
+<li><p>先查找第一个o出现的位置</p>
+</li>
+<li><p>然后 只要indexOf 返回的结果不是 -1 就继续往后查找</p>
+</li>
+<li><p>因为indexOf 只能查找到第一个，所以后面的查找，利用第二个参数，当前索引加1，从而继续查找 </p>
+</li>
 </ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;abcoefoxyozzopp&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> index = str.indexOf(<span class="string">&#x27;o&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(index != -<span class="number">1</span>)&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(index); <span class="comment">//3</span></span><br><span class="line">    num++;</span><br><span class="line">    index = str.indexOf(<span class="string">&#x27;o&#x27;</span>,index+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;o出现的次数是：&#x27;</span>+ num +<span class="string">&#x27;次&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="根据位置返回字符"><a href="#根据位置返回字符" class="headerlink" title="根据位置返回字符"></a>根据位置返回字符</h4><p>​        字符串通过基本包装类型可以调用部分方法来操作字符串，以下是根据位置返回指定位置上的字符：</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816170225.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816170225.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<p>​        案例：判断一个字符串 ‘abcoefoxyozzopp’ 中出现次数最多的字符，并统计其次数</p>
+<ol>
+<li><p>核心算法：利用 charAt(） 遍历这个字符串</p>
+</li>
+<li><p>把每个字符都存储给对象， 如果对象没有该属性，就为1，如果存在了就 +1</p>
+</li>
+<li><p>遍历对象，得到最大值和该字符     </p>
+<p>​    注意：在遍历的过程中，把字符串中的每个字符作为对象的属性存储在对象总，对应的属性值是该字符出现的次数</p>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">&#x27;abcoefoxyozzopp&#x27;</span>;</span><br><span class="line"><span class="keyword">var</span> o = &#123;&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> chars = str.charAt(i); <span class="comment">// chars 是 字符串的每一个字符</span></span><br><span class="line">    <span class="keyword">if</span> (o[chars]) &#123; <span class="comment">// o[chars] 得到的是属性值</span></span><br><span class="line">        o[chars]++;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        o[chars] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(o);</span><br><span class="line"><span class="comment">// 2. 遍历对象</span></span><br><span class="line"><span class="keyword">var</span> max = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> ch = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> k <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="comment">// k 得到是 属性名</span></span><br><span class="line">    <span class="comment">// o[k] 得到的是属性值</span></span><br><span class="line">    <span class="keyword">if</span> (o[k] &gt; max) &#123;</span><br><span class="line">        max = o[k];</span><br><span class="line">        ch = k;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(max);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;最多的字符是&#x27;</span> + ch);</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="字符串操作方法"><a href="#字符串操作方法" class="headerlink" title="字符串操作方法"></a>字符串操作方法</h4><p>​        字符串通过基本包装类型可以调用部分方法来操作字符串，以下是部分操作方法：</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816170329.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816170329.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h4 id="replace-方法"><a href="#replace-方法" class="headerlink" title="replace()方法"></a>replace()方法</h4><p>​        replace() 方法用于在字符串中用一些字符替换另一些字符，其使用格式如下：  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串.replace(被替换的字符串， 要替换为的字符串)；</span><br></pre></td></tr></table></figure>
+
+<h4 id="split-方法"><a href="#split-方法" class="headerlink" title="split()方法"></a>split()方法</h4><p>​        split()方法用于切分字符串，它可以将字符串切分为数组。在切分完毕之后，返回的是一个新数组。</p>
+<p>​        其使用格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">字符串.split(&quot;分割字符&quot;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-简单数据类型和复杂数据类型"><a href="#2-简单数据类型和复杂数据类型" class="headerlink" title="2 - 简单数据类型和复杂数据类型"></a>2 - 简单数据类型和复杂数据类型</h2><h3 id="2-1-简单数据类型"><a href="#2-1-简单数据类型" class="headerlink" title="2.1 简单数据类型"></a>2.1 简单数据类型</h3><p>​        <strong>简单类型</strong>（<strong>基本数据类型</strong>、<strong>值类型</strong>）：在存储时变量中存储的是值本身，包括string ，number，boolean，undefined，null</p>
+<h3 id="2-2-复杂数据类型"><a href="#2-2-复杂数据类型" class="headerlink" title="2.2 复杂数据类型"></a>2.2 复杂数据类型</h3><p>​        <strong>复杂数据类型（引用类型）</strong>：在存储时变量中存储的仅仅是地址（引用），通过 new 关键字创建的对象（系统对象、自定义对象），如 Object、Array、Date等；</p>
+<h3 id="2-3-堆栈"><a href="#2-3-堆栈" class="headerlink" title="2.3 堆栈"></a>2.3 堆栈</h3><ul>
+<li>堆栈空间分配区别：</li>
+</ul>
+<p>　　1、栈（操作系统）：由操作系统自动分配释放存放函数的参数值、局部变量的值等。其操作方式类似于数据结构中的栈；</p>
+<p>简单数据类型存放到栈里面</p>
+<p>　　2、堆（操作系统）：存储复杂类型(对象)，一般由程序员分配释放，若程序员不释放，由垃圾回收机制回收。</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816170347.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816170347.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<ul>
+<li><p>简单数据类型的存储方式</p>
+<p>​        值类型变量的数据直接存放在变量（栈空间）中</p>
 </li>
 </ul>
-<h4 id="函数形参和实参数量不匹配时"><a href="#函数形参和实参数量不匹配时" class="headerlink" title="函数形参和实参数量不匹配时"></a>函数形参和实参数量不匹配时</h4><p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210815112030.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210815112030.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
-<pre><code>注意：在JavaScript中，形参的默认值是undefined。
-</code></pre>
-<p>小结：</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816170352.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816170352.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 <ul>
-<li> 函数可以带参数也可以不带参数</li>
-<li> 声明函数的时候，函数名括号里面的是形参，形参的默认值为 undefined</li>
-<li> 调用函数的时候，函数名括号里面的是实参</li>
-<li>多个参数中间用逗号分隔</li>
-</ul>
-<h3 id="2-3函数的返回值"><a href="#2-3函数的返回值" class="headerlink" title="2-3函数的返回值"></a>2-3函数的返回值</h3><h4 id="return-语句"><a href="#return-语句" class="headerlink" title="return 语句"></a>return 语句</h4><pre><code>返回值：函数调用整体代表的数据；函数执行完成后可以通过return语句将指定数据返回 。
-</code></pre>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> 函数名（）</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span>  需要返回的值；</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用函数</span></span><br><span class="line">函数名();    <span class="comment">// 此时调用函数就可以得到函数体内return 后面的值</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li> 在使用 return 语句时，函数会停止执行，并返回指定的值</li>
-<li> 如果函数没有 return ，返回的值是 undefined</li>
-</ul>
-<h4 id="break-continue-return-的区别"><a href="#break-continue-return-的区别" class="headerlink" title="break ,continue ,return 的区别"></a>break ,continue ,return 的区别</h4><ul>
-<li>break ：结束当前的循环体（如 for、while）</li>
-<li>continue ：跳出本次循环，继续执行下次循环（如 for、while）</li>
-<li>return ：不仅可以退出循环，还能够返回 return 语句中的值，同时还可以结束当前的函数体内的代码</li>
-</ul>
-<h3 id="2-4arguments的使用"><a href="#2-4arguments的使用" class="headerlink" title="2-4arguments的使用"></a>2-4arguments的使用</h3><p>​        <strong>当不确定有多少个参数传递的时候，可以用 arguments 来获取。</strong>JavaScript 中，arguments实际上它是当前函数的一个内置对象。所有函数都内置了一个 arguments 对象，arguments 对象中存储了传递的所有实参。arguments展示形式是一个伪数组，因此可以进行遍历。伪数组具有以下特点：</p>
-<ul>
-<li><p>具有 length 属性</p>
-</li>
-<li><p>按索引方式储存数据</p>
-</li>
-<li><p>不具有数组的 push , pop 等方法</p>
-<p>注意：在函数内部使用该对象，用此对象获取函数调用时传的实参。</p>
+<li><p>复杂数据类型的存储方式</p>
+<p>​        引用类型变量（栈空间）里存放的是地址，真正的对象实例存放在堆空间中</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210816170407.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210816170407.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
 </li>
 </ul>
-<h3 id="2-5函数案例"><a href="#2-5函数案例" class="headerlink" title="2-5函数案例"></a>2-5函数案例</h3><pre><code>    函数内部可以调用另一个函数，在同一作用域代码中，函数名即代表封装的操作，使用函数名加括号即可以将封装的操作执行。
-</code></pre>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//用户输入年份，输出当前年份2月份的天数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">backDay</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> year = prompt(<span class="string">&#x27;请输入年份：&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(isRunYear(year))&#123;</span><br><span class="line">        alert(year+<span class="string">&#x27;是闰年，2月份有29天&#x27;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        alert(year+<span class="string">&#x27;是平年，2月份有28天&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line">backDay();</span><br><span class="line">     </span><br><span class="line"><span class="comment">// 判断是否是闰年</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isRunYear</span>(<span class="params">year</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//如果是闰年返回true，否则else</span></span><br><span class="line">    <span class="keyword">var</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span>&amp;&amp;year%<span class="number">100</span>!=<span class="number">0</span>||year%<span class="number">400</span>==<span class="number">0</span>) &#123; <span class="comment">//能被4整除且不能被100整除或者能被400整除</span></span><br><span class="line">        flag=<span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-4-简单类型传参"><a href="#2-4-简单类型传参" class="headerlink" title="2.4 简单类型传参"></a>2.4 简单类型传参</h3><p>​        函数的形参也可以看做是一个变量，当我们把一个值类型变量作为参数传给函数的形参时，其实是把变量在栈空间里的值复制了一份给形参，那么在方法内部对形参做任何修改，都不会影响到的外部变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="built_in">console</span>.log(a); </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line">fn(x);</span><br><span class="line"><span class="built_in">console</span>.log(x);</span><br></pre></td></tr></table></figure>
 
+<p>​        运行结果是：11 10</p>
+<h3 id="2-5-复杂数据类型传参"><a href="#2-5-复杂数据类型传参" class="headerlink" title="2.5 复杂数据类型传参"></a>2.5 复杂数据类型传参</h3><p>​        函数的形参也可以看做是一个变量，当我们把引用类型变量传给形参时，其实是把变量在栈空间里保存的堆地址复制给了形参，形参和实参其实保存的是同一个堆地址，所以操作的是同一个对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params">x</span>) </span>&#123; <span class="comment">// x = p</span></span><br><span class="line">    <span class="built_in">console</span>.log(x.name); <span class="comment">// 2. 这个输出什么 ?    </span></span><br><span class="line">    x.name = <span class="string">&quot;罗志祥&quot;</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(x.name); <span class="comment">// 3. 这个输出什么 ?    </span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person(<span class="string">&quot;吴亦凡&quot;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(p.name);    <span class="comment">// 1. 这个输出什么 ?   </span></span><br><span class="line">f1(p);</span><br><span class="line"><span class="built_in">console</span>.log(p.name);    <span class="comment">// 4. 这个输出什么 ?  </span></span><br></pre></td></tr></table></figure>
 
-
-<h3 id="2-6函数的两种声明方式"><a href="#2-6函数的两种声明方式" class="headerlink" title="2-6函数的两种声明方式"></a>2-6函数的两种声明方式</h3><h4 id="自定义函数方式-命名函数"><a href="#自定义函数方式-命名函数" class="headerlink" title="自定义函数方式(命名函数)"></a>自定义函数方式(命名函数)</h4><p>利用函数关键字 function 自定义函数方式</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明定义方式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;...&#125;</span><br><span class="line"><span class="comment">// 调用  </span></span><br><span class="line">fn();  </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>因为有名字，所以也被称为命名函数</li>
-<li>调用函数的代码既可以放到声明函数的前面，也可以放在声明函数的后面</li>
-</ul>
-<h4 id="函数表达式方式-匿名函数）"><a href="#函数表达式方式-匿名函数）" class="headerlink" title="函数表达式方式(匿名函数）"></a>函数表达式方式(匿名函数）</h4><p>利用函数表达式方式的写法如下： </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这是函数表达式写法，匿名函数后面跟分号结束</span></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;；</span><br><span class="line"><span class="comment">// 调用的方式，函数调用必须写到函数体下面</span></span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>因为函数没有名字，所以也被称为匿名函数</li>
-<li>这个fn 里面存储的是一个函数  </li>
-<li>函数表达式方式原理跟声明变量方式是一致的</li>
-<li>函数调用的代码必须写到函数体后面</li>
-</ul>
+<p>​        运行结果是：吴亦凡 吴亦凡 罗志祥 罗志祥</p>
 
   
   
@@ -686,7 +781,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/08/15/js2/>https://blog.wangyouwu.cn/2021/08/15/js2/</a></p>
+                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/08/16/js4/>https://blog.wangyouwu.cn/2021/08/16/js4/</a></p>
               
             
           </blockquote>
@@ -703,10 +798,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-15T11:28:24+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-08-16T17:27:47+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2021年8月15日</p>
+    <p>更新于：2021年8月16日</p>
   </a>
 </div>
 
@@ -728,7 +823,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/08/15/js2/&title=js基础Ⅱ：数组和函数 - 胖虎同学|生活学习类个人博客&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/08/16/js4/&title=js基础Ⅳ：内置对象 - 胖虎同学|生活学习类个人博客&summary="
           
           >
           
@@ -740,7 +835,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/08/15/js2/&title=js基础Ⅱ：数组和函数 - 胖虎同学|生活学习类个人博客&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/08/16/js4/&title=js基础Ⅳ：内置对象 - 胖虎同学|生活学习类个人博客&summary="
           
           >
           
@@ -752,7 +847,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/08/15/js2/&title=js基础Ⅱ：数组和函数 - 胖虎同学|生活学习类个人博客&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/08/16/js4/&title=js基础Ⅳ：内置对象 - 胖虎同学|生活学习类个人博客&summary="
           
           >
           
@@ -782,18 +877,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/08/15/js3/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>js基础Ⅲ：作用域和对象</p>
+      
+        <a class='next' href='/2021/08/15/js3/'>
+          <p class='title'>js基础Ⅲ：作用域和对象<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>1 - 作用域​        通常来说，一段程序代码中所用到的名字并不总是有效和可用的，而限定这个名字的可用性的代码范围就是这个名字的作用域。作用域的使用提高了程序逻辑的局部性，增强了程序的可...</p>
-        </a>
-      
-      
-        <a class='next' href='/2021/08/14/js-exercise/'>
-          <p class='title'>js练习Ⅰ：循环、数组、函数<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>🙂循环
-一行打印★★★★★
-
-12345var str = &#x27;&#x27;;for (var i = 1;i&lt;=5;i++) &#123;    str = str + &#x...</p>
         </a>
       
     </div>
@@ -836,7 +923,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%95%B0%E7%BB%84"><span class="toc-text">1-数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84"><span class="toc-text">1-1创建数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8-new-%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84"><span class="toc-text">利用  new 创建数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%95%B0%E7%BB%84%E5%AD%97%E9%9D%A2%E9%87%8F%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84"><span class="toc-text">利用数组字面量创建数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2%E8%8E%B7%E5%8F%96%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0"><span class="toc-text">1-2获取数组中的元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84"><span class="toc-text">1-3遍历数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E9%81%8D%E5%8E%86"><span class="toc-text">数组遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-text">数组的长度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%87%BD%E6%95%B0"><span class="toc-text">2-函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1%E5%87%BD%E6%95%B0%E7%9A%84%E5%A3%B0%E6%98%8E%E8%B0%83%E7%94%A8"><span class="toc-text">2-1函数的声明调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A3%B0%E6%98%8E%E5%87%BD%E6%95%B0"><span class="toc-text">声明函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">调用函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2%E5%87%BD%E6%95%B0%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-text">2-2函数的参数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E8%AF%AD%E6%B3%95"><span class="toc-text">函数参数语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82%E6%95%B0%E9%87%8F%E4%B8%8D%E5%8C%B9%E9%85%8D%E6%97%B6"><span class="toc-text">函数形参和实参数量不匹配时</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">2-3函数的返回值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#return-%E8%AF%AD%E5%8F%A5"><span class="toc-text">return 语句</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#break-continue-return-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">break ,continue ,return 的区别</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4arguments%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-text">2-4arguments的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5%E5%87%BD%E6%95%B0%E6%A1%88%E4%BE%8B"><span class="toc-text">2-5函数案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F"><span class="toc-text">2-6函数的两种声明方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E6%96%B9%E5%BC%8F-%E5%91%BD%E5%90%8D%E5%87%BD%E6%95%B0"><span class="toc-text">自定义函数方式(命名函数)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%96%B9%E5%BC%8F-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0%EF%BC%89"><span class="toc-text">函数表达式方式(匿名函数）</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="toc-text">1 - 内置对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%86%85%E7%BD%AE%E5%AF%B9%E8%B1%A1"><span class="toc-text">1.1 内置对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%9F%A5%E6%96%87%E6%A1%A3"><span class="toc-text">1.2 查文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-Math%E5%AF%B9%E8%B1%A1"><span class="toc-text">1.3 Math对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Date%E5%AF%B9%E8%B1%A1"><span class="toc-text">1.4 Date对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1"><span class="toc-text">1.5 数组对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-text">创建数组的两种方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%B5%8B%E6%98%AF%E5%90%A6%E4%B8%BA%E6%95%B0%E7%BB%84"><span class="toc-text">检测是否为数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E6%95%B0%E7%BB%84%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-text">添加删除数组元素的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F"><span class="toc-text">数组排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%B4%A2%E5%BC%95%E6%96%B9%E6%B3%95"><span class="toc-text">数组索引方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">数组转换为字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95"><span class="toc-text">其他方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-6-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AF%B9%E8%B1%A1"><span class="toc-text">1.6 字符串对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8C%85%E8%A3%85%E7%B1%BB%E5%9E%8B"><span class="toc-text">基本包装类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E4%B8%8D%E5%8F%AF%E5%8F%98"><span class="toc-text">字符串的不可变</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E5%AD%97%E7%AC%A6%E8%BF%94%E5%9B%9E%E4%BD%8D%E7%BD%AE"><span class="toc-text">根据字符返回位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E4%BD%8D%E7%BD%AE%E8%BF%94%E5%9B%9E%E5%AD%97%E7%AC%A6"><span class="toc-text">根据位置返回字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="toc-text">字符串操作方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#replace-%E6%96%B9%E6%B3%95"><span class="toc-text">replace()方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#split-%E6%96%B9%E6%B3%95"><span class="toc-text">split()方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2 - 简单数据类型和复杂数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E7%AE%80%E5%8D%95%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.1 简单数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">2.2 复杂数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E5%A0%86%E6%A0%88"><span class="toc-text">2.3 堆栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-%E7%AE%80%E5%8D%95%E7%B1%BB%E5%9E%8B%E4%BC%A0%E5%8F%82"><span class="toc-text">2.4 简单类型传参</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-%E5%A4%8D%E6%9D%82%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%BC%A0%E5%8F%82"><span class="toc-text">2.5 复杂数据类型传参</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -855,7 +942,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="js基础Ⅱ：数组和函数";
+  pdata.postTitle="js基础Ⅳ：内置对象";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
