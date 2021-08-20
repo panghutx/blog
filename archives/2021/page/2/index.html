@@ -490,6 +490,175 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title" >
+      <a href="/2021/08/10/c-function/">
+        c语言：函数
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        函数是一块代码，接收零个或多个参数，做一件事情，并返回零个或一个值。
+
+
+调用函数函数名()
+()起到了表示函数调用的作用，即使没有参数也需要()；如果有参数，则需要给出正确的数量和顺序，这些值会被按照顺序依次用来初始化函数中的参数。
+123456789101112131415#include&lt;stdio.h&gt;void sum(int begain, int end)&#123;...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+        
+        <time>2021-08-10</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/08/10/c-function/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/08/09/c-date-type/">
+        c语言：数据类型
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        整数
+char：1字节（8比特） -128~127
+
+short：2字节 -32768~32767
+
+int：取决于编译器（CPU），通常意义是“1个字”
+
+long：取决于编译器（CPU），通常意义是“1个字”
+
+long long：8字节
+
+
+整数的内部表达都是二进制
+补码补码的意义就是拿补码和原码可以加出一个溢出的“零”
+0-1=-1(1)00000000 - 00000001 –&g...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+        
+        <time>2021-08-09</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/08/09/c-date-type/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
+      <a href="/2021/08/05/rem/">
+        移动web开发——rem布局
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        rem基础rem (root em)是一个相对单位，类似于em，em是父元素字体大小。
+不同的是rem的基准是相对于html元素的字体大小。
+比如，根元素（html）设置font-size=12px; 非根元素设置width:2rem; 则换成px表示就是24px。
+12345678/* 根html 为 12px */html &#123;   font-size: 12px;&#125;/...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+        
+        <time>2021-08-05</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/08/05/rem/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
       <a href="/2021/08/02/words/">
         我爱记单词🙂
       </a>
@@ -858,168 +1027,6 @@ visibil...
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/06/05/float/">
-        css浮动
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        网页布局
-标准流
-
-
-块级元素：独占一行，从上向下顺序排列。常用元素：div、hr、p、h1~h6、ul、ol、dl、form、table
-行内元素：按照顺序从左到右顺序排列，碰到父元素边缘则自动换行。常用元素：span、a、i、em等以上都是标准流布局，标准流是最基本的布局方式。
-
-
-浮动
-定位
-
-浮动float属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-06-05</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/06/05/float/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/06/03/box/">
-        盒子边框
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        边框12345border-width/*定义边框粗细，单位px*/border-style /*边框样式 solid实先 dashed虚线 dotted点线 */border-color /*边框颜色*/border: 1px solid red; /*简写*/border-collapse:collapse; /*表示相邻边框合并*/
-
-内边距padding内边距，即边框和内容之间的距离...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-06-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/06/03/box/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/06/02/new/">
-        讲座，机会，关系
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        新电脑换新电脑了，开心o(￣▽￣)ブ
-旧电脑有些年头了，太卡了，打开个VS Code都要卡好久，严重影响心情……趁着618在京东入手了荣耀Magicbook pro 2020，我的要求不高，能满足日常学习就行。新电脑体验不错，激活电脑后就在新电脑上部署了博客，参考了这篇教程。
-在新电脑部署hexohttps://www.cnblogs.com/study-everyday/p/8902136...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-06-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/06/02/new/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1151,7 +1158,7 @@ visibil...
           <li><a class="flat-box"
             title="/categories/%E6%97%A5%E5%B8%B8/" href="/categories/%E6%97%A5%E5%B8%B8/"
             id="categoriesE697A5E5B8B8"
-            ><div class='name'>日常</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>日常</div><div class='badge'>(9)</div></a></li>
         
       </ul>
     </div>
@@ -1175,7 +1182,7 @@ visibil...
 
 
     <div class='content'>
-      <a href="/tags/JavaScript/" style="font-size: 22px; color: #636363">JavaScript</a> <a href="/tags/c/" style="font-size: 18px; color: #7e7e7e">c</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/html/" style="font-size: 18px; color: #7e7e7e">html</a> <a href="/tags/linux/" style="font-size: 20px; color: #707070">linux</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 16px; color: #8b8b8b">英语</a>
+      <a href="/tags/JavaScript/" style="font-size: 22px; color: #636363">JavaScript</a> <a href="/tags/c/" style="font-size: 18px; color: #7e7e7e">c</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/html/" style="font-size: 18px; color: #7e7e7e">html</a> <a href="/tags/linux/" style="font-size: 20px; color: #707070">linux</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 16px; color: #8b8b8b">英语</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 18px; color: #7e7e7e">阅读</a>
     </div>
   </section>
 
@@ -1200,7 +1207,7 @@ visibil...
       
         <div class="webinfo-item">
           <div>文章数目</div>
-          <div>41 篇</div>
+          <div>44 篇</div>
         </div>
       
 
@@ -1243,8 +1250,8 @@ visibil...
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Thu Aug 19 2021 19:29:25 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-08-19 日</div>
+            <div id="last-update" style="display: none;">Fri Aug 20 2021 18:23:37 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-08-20 日</div>
           
         </div>
         
@@ -1294,7 +1301,7 @@ visibil...
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-08-19 日';
+            document.getElementById('last-update-show').innerHTML = '2021-08-20 日';
           }
         </script>
         
