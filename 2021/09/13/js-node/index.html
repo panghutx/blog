@@ -22,7 +22,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>所有分类 - 胖虎同学|生活学习类个人博客</title>
+  <title>WebApiⅡ：自定义属性、节点 - 胖虎同学|生活学习类个人博客</title>
+  
+    <meta name="keywords" content="JavaScript">
   
 
   
@@ -409,7 +411,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper category dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg"></div>
           
@@ -472,45 +474,280 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper" id="pjax-container">
           
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      <div class='post-wrapper'>
-        <article id="cat" class="post article white-box reveal shadow">
-          <h2>所有分类</h2>
-          <div class="all-cats">
-            
-              
-                <a class="" href="/categories/%E5%88%86%E4%BA%AB/">
-                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;分享</span>
-                  <span class="title">
-                    (3)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E5%AD%A6%E4%B9%A0/">
-                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;学习</span>
-                  <span class="title">
-                    (34)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/%E6%97%A5%E5%B8%B8/">
-                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;日常</span>
-                  <span class="title">
-                    (10)
-                  </span>
-                </a>
-              
-            
-          </div>
-          <br>
+    
+    
+      <h1 class="title">
+        WebApiⅡ：自定义属性、节点
+      </h1>
+      <div class='new-meta-box'>
+        
           
-        </article>
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg">
+    <p>胖虎</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年9月13日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="WebApiⅡ：自定义属性、节点" data-path="/2021/09/13/js-node/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
       </div>
     
+  </div>
+
+
   
+  
+  <h2 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h2><h3 id="获取属性值"><a href="#获取属性值" class="headerlink" title="获取属性值"></a>获取属性值</h3><ul>
+<li><p>element.属性 ：获取内置属性值</p>
+</li>
+<li><p>element.getAttribute(‘属性’) ：获取自定义属性值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;demo&quot;</span> index=<span class="string">&quot;1&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;nav&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 1. 获取元素的属性值</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// (1) element.属性</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.id);  <span class="comment">//demo</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">//(2) element.getAttribute(&#x27;属性&#x27;) </span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.getAttribute(<span class="string">&#x27;id&#x27;</span>)); <span class="comment">//demo</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.getAttribute(<span class="string">&#x27;index&#x27;</span>)); <span class="comment">//1</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="设置属性值"><a href="#设置属性值" class="headerlink" title="设置属性值"></a>设置属性值</h3><ul>
+<li>element.属性 = ‘属性值’</li>
+<li>element.setAttribute (‘属性’,’属性值’) ：设置自定义属性值</li>
+</ul>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (1) element.属性= &#x27;值&#x27;</span></span><br><span class="line">  div.id = <span class="string">&#x27;test&#x27;</span>;</span><br><span class="line">  div.className = <span class="string">&#x27;navs&#x27;</span>;</span><br><span class="line"><span class="comment">// (2) element.setAttribute(&#x27;属性&#x27;, &#x27;值&#x27;);  主要针对于自定义属性</span></span><br><span class="line">  div.setAttribute(<span class="string">&#x27;index&#x27;</span>, <span class="number">2</span>);</span><br><span class="line">  div.setAttribute(<span class="string">&#x27;class&#x27;</span>, <span class="string">&#x27;footer&#x27;</span>); </span><br></pre></td></tr></table></figure>
+
+<h3 id="移除属性"><a href="#移除属性" class="headerlink" title="移除属性"></a>移除属性</h3><p>element.removeAttribute (‘属性’)</p>
+<h3 id="h5自定义属性"><a href="#h5自定义属性" class="headerlink" title="h5自定义属性"></a>h5自定义属性</h3><p>自定义属性获取是通过getAttribute(‘属性’) 获取。</p>
+<p>但是有些自定义属性很容易引起歧义，不容易判断是元素的内置属性还是自定义属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div getTime=<span class="string">&quot;20&quot;</span> data-index=<span class="string">&quot;2&quot;</span> data-list-name=<span class="string">&quot;andy&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// console.log(div.getTime);</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.getAttribute(<span class="string">&#x27;getTime&#x27;</span>));</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    div.setAttribute(<span class="string">&#x27;data-time&#x27;</span>, <span class="number">20</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.getAttribute(<span class="string">&#x27;data-index&#x27;</span>));</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.getAttribute(<span class="string">&#x27;data-list-name&#x27;</span>));</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// h5新增的获取自定义属性的方法 它只能获取data-开头的</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// dataset 是一个集合里面存放了所有以data开头的自定义属性</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.dataset);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.dataset.index);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.dataset[<span class="string">&#x27;index&#x27;</span>]);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 如果自定义属性里面有多个-链接的单词，我们获取的时候采取 驼峰命名法</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.dataset.listName);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.dataset[<span class="string">&#x27;listName&#x27;</span>]);</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h2><p>网页中的所有内容都是节点（标签、属性、文本、注释等），在DOM 中，节点使用 node 来表示。</p>
+<p>一般地，节点至少拥有nodeType（节点类型）、nodeName（节点名称）和nodeValue（节点值）这三个基本属性。</p>
+<ul>
+<li><p>元素节点 nodeType 为1</p>
+</li>
+<li><p>属性节点 nodeType 为2</p>
+</li>
+<li><p>文本节点 nodeType 为3（文字、空格、换行）</p>
+<p><strong>实际开发中，节点操作主要操作元素节点</strong></p>
+</li>
+</ul>
+<h3 id="父级节点"><a href="#父级节点" class="headerlink" title="父级节点"></a>父级节点</h3><p><code>node.parentNode</code></p>
+<p>parentNode返回某节点的父节点（最近的），没有则返回null</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;demo&quot;</span>&gt;</span><br><span class="line">       <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;dad&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">           <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span>&gt;</span>×<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">   <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">   <span class="built_in">console</span>.log(son.parentNode);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="子节点"><a href="#子节点" class="headerlink" title="子节点"></a>子节点</h3><p><code>parentNode.chlidNodes</code>(标准)</p>
+<p>返回值包含所有子节点，包括元素、文本节点等，so一般不用childNodes</p>
+<p><code>parentNode.children</code>(非标准)</p>
+<p>返回值只有元素字节，so提倡用children</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>胖虎同学<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>panghutx<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>www.wangyouwu.cn<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>blog.wangyouwu.cn<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// DOM 提供的方法（API）获取</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;ul&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> lis = ul.querySelectorAll(<span class="string">&#x27;li&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 1. 子节点  childNodes 所有的子节点 包含 元素节点 文本节点等等</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(ul.childNodes);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(ul.childNodes[<span class="number">0</span>].nodeType); <span class="comment">//3</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(ul.childNodes[<span class="number">1</span>].nodeType); <span class="comment">//1</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 2. children 获取所有的子元素节点 也是我们实际开发常用的</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(ul.children); </span></span></span><br><span class="line"><span class="javascript"><span class="xml">	<span class="built_in">console</span>.log(ul.children[<span class="number">0</span>]); <span class="comment">//第一个li</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">	<span class="built_in">console</span>.log(ul.children[ul.children.length - <span class="number">1</span>]);<span class="comment">//最后一个li</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建-添加节点"><a href="#创建-添加节点" class="headerlink" title="创建/添加节点"></a>创建/添加节点</h3><ol>
+<li><p>创建节点</p>
+<p><code>document.creatElement(&#39;tagName&#39;)</code></p>
+</li>
+<li><p>添加节点</p>
+<p><code>node.appendChild(child)</code>   将节点添加到父节点的子节点列表末尾</p>
+<p><code>node.inserBefore(child,指定元素)</code>   将节点添加到父节点的子节点列表开头</p>
+ <ul>
+     <li>胖虎同学</li>
+ </ul>
+ <script>
+     // 1. 创建节点元素节点
+     var li = document.createElement('li');
+     // 2. 添加节点 node.appendChild(child)  node 父级  child 是子级 后面追加元素
+     var ul = document.querySelector('ul');
+     ul.appendChild(li);
+     // 3. 添加节点 node.insertBefore(child, 指定元素);
+     var lili = document.createElement('li');
+     ul.insertBefore(lili, ul.children[0]);
+     // 4. 我们想要页面添加一个新的元素 ： 1. 创建元素 2. 添加元素
+ </script></li>
+</ol>
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/09/13/js-node/>https://blog.wangyouwu.cn/2021/09/13/js-node/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-13T22:41:23+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年9月13日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>JavaScript</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/09/13/js-node/&title=WebApiⅡ：自定义属性、节点 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/09/13/js-node/&title=WebApiⅡ：自定义属性、节点 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/09/13/js-node/&title=WebApiⅡ：自定义属性、节点 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2021/09/05/read-renzhi/'>
+          <p class='title'>《认知觉醒》：真正的成长不是懂得多少道理，而是做出多少改变<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+年轻的时候，人人都自命不凡，认定美好生活会自然到来。后来他们不得不敲碎那颗高傲的心，在无奈和叹息中接受平庸的自己。
+
+杨绛说：“你的问题在于想得太多，读书太少”。学而不思则罔，思而不学则怠，学...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -520,11 +757,26 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-text">自定义属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">获取属性值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">设置属性值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E5%B1%9E%E6%80%A7"><span class="toc-text">移除属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#h5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-text">h5自定义属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%82%E7%82%B9"><span class="toc-text">节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%B6%E7%BA%A7%E8%8A%82%E7%82%B9"><span class="toc-text">父级节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E8%8A%82%E7%82%B9"><span class="toc-text">子节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9"><span class="toc-text">创建&#x2F;添加节点</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
   
 
 
 </aside>
+
 
 
 		  
@@ -533,8 +785,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="WebApiⅡ：自定义属性、节点";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
