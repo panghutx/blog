@@ -22,7 +22,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>WebApiⅡ：自定义属性、节点 - 胖虎同学|生活学习类个人博客</title>
+  <title>WebApiⅢ：事件、事件对象 - 胖虎同学|生活学习类个人博客</title>
   
     <meta name="keywords" content="JavaScript">
   
@@ -485,7 +485,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title">
-        WebApiⅡ：自定义属性、节点
+        WebApiⅢ：事件、事件对象
       </h1>
       <div class='new-meta-box'>
         
@@ -516,7 +516,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2021年9月13日</p>
+    <p>发布于：2021年9月16日</p>
   </a>
 </div>
 
@@ -527,7 +527,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="WebApiⅡ：自定义属性、节点" data-path="/2021/09/13/js-node/">
+      <div id="lc-pv" data-title="WebApiⅢ：事件、事件对象" data-path="/2021/09/16/js-shijian/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -545,95 +545,141 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   
   
-  <h2 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h2><h3 id="获取属性值"><a href="#获取属性值" class="headerlink" title="获取属性值"></a>获取属性值</h3><ul>
-<li><p>element.属性 ：获取内置属性值</p>
-</li>
-<li><p>element.getAttribute(‘属性’) ：获取自定义属性值</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">&quot;demo&quot;</span> index=<span class="string">&quot;1&quot;</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;nav&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 1. 获取元素的属性值</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// (1) element.属性</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.id);  <span class="comment">//demo</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">//(2) element.getAttribute(&#x27;属性&#x27;) </span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.getAttribute(<span class="string">&#x27;id&#x27;</span>)); <span class="comment">//demo</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.getAttribute(<span class="string">&#x27;index&#x27;</span>)); <span class="comment">//1</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="设置属性值"><a href="#设置属性值" class="headerlink" title="设置属性值"></a>设置属性值</h3><ul>
-<li>element.属性 = ‘属性值’</li>
-<li>element.setAttribute (‘属性’,’属性值’) ：设置自定义属性值</li>
-</ul>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// (1) element.属性= &#x27;值&#x27;</span></span><br><span class="line">  div.id = <span class="string">&#x27;test&#x27;</span>;</span><br><span class="line">  div.className = <span class="string">&#x27;navs&#x27;</span>;</span><br><span class="line"><span class="comment">// (2) element.setAttribute(&#x27;属性&#x27;, &#x27;值&#x27;);  主要针对于自定义属性</span></span><br><span class="line">  div.setAttribute(<span class="string">&#x27;index&#x27;</span>, <span class="number">2</span>);</span><br><span class="line">  div.setAttribute(<span class="string">&#x27;class&#x27;</span>, <span class="string">&#x27;footer&#x27;</span>); </span><br></pre></td></tr></table></figure>
-
-<h3 id="移除属性"><a href="#移除属性" class="headerlink" title="移除属性"></a>移除属性</h3><p><code>element.removeAttribute (&#39;属性&#39;)</code></p>
-<h3 id="h5自定义属性"><a href="#h5自定义属性" class="headerlink" title="h5自定义属性"></a>h5自定义属性</h3><p>自定义属性获取是通过getAttribute(‘属性’) 获取。</p>
-<p>但是有些自定义属性很容易引起歧义，不容易判断是元素的内置属性还是自定义属性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div getTime=<span class="string">&quot;20&quot;</span> data-index=<span class="string">&quot;2&quot;</span> data-list-name=<span class="string">&quot;andy&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// console.log(div.getTime);</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.getAttribute(<span class="string">&#x27;getTime&#x27;</span>));</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    div.setAttribute(<span class="string">&#x27;data-time&#x27;</span>, <span class="number">20</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.getAttribute(<span class="string">&#x27;data-index&#x27;</span>));</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.getAttribute(<span class="string">&#x27;data-list-name&#x27;</span>));</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// h5新增的获取自定义属性的方法 它只能获取data-开头的</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// dataset 是一个集合里面存放了所有以data开头的自定义属性</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.dataset);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.dataset.index);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.dataset[<span class="string">&#x27;index&#x27;</span>]);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 如果自定义属性里面有多个-链接的单词，我们获取的时候采取 驼峰命名法</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.dataset.listName);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(div.dataset[<span class="string">&#x27;listName&#x27;</span>]);</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<h2 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h2><p>网页中的所有内容都是节点（标签、属性、文本、注释等），在DOM 中，节点使用 node 来表示。</p>
-<p>一般地，节点至少拥有nodeType（节点类型）、nodeName（节点名称）和nodeValue（节点值）这三个基本属性。</p>
-<ul>
-<li><p>元素节点 nodeType 为1</p>
-</li>
-<li><p>属性节点 nodeType 为2</p>
-</li>
-<li><p>文本节点 nodeType 为3（文字、空格、换行）</p>
-<p><strong>实际开发中，节点操作主要操作元素节点</strong></p>
-</li>
-</ul>
-<h3 id="父级节点"><a href="#父级节点" class="headerlink" title="父级节点"></a>父级节点</h3><p><code>node.parentNode</code></p>
-<p>parentNode返回某节点的父节点（最近的），没有则返回null</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;demo&quot;</span>&gt;</span><br><span class="line">       <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;dad&quot;</span>&gt;</span></span></span><br><span class="line"><span class="xml">           <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span>&gt;</span>×<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="xml">       <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">   &lt;/div&gt;</span><br><span class="line">   <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">   <span class="built_in">console</span>.log(son.parentNode);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">   </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<h3 id="子节点"><a href="#子节点" class="headerlink" title="子节点"></a>子节点</h3><p><code>parentNode.chlidNodes</code>(标准)</p>
-<p>返回值包含所有子节点，包括元素、文本节点等，so一般不用childNodes</p>
-<p><code>parentNode.children</code>(非标准)</p>
-<p>返回值只有元素字节，so提倡用children</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>胖虎同学<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>panghutx<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>www.wangyouwu.cn<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>blog.wangyouwu.cn<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// DOM 提供的方法（API）获取</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;ul&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> lis = ul.querySelectorAll(<span class="string">&#x27;li&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 1. 子节点  childNodes 所有的子节点 包含 元素节点 文本节点等等</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(ul.childNodes);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(ul.childNodes[<span class="number">0</span>].nodeType); <span class="comment">//3</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(ul.childNodes[<span class="number">1</span>].nodeType); <span class="comment">//1</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 2. children 获取所有的子元素节点 也是我们实际开发常用的</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="built_in">console</span>.log(ul.children); </span></span></span><br><span class="line"><span class="javascript"><span class="xml">	<span class="built_in">console</span>.log(ul.children[<span class="number">0</span>]); <span class="comment">//第一个li</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">	<span class="built_in">console</span>.log(ul.children[ul.children.length - <span class="number">1</span>]);<span class="comment">//最后一个li</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<h3 id="创建-添加节点"><a href="#创建-添加节点" class="headerlink" title="创建/添加节点"></a>创建/添加节点</h3><ol>
-<li><p>创建节点</p>
-<p><code>document.creatElement(&#39;tagName&#39;)</code></p>
-</li>
-<li><p>添加节点</p>
-<p><code>node.appendChild(child)</code>   将节点添加到父节点的子节点列表末尾</p>
-<p><code>node.inserBefore(child,指定元素)</code>   将节点添加到父节点的子节点列表开头</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>胖虎同学<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 1. 创建节点元素节点</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> li = <span class="built_in">document</span>.createElement(<span class="string">&#x27;li&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 2. 添加节点 node.appendChild(child)  node 父级  child 是子级 后面追加元素</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;ul&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    ul.appendChild(li);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 3. 添加节点 node.insertBefore(child, 指定元素);</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> lili = <span class="built_in">document</span>.createElement(<span class="string">&#x27;li&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    ul.insertBefore(lili, ul.children[<span class="number">0</span>]);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 4. 我们想要页面添加一个新的元素 ： 1. 创建元素 2. 添加元素</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li>
+  <h3 id="注册事件"><a href="#注册事件" class="headerlink" title="注册事件"></a>注册事件</h3><ol>
+<li>传统方式   <code>btn.onclick = function() &#123;&#125;</code></li>
 </ol>
-<h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p><code>node.removeChild()</code></p>
-<p>从node节点中删除子节点，返回的是删除节点</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;button&gt;删除&lt;/button&gt;</span><br><span class="line"> <span class="xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="xml">     <span class="tag">&lt;<span class="name">li</span>&gt;</span>胖虎<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="xml">     <span class="tag">&lt;<span class="name">li</span>&gt;</span>胖虎同学<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="xml">     <span class="tag">&lt;<span class="name">li</span>&gt;</span>胖虎同学的博客<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="xml"> <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"> <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="comment">// 1.获取元素</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;ul&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;button&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="comment">// 2. 删除元素  node.removeChild(child)</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="comment">// ul.removeChild(ul.children[0]);</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="comment">// 3. 点击按钮依次删除里面的孩子</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         <span class="keyword">if</span> (ul.children.length == <span class="number">0</span>) &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">             <span class="built_in">this</span>.disabled = <span class="literal">true</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         &#125; <span class="keyword">else</span> &#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">             ul.removeChild(ul.children[<span class="number">0</span>]);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>传统事件注册具有<strong>唯一性</strong>：同一个元素同一个事件只能设置一个处理函数，最后注册的处理函数将会覆盖前面注册的处理函数</p>
+<ol start="2">
+<li>方法监听注册方式</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eventTarget.addEventListener(type,listener[,useCapture])</span><br></pre></td></tr></table></figure>
 
-<h3 id="克隆节点"><a href="#克隆节点" class="headerlink" title="克隆节点"></a>克隆节点</h3><p><code>node.cloneNode()</code></p>
-<ul>
-<li>如果括号参数为空或false，则为浅拷贝，只克隆节点本身，不克隆里面的子节点</li>
-<li>括号参数为true，则为深拷贝，会克隆字节本身以及里面所有子节点</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;ul&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 1. node.cloneNode(); 括号为空或者里面是false 浅拷贝 只复制标签不复制里面的内容</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 2. node.cloneNode(true); 括号为true 深拷贝 复制标签复制里面的内容</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> lili = ul.children[<span class="number">0</span>].cloneNode(<span class="literal">true</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    ul.appendChild(lili);</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>type：事件类型字符串，比如 click、mouseover。这里不需要加on<br>listener：事件处理函数，事件发生时，会调用该监听函数<br>useCapture：可选参数，是一个布尔值，默认是false。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button&gt;</span><br><span class="line">        传统注册事件</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">    &lt;button&gt;</span><br><span class="line">        事件监听注册事件</span><br><span class="line">    &lt;/button&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">    	var btns = document.querySelectorAll(&#x27;button&#x27;);</span><br><span class="line">        //传统注册事件</span><br><span class="line">        btns[0].onclick = function()&#123;</span><br><span class="line">            alert(&#x27;hi&#x27;);</span><br><span class="line">        &#125;</span><br><span class="line">        btns[0].onclick = function()&#123;</span><br><span class="line">            alert(&#x27;传统注册事件&#x27;);</span><br><span class="line">        &#125;</span><br><span class="line">        //运行程序，点击传统注册事件按钮，弹出提示框：传统注册事件。第一个hi提示框被覆盖，不会弹出。</span><br><span class="line">        </span><br><span class="line">        //事件侦听注册事件</span><br><span class="line">        btns[1].addEventListener(&#x27;click&#x27;,function()&#123;</span><br><span class="line">            alert(&#x27;事件监听注册事件&#x27;);</span><br><span class="line">        &#125;)</span><br><span class="line">        btns[1].addEventListener(&#x27;click&#x27;,function()&#123;</span><br><span class="line">            alert(&#x27;事件监听注册事件2&#x27;);</span><br><span class="line">        &#125;)</span><br><span class="line">        //运行程序，点击事件监听注册事件按钮，弹出提示框：事件监听注册事件，点击确定后，再次弹出“事件监听注册事件2”的提示框</span><br><span class="line">        //在事件侦听注册事件的方法中事件类型要加引号并且没有on</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="DOM重点总结"><a href="#DOM重点总结" class="headerlink" title="DOM重点总结"></a>DOM重点总结</h2><p>文档对象模型（Document Object Model），处理可拓展标记语言的编程接口，可以改变网页内容、结构、样式。</p>
-<p>关于DOM操作，主要针对元素操作，主要有创建、增删改查、属性操作、实践操作。</p>
-<ul>
-<li>创建：</li>
-</ul>
-<p><code>document.write</code> <code>innerHTML</code> <code>creatElement</code></p>
-<ul>
-<li>增加</li>
-</ul>
-<p><code>appendChild</code> <code>insertBefore</code></p>
-<ul>
-<li>删除</li>
-</ul>
-<p><code>removeChild</code></p>
-<ul>
-<li>改</li>
-</ul>
-<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210914151227.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210914151227.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="1551164907830"></p>
-<ul>
-<li>查</li>
-</ul>
-<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210914151205.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210914151205.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="1551164936214"></p>
-<ul>
-<li>属性操作</li>
-</ul>
-<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210914151306.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210914151306.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="1551164985383"></p>
-<ul>
-<li>事件操作</li>
-</ul>
-<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210914151350.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210914151350.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="1551172699854"></p>
+<h3 id="删除事件"><a href="#删除事件" class="headerlink" title="删除事件"></a>删除事件</h3><ol>
+<li><p>传统方式 <code>eventTarget.onclick = null;</code></p>
+</li>
+<li><p>方法监听注册方式</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eventTarget.removeEventListener(type,listener[,useCapture])</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;<span class="number">1</span>&lt;/div&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> divs = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;div&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    divs[<span class="number">0</span>].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        alert(<span class="number">11</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        <span class="comment">// 1. 传统方式删除事件</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">        divs[<span class="number">0</span>].onclick = <span class="literal">null</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 2. removeEventListener 删除事件</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    divs[<span class="number">1</span>].addEventListener(<span class="string">&#x27;click&#x27;</span>, fn) <span class="comment">// 里面的fn 不需要调用加小括号</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        alert(<span class="number">22</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        divs[<span class="number">1</span>].removeEventListener(<span class="string">&#x27;click&#x27;</span>, fn);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
+<h3 id="DOM事件流"><a href="#DOM事件流" class="headerlink" title="DOM事件流"></a>DOM事件流</h3><p>事件流描述的是从页面接受事件的顺序，这个传播顺序就是DOM事件流。</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210915214418.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210915214418.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="1551166555833"></p>
+<p>DOM事件流会历经 捕获阶段、当前目标阶段、冒泡阶段 这三个阶段</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210915214530.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210915214530.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="1551169007768"></p>
+<ul>
+<li>js代码只能执行捕获或冒泡其中的一个阶段</li>
+<li>onclick、attachEvent只有冒泡阶段</li>
+<li>addEventListener(type,listener,<strong>true</strong>)表示在<strong>事件捕获阶段</strong>调用事件处理程序，如果第三个参数是<strong>false</strong>表示在<strong>事件冒泡阶段</strong>调用事件处理程序。</li>
+</ul>
+<h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><pre><code>&lt;div class=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;son盒子&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    // onclick 和 attachEvent（ie） 在冒泡阶段触发
+    // 冒泡阶段 如果addEventListener 第三个参数是 false 或者 省略 
+    // son -&gt; father -&gt;body -&gt; html -&gt; document
+    var son = document.querySelector(&#39;.son&#39;);
+    // 给son注册单击事件
+    son.addEventListener(&#39;click&#39;, function() &#123;
+        alert(&#39;son&#39;);
+    &#125;, false);
+    // 给father注册单击事件
+    var father = document.querySelector(&#39;.father&#39;);
+    father.addEventListener(&#39;click&#39;, function() &#123;
+        alert(&#39;father&#39;);
+    &#125;, false);
+    // 给document注册单击事件，省略第3个参数
+    document.addEventListener(&#39;click&#39;, function() &#123;
+        alert(&#39;document&#39;);
+    &#125;)
+&lt;/script&gt;
+</code></pre>
+<h4 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h4><pre><code>&lt;div class=&quot;father&quot;&gt;
+    &lt;div class=&quot;son&quot;&gt;son盒子&lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    // 如果addEventListener() 第三个参数是 true 那么在捕获阶段触发
+    // document -&gt; html -&gt; body -&gt; father -&gt; son
+     var son = document.querySelector(&#39;.son&#39;);
+    // 给son注册单击事件，第3个参数为true
+     son.addEventListener(&#39;click&#39;, function() &#123;
+         alert(&#39;son&#39;);
+     &#125;, true);
+     var father = document.querySelector(&#39;.father&#39;);
+    // 给father注册单击事件，第3个参数为true
+     father.addEventListener(&#39;click&#39;, function() &#123;
+         alert(&#39;father&#39;);
+     &#125;, true);
+    // 给document注册单击事件，第3个参数为true
+    document.addEventListener(&#39;click&#39;, function() &#123;
+        alert(&#39;document&#39;);
+    &#125;, true)
+&lt;/script&gt;
+</code></pre>
+<h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p>事件发生后，跟事件相关的一系列信息数据的集合都放到这个对象里面，这个对象就是事件对象。</p>
+<p>比如：  </p>
+<ol>
+<li><p>谁绑定了这个事件。</p>
+</li>
+<li><p>鼠标触发事件的话，会得到鼠标的相关信息，如鼠标位置。</p>
+</li>
+<li><p>键盘触发事件的话，会得到键盘的相关信息，如按了哪个键。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;<span class="number">123</span>&lt;/div&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;div&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    div.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">            <span class="comment">// 事件对象 可以写成e、evt、event</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">            e = e || <span class="built_in">window</span>.event; <span class="comment">//兼容性写法 </span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">            <span class="built_in">console</span>.log(e);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    &#125;</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="事件对象的属性和方法"><a href="#事件对象的属性和方法" class="headerlink" title="事件对象的属性和方法"></a>事件对象的属性和方法</h4></li>
+</ol>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210915221631.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210915221631.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="1551169931778"></p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;abc&lt;/li&gt;
+    &lt;li&gt;abc&lt;/li&gt;
+    &lt;li&gt;abc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+    var ul = document.querySelector(&#39;ul&#39;);
+    ul.addEventListener(&#39;click&#39;, function(e) &#123;
+          // 我们给ul 绑定了事件  那么this 就指向ul  
+          console.log(this); // ul
+
+          // e.target 触发了事件的对象 我们点击的是li e.target 指向的就是li
+          console.log(e.target); // li
+    &#125;);
+&lt;/script&gt;
+</code></pre>
+<h4 id="阻止默认行为"><a href="#阻止默认行为" class="headerlink" title="阻止默认行为"></a>阻止默认行为</h4><p>html中一些标签有默认行为，例如a标签被单击后，默认会进行页面跳转。</p>
+<pre><code>&lt;a href=&quot;https://blog.wangyouwu.cn&quot;&gt;胖虎同学&lt;/a&gt;
+&lt;script&gt;
+    // 2. 阻止默认行为 让链接不跳转 
+    var a = document.querySelector(&#39;a&#39;);
+    a.addEventListener(&#39;click&#39;, function(e) &#123;
+         e.preventDefault(); //  dom 标准写法
+    &#125;);
+    // 3. 传统的注册方式
+    a.onclick = function(e) &#123;
+        // 普通浏览器 e.preventDefault();  方法
+        e.preventDefault();
+        // 低版本浏览器 ie678  returnValue  属性
+        e.returnValue = false;
+        // 我们可以利用return false 也能阻止默认行为 没有兼容性问题
+        return false;
+    &#125;
+&lt;/script&gt;
+</code></pre>
+<h4 id="阻止事件冒泡"><a href="#阻止事件冒泡" class="headerlink" title="阻止事件冒泡"></a>阻止事件冒泡</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;father&quot;</span>&gt;</span><br><span class="line">     <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span>&gt;</span>son儿子<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> <span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="keyword">var</span> son = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.son&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> 	<span class="comment">// 给son注册单击事件</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     son.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         alert(<span class="string">&#x27;son&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         e.stopPropagation(); <span class="comment">// stop 停止  Propagation 传播</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">         <span class="built_in">window</span>.event.cancelBubble = <span class="literal">true</span>; <span class="comment">// 非标准 cancel 取消 bubble 泡泡</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     &#125;, <span class="literal">false</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> </span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="keyword">var</span> father = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.father&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> 	<span class="comment">// 给father注册单击事件</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     father.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         alert(<span class="string">&#x27;father&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     &#125;, <span class="literal">false</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> 	<span class="comment">// 给document注册单击事件</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">     <span class="built_in">document</span>.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">         alert(<span class="string">&#x27;document&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">     &#125;)</span></span></span><br><span class="line"><span class="javascript"><span class="xml"> </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><p>事件委托也称为事件代理，在 jQuery 里面称为事件委派。</p>
+<p>给父元素注册事件，利用事件冒泡，当子元素的事件触发，会冒泡到父元素，然后去控制相应的子元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>点我一下试试<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>点我一下试试<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>点我一下试试<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>点我一下试试<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span>点我一下试试<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="comment">// 事件委托的核心原理：给父节点添加侦听器， 利用事件冒泡影响每一个子节点</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">    <span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;ul&#x27;</span>);</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    ul.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">        <span class="comment">// e.target 这个可以得到我们点击的对象</span></span></span></span><br><span class="line"><span class="javascript"><span class="xml">        e.target.style.backgroundColor = <span class="string">&#x27;pink&#x27;</span>;</span></span></span><br><span class="line"><span class="javascript"><span class="xml">    &#125;)</span></span></span><br><span class="line"><span class="javascript"><span class="xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用鼠标事件"><a href="#常用鼠标事件" class="headerlink" title="常用鼠标事件"></a>常用鼠标事件</h3><p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210916165625.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210916165625.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="1551172699854"></p>
+<p>禁止鼠标右键 <code>contextmenu</code></p>
+<p>禁止鼠标选中 <code>selectstar</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    休想复制我</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="comment">// 1. contextmenu 禁用右键菜单</span></span><br><span class="line">        <span class="built_in">document</span>.addEventListener(<span class="string">&#x27;contextmenu&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">                e.preventDefault();</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="comment">// 2. selectstart 禁止选中文字 </span></span><br><span class="line">        <span class="built_in">document</span>.addEventListener(<span class="string">&#x27;selectstart&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            e.preventDefault();</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="鼠标事件对象"><a href="#鼠标事件对象" class="headerlink" title="鼠标事件对象"></a>鼠标事件对象</h4><p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20210916165853.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20210916165853.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">        <span class="comment">// 鼠标事件对象 MouseEvent</span></span><br><span class="line">        <span class="built_in">document</span>.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            <span class="comment">// 1. client 鼠标在可视区的x和y坐标</span></span><br><span class="line">            <span class="built_in">console</span>.log(e.clientX);</span><br><span class="line">            <span class="built_in">console</span>.log(e.clientY);</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&#x27;---------------------&#x27;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 2. page 鼠标在页面文档的x和y坐标</span></span><br><span class="line">            <span class="built_in">console</span>.log(e.pageX);</span><br><span class="line">            <span class="built_in">console</span>.log(e.pageY);</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&#x27;---------------------&#x27;</span>);</span><br><span class="line">    </span><br><span class="line">            <span class="comment">// 3. screen 鼠标在电脑屏幕的x和y坐标</span></span><br><span class="line">            <span class="built_in">console</span>.log(e.screenX);</span><br><span class="line">            <span class="built_in">console</span>.log(e.screenY);</span><br><span class="line">    </span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br></pre></td></tr></table></figure>
   
   
     
@@ -650,7 +696,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               
-                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/09/13/js-node/>https://blog.wangyouwu.cn/2021/09/13/js-node/</a></p>
+                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/09/16/js-shijian/>https://blog.wangyouwu.cn/2021/09/16/js-shijian/</a></p>
               
             
           </blockquote>
@@ -667,7 +713,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-16T17:05:23+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-09-16T17:09:34+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2021年9月16日</p>
@@ -692,7 +738,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/09/13/js-node/&title=WebApiⅡ：自定义属性、节点 - 胖虎同学|生活学习类个人博客&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/09/16/js-shijian/&title=WebApiⅢ：事件、事件对象 - 胖虎同学|生活学习类个人博客&summary="
           
           >
           
@@ -704,7 +750,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/09/13/js-node/&title=WebApiⅡ：自定义属性、节点 - 胖虎同学|生活学习类个人博客&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/09/16/js-shijian/&title=WebApiⅢ：事件、事件对象 - 胖虎同学|生活学习类个人博客&summary="
           
           >
           
@@ -716,7 +762,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/09/13/js-node/&title=WebApiⅡ：自定义属性、节点 - 胖虎同学|生活学习类个人博客&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/09/16/js-shijian/&title=WebApiⅢ：事件、事件对象 - 胖虎同学|生活学习类个人博客&summary="
           
           >
           
@@ -746,21 +792,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/09/16/js-shijian/'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>WebApiⅢ：事件、事件对象</p>
-          <p class='content'>注册事件
-传统方式   btn.onclick = function() &#123;&#125;
-
-传统事件注册具有唯一性：同一个元素同一个事件只能设置一个处理函数，最后注册的处理函数将会覆盖...</p>
-        </a>
       
-      
-        <a class='next' href='/2021/09/05/read-renzhi/'>
-          <p class='title'>《认知觉醒》：真正的成长不是懂得多少道理，而是做出多少改变<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>
-年轻的时候，人人都自命不凡，认定美好生活会自然到来。后来他们不得不敲碎那颗高傲的心，在无奈和叹息中接受平庸的自己。
+        <a class='next' href='/2021/09/13/js-node/'>
+          <p class='title'>WebApiⅡ：自定义属性、节点<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>自定义属性获取属性值
+element.属性 ：获取内置属性值
 
-杨绛说：“你的问题在于想得太多，读书太少”。学而不思则罔，思而不学则怠，学...</p>
+element.getAttribute(‘属性’) ：获取自定义属性值
+12345678910&lt;div id=&quot;...</p>
         </a>
       
     </div>
@@ -803,7 +842,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-text">自定义属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">获取属性值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-text">设置属性值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E9%99%A4%E5%B1%9E%E6%80%A7"><span class="toc-text">移除属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#h5%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-text">h5自定义属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%82%E7%82%B9"><span class="toc-text">节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%88%B6%E7%BA%A7%E8%8A%82%E7%82%B9"><span class="toc-text">父级节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%90%E8%8A%82%E7%82%B9"><span class="toc-text">子节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9"><span class="toc-text">创建&#x2F;添加节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="toc-text">删除节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E8%8A%82%E7%82%B9"><span class="toc-text">克隆节点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM%E9%87%8D%E7%82%B9%E6%80%BB%E7%BB%93"><span class="toc-text">DOM重点总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6"><span class="toc-text">注册事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%BA%8B%E4%BB%B6"><span class="toc-text">删除事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM%E4%BA%8B%E4%BB%B6%E6%B5%81"><span class="toc-text">DOM事件流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1"><span class="toc-text">事件冒泡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E6%8D%95%E8%8E%B7"><span class="toc-text">事件捕获</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-text">事件对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-text">事件对象的属性和方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%BB%E6%AD%A2%E9%BB%98%E8%AE%A4%E8%A1%8C%E4%B8%BA"><span class="toc-text">阻止默认行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%BB%E6%AD%A2%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1"><span class="toc-text">阻止事件冒泡</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="toc-text">事件委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6"><span class="toc-text">常用鼠标事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-text">鼠标事件对象</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -822,7 +861,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <script>
   window.pdata={}
   pdata.ispage=true;
-  pdata.postTitle="WebApiⅡ：自定义属性、节点";
+  pdata.postTitle="WebApiⅢ：事件、事件对象";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
