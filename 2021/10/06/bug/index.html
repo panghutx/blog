@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -26,7 +22,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>胖虎同学|生活学习类个人博客</title>
+  <title>敲代码时的各种错误 - 胖虎同学|生活学习类个人博客</title>
   
 
   
@@ -413,7 +409,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="full" class='cover-wrapper  dock' style="display: none;">
+        <div id="full" class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg"></div>
           
@@ -477,547 +473,220 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  <section class="post-list">
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2021/04/10/background/">
-        css背景
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        通过CSS 背景属性，可以给页面元素添加背景样式。背景属性可以设置背景颜色、背景图片、背景平铺、背景图片位置、背景图像固定等。
-123456background-color: 颜色值;    /*背景颜色*/background-image: url();    /*背景图片*/background-repeat: repeat |no-repeat |repeat-x |repeat-y ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      <h1 class="title">
+        敲代码时的各种错误
+      </h1>
+      <div class='new-meta-box'>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg">
+    <p>胖虎</p>
+  </a>
+</div>
+
+          
         
-        <time>2021-04-10</time>
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </a>
+  </div>
+
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年10月6日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="敲代码时的各种错误" data-path="/2021/10/06/bug/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <p>一看全会，一敲全废。看书、看视频，要么长时间不看，要么一次看很多，没有规划，也没有思考、实践，始终停留在浅层的学习，停留在自己的舒适区，急于求成、避难趋易。看书、看视频时自我感觉良好，一到自己敲代码就各种报错。每次找错误都浪费好长时间，甚至错过之后下次还会再错，缺少总结、思考。从此刻开始，记录错误，反思总结。</p>
+<h3 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h3><p>创建节点元素时，出现这样的报错信息：<code>Uncaught TypeError: document.creatElement is not a function</code>，找了半天也没找到错误，最后百度发现有人和我犯了一样的错误，将createElement写成了creatElement。</p>
+<p>错误代码：var para = document.creatElement(“p”);</p>
+<p>正确代码：var para = document.creat<strong>e</strong>Element(“p”);</p>
+<h3 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h3><p>追加元素时，出现<code>Uncaught TypeError: document.getElementsByTagName(...).appendChild is not a function</code>，发现问题在于获取元素时出错。body元素不用通过document.getElementsByTagName()方法获得。</p>
+<p>错误代码：document.getElementsByTagName(‘body’).appendChild(placeholder);</p>
+<p>正确代码：document.getElementsByTagName(‘body’).appendChild(placeholder)[0];</p>
+<p>或者使用HTML-DOM获取body属性，document.body</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/04/10/background/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/10/06/bug/>https://blog.wangyouwu.cn/2021/10/06/bug/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-06T16:49:05+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年10月6日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/09/display/">
-        元素显示模式及转换
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        元素显示模式就是元素（标签）以什么方式进行显示。比如&lt;div&gt;自己占一行，比如一行可以放多个&lt;span&gt;。HTML元素一般分为块元素和行内元素两种类型
-块元素常见的块元素有&lt;h1&gt;~&lt;h6&gt;、&lt;p&gt;、&lt;div&gt;、&lt;ul&gt;、&lt;ol&gt;、&lt;li&gt;等，其中&lt;div&gt;标签是最典型的块...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/10/06/bug/&title=敲代码时的各种错误 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/10/06/bug/&title=敲代码时的各种错误 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/10/06/bug/&title=敲代码时的各种错误 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-04-09</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/09/display/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/08/css-hover/">
-        css伪类选择器
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        伪类选择器用于向某些选择器添加特殊的效果，伪类选择器有链接伪类、结构伪类等。
-链接伪类1234a: link   /*未访问的链接*/a: visited    /*已访问的链接*/a: hover    /*鼠标悬停的链接*/a: active    /*已选择的链接*/
 
-1234567891011121314151617181920212223242526272829303132333...
+
+        
       
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-04-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2021/04/08/css-hover/'>
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/2021/09/26/good-news/'>
+          <p class='title'>开学月记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>开学近一个月了，从大一到现在，学校一直在封校，现在每周做一次核酸检测。高三受疫情影响，上了挺长时间网课，高考还延期了一个月；上大学受疫情影响，几次开学均延期了，开学后也一直在封校。
+如愿以偿最近...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/07/emmet/">
-        emmet语法
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Emmet语法的前身是Zen coding,它使用缩写,来提高html/css的编写速度, Vscode内部已经集成该语法。
-快速生成HTML结构语法标签div 然后tab 键
-1&lt;div&gt;&lt;/div&gt;
+  </article>
 
-多个相同标签div*3
-123&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&g...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-04-07</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/07/emmet/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/06/html-form/">
-        html表单元素
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        HTML 表单用于搜集不同类型的用户输入。
-input元素&lt;input type=&quot; &quot;&gt;
-radio 单选按钮text 单行文本输入submit 提交按钮checkbox 多选按钮password 定义密码字段
-select元素下拉列表， option 元素定义待选择的选项,selected 属性定义预定义选项。
-12345&lt;select name=&...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-04-06</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/06/html-form/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
 
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/02/css/">
-        css基础选择器和组合选择器
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>CSS 选择器用于“查找”（或选取）要设置样式的 HTML 元素。css选择器分为简单选择器（根据名称、id、类来选取元素）、组合器选择器（根据它们之间的特定关系来选取元素）、伪类选择器（根据特定状态选取元素）、伪元素选择器（选取元素的一部分并设置其样式）、属性选择器（根据属性或属性值来选取元素）</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-04-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/02/css/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/04/02/luoxiang/">
-        罗翔老师打动人心的句子
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        一直很喜欢张三（不是），张三的塑造者，罗翔老师，罗翔老师风趣幽默又严肃谦逊，不卖弄学识，不好为人师，学识渊博却无时不在强调自己的无知。
-在罗祥老师身上总能看到两代人：年轻一代的理想与正义，老去一代慈祥与释怀。引用B站的一个评论：
-
-听罗老师的课，总能感受到一种年少才有的那种激进正义感，和年长了才会有的那种温暖的慈悲
-
-下面是转自B站的视频，与君共勉。
-
-所有的天资聪颖都需要艰苦的训练。
-我们...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-04-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%88%86%E4%BA%AB/">分享</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/04/02/luoxiang/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/03/31/html/">
-        HTML速查手册
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>HTML 是超文本标记语言 (Hyper Text Markup Language)，标记语言是一套标记标签 (markup tag)，HTML 使用标记标签来描述网页。本篇是HTML速查手册，主要列举的是HTML一些常用的标签。</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-03-31</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/03/31/html/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/03/29/yaml/">
-        yaml基础语法
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        yaml简介YAML 是 “YAML Ain’t a Markup Language”（YAML 不是一种标记语言）的递归缩写。在开发的这种语言时，YAML 的意思其实是：”Yet Another Markup Language”（仍是一种标记语言）。yaml是能够被电脑识别的数据序列化格式。
-基本语法
-大小写敏感
-使用缩进表示层级关系
-缩进禁止用Tab，只允许用空格
-空格数不重要，只要相同...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-03-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/03/29/yaml/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/03/29/go-school/">
-        新学期，新博客，新开始！
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        前言新学期要开始了，把旧站关了，建个新站。本站用Hexo搭建，部署在github和vercel。
-改用Hexo缘起幼稚园园长的博客，陷进去了（沈腾语气）。搭建博客出了些问题，感谢小茗同学的教程和小T同学的帮助。
-博客内容博客主要记录我的学习笔记、日常生活和想要分享的内容。
-一直对编程感兴趣，尤其是前端。我想学的是计算机相关专业，憧憬的职业是程序员👨‍💻，无奈被调剂到了应用物理学。没关系，...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
-        
-        <time>2021-03-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/03/29/go-school/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/page/4/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          5 / 5
-        </p>
-        
-      </div>
-    
-  
 
 
 </div>
@@ -1027,238 +696,22 @@ select元素下拉列表， option 元素定义待选择的选项,selected 属�
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">胖虎同学|生活学习类个人博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:2367897284@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/panghutx/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop mobile">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%88%86%E4%BA%AB/" href="/categories/%E5%88%86%E4%BA%AB/"
-            id="categoriesE58886E4BAAB"
-            ><div class='name'>分享</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE5ADA6E4B9A0"
-            ><div class='name'>学习</div><div class='badge'>(36)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E5%B8%B8/" href="/categories/%E6%97%A5%E5%B8%B8/"
-            id="categoriesE697A5E5B8B8"
-            ><div class='name'>日常</div><div class='badge'>(11)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF1"><span class="toc-text">错误1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%94%99%E8%AF%AF2"><span class="toc-text">错误2</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/JavaScript/" style="font-size: 22px; color: #636363">JavaScript</a> <a href="/tags/c/" style="font-size: 16px; color: #8b8b8b">c</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/html/" style="font-size: 16px; color: #8b8b8b">html</a> <a href="/tags/linux/" style="font-size: 20px; color: #707070">linux</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 16px; color: #8b8b8b">英语</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 18px; color: #7e7e7e">阅读</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目</div>
-          <div>50 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2020/03/28'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Wed Oct 06 2021 16:55:39 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-10-06 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-10-06 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
 
   
 
@@ -1273,8 +726,8 @@ select元素下拉列表， option 元素定义待选择的选项,selected 属�
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="敲代码时的各种错误";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要

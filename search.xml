@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>敲代码时的各种错误</title>
+      <link href="/2021/10/06/bug/"/>
+      <url>/2021/10/06/bug/</url>
+      
+        <content type="html"><![CDATA[<p>一看全会，一敲全废。看书、看视频，要么长时间不看，要么一次看很多，没有规划，也没有思考、实践，始终停留在浅层的学习，停留在自己的舒适区，急于求成、避难趋易。看书、看视频时自我感觉良好，一到自己敲代码就各种报错。每次找错误都浪费好长时间，甚至错过之后下次还会再错，缺少总结、思考。从此刻开始，记录错误，反思总结。</p><h3 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h3><p>创建节点元素时，出现这样的报错信息：<code>Uncaught TypeError: document.creatElement is not a function</code>，找了半天也没找到错误，最后百度发现有人和我犯了一样的错误，将createElement写成了creatElement。</p><p>错误代码：var para = document.creatElement(“p”);</p><p>正确代码：var para = document.creat<strong>e</strong>Element(“p”);</p><h3 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h3><p>追加元素时，出现<code>Uncaught TypeError: document.getElementsByTagName(...).appendChild is not a function</code>，发现问题在于获取元素时出错。body元素不用通过document.getElementsByTagName()方法获得。</p><p>错误代码：document.getElementsByTagName(‘body’).appendChild(placeholder);</p><p>正确代码：document.getElementsByTagName(‘body’).appendChild(placeholder)[0];</p><p>或者使用HTML-DOM获取body属性，document.body</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>开学月记</title>
       <link href="/2021/09/26/good-news/"/>
       <url>/2021/09/26/good-news/</url>

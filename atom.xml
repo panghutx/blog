@@ -6,7 +6,7 @@
   <link href="https://blog.wangyouwu.cn/atom.xml" rel="self"/>
   
   <link href="https://blog.wangyouwu.cn/"/>
-  <updated>2021-10-03T05:50:06.866Z</updated>
+  <updated>2021-10-06T08:49:05.715Z</updated>
   <id>https://blog.wangyouwu.cn/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>敲代码时的各种错误</title>
+    <link href="https://blog.wangyouwu.cn/2021/10/06/bug/"/>
+    <id>https://blog.wangyouwu.cn/2021/10/06/bug/</id>
+    <published>2021-10-06T08:31:01.000Z</published>
+    <updated>2021-10-06T08:49:05.715Z</updated>
+    
+    <content type="html"><![CDATA[<p>一看全会，一敲全废。看书、看视频，要么长时间不看，要么一次看很多，没有规划，也没有思考、实践，始终停留在浅层的学习，停留在自己的舒适区，急于求成、避难趋易。看书、看视频时自我感觉良好，一到自己敲代码就各种报错。每次找错误都浪费好长时间，甚至错过之后下次还会再错，缺少总结、思考。从此刻开始，记录错误，反思总结。</p><h3 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h3><p>创建节点元素时，出现这样的报错信息：<code>Uncaught TypeError: document.creatElement is not a function</code>，找了半天也没找到错误，最后百度发现有人和我犯了一样的错误，将createElement写成了creatElement。</p><p>错误代码：var para = document.creatElement(“p”);</p><p>正确代码：var para = document.creat<strong>e</strong>Element(“p”);</p><h3 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h3><p>追加元素时，出现<code>Uncaught TypeError: document.getElementsByTagName(...).appendChild is not a function</code>，发现问题在于获取元素时出错。body元素不用通过document.getElementsByTagName()方法获得。</p><p>错误代码：document.getElementsByTagName(‘body’).appendChild(placeholder);</p><p>正确代码：document.getElementsByTagName(‘body’).appendChild(placeholder)[0];</p><p>或者使用HTML-DOM获取body属性，document.body</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;一看全会，一敲全废。看书、看视频，要么长时间不看，要么一次看很多，没有规划，也没有思考、实践，始终停留在浅层的学习，停留在自己的舒适区，急于求成、避难趋易。看书、看视频时自我感觉良好，一到自己敲代码就各种报错。每次找错误都浪费好长时间，甚至错过之后下次还会再错，缺少总结、思</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>开学月记</title>
@@ -491,32 +513,6 @@
     
     
     <category term="英语" scheme="https://blog.wangyouwu.cn/tags/%E8%8B%B1%E8%AF%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>移动web开发——flex布局</title>
-    <link href="https://blog.wangyouwu.cn/2021/07/26/flex/"/>
-    <id>https://blog.wangyouwu.cn/2021/07/26/flex/</id>
-    <published>2021-07-26T10:25:01.000Z</published>
-    <updated>2021-07-26T10:44:47.549Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>flex 是 flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性，任何一个容器都可以指定为 flex 布局。</li><li>当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效。</li><li>给父盒子添加flex属性，来控制子盒子的位置和排列方式</li></ul><h2 id="父项常见属性"><a href="#父项常见属性" class="headerlink" title="父项常见属性"></a>父项常见属性</h2><ul><li>flex-direction：设置主轴的方向</li><li>justify-content：设置主轴上的子元素排列方式</li><li>flex-wrap：设置子元素是否换行  </li><li>align-content：设置侧轴上的子元素的排列方式（多行）</li><li>align-items：设置侧轴上的子元素排列方式（单行）</li><li>flex-flow：复合属性，相当于同时设置了 flex-direction 和 flex-wrap</li></ul><h3 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a>flex-direction</h3><p>设置主轴方向，在flex布局中分为主轴和侧轴（x、y轴），默认主轴是x轴，水平向右。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex-direction</span>: row; <span class="comment">/*主轴为x轴，从左到右*/</span></span><br><span class="line"><span class="attribute">flex-direction</span>: row-reverse; <span class="comment">/*，主轴为x轴，从右到左*/</span></span><br><span class="line"><span class="attribute">flex-direction</span>: column; <span class="comment">/*主轴为y轴，从上到下*/</span></span><br><span class="line"><span class="attribute">flex-direction</span>: column-reverse; <span class="comment">/*，主轴为y轴，从下到上*/</span></span><br></pre></td></tr></table></figure><h3 id="justify-content"><a href="#justify-content" class="headerlink" title="justify-content"></a>justify-content</h3><p>设置<strong>主轴</strong>上子元素的排列方式，使用该属性前要先定好主轴。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">justify-content</span>: flex-start;<span class="comment">/*从前开始*/</span></span><br><span class="line"><span class="attribute">justify-content</span>: flex-end;<span class="comment">/*从后开始*/</span></span><br><span class="line"><span class="attribute">justify-content</span>: center;<span class="comment">/*居中对齐*/</span></span><br><span class="line"><span class="attribute">justify-content</span>: space-around;<span class="comment">/*平分剩余空间*/</span></span><br><span class="line"><span class="attribute">justify-content</span>: space-between;<span class="comment">/*★两边贴边后再平分剩余空间*/</span></span><br></pre></td></tr></table></figure><h3 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a>flex-wrap</h3><p>flex中项目默认都排列在一行，通过flex-wrap属性可换行</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex-wrap</span>: nowrap;<span class="comment">/*默认值，不换行*/</span></span><br><span class="line"><span class="attribute">flex-wrap</span>: wrap;<span class="comment">/*换行*/</span></span><br></pre></td></tr></table></figure><h3 id="align-items"><a href="#align-items" class="headerlink" title="align-items"></a>align-items</h3><p>设置<strong>侧轴</strong>上子元素的排列方式，在子项为<strong>单行</strong>时使用</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">align-items</span>: flex-start;(<span class="attribute">flex</span>-end/center/streth)</span><br><span class="line"><span class="comment">/*flex-start 从头部开始</span></span><br><span class="line"><span class="comment">flex-end 从尾部开始</span></span><br><span class="line"><span class="comment">center 居中显示</span></span><br><span class="line"><span class="comment">stretch 拉伸*/</span></span><br></pre></td></tr></table></figure><h3 id="align-content"><a href="#align-content" class="headerlink" title="align-content"></a>align-content</h3><p>设置<strong>侧轴</strong>上子元素的排列方式，在子项为<strong>多行</strong>时使用</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">align-content</span>: flex-start;</span><br></pre></td></tr></table></figure><img src="https://gitee.com/panghutx/tuchuang/raw/master/align-content.jpg" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/align-content.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="><ul><li>align-items  适用于单行情况下， 只有上对齐、下对齐、居中和 拉伸</li><li>align-content适应于换行（多行）的情况下（单行情况下无效）， 可以设置 上对齐、下对齐、居中、拉伸以及平均分配剩余空间等属性值。 </li><li>总结:单行用align-items，多行用 align-content</li></ul><h3 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a>flex-flow</h3><p>flex-direction和flex-wrap的符合属性</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">flex-flow</span>: row wrap;<span class="comment">/*主轴为x轴，换行*/</span></span><br></pre></td></tr></table></figure><h2 id="子项常见属性"><a href="#子项常见属性" class="headerlink" title="子项常见属性"></a>子项常见属性</h2><ul><li>flex子项目占的份数</li><li>align-self控制子项自己在侧轴的排列方式</li><li>order属性定义子项的排列顺序（前后顺序）</li></ul><h3 id="flex"><a href="#flex" class="headerlink" title="flex"></a>flex</h3><p>flex 属性定义子项目分配剩余空间，用flex来表示占多少份数。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: &lt;number&gt;; <span class="comment">/* 默认值 0 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="align-self"><a href="#align-self" class="headerlink" title="align-self"></a>align-self</h3><p>align-self 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖 align-items 属性。</p><p>默认值为 auto，表示继承父元素的 align-items 属性，如果没有父元素，则等同于 stretch。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">span</span><span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) &#123;</span><br><span class="line">      <span class="attribute">align-self</span>: flex-end;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="order"><a href="#order" class="headerlink" title="order"></a>order</h3><p>order属性定义项目的排列顺序，数值越小，排列越靠前，默认为0。和 z-index 不同。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">order</span>: &lt;number&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;flex 是 flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性，任何一个容器都可以指定为 flex 布局。&lt;/li&gt;
-&lt;li&gt;当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-ali</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="css" scheme="https://blog.wangyouwu.cn/tags/css/"/>
     
   </entry>
   
