@@ -108,7 +108,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -411,9 +411,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  search' style="display: ;">
+        <div id="full" class='cover-wrapper  search' style="display: none;">
           
-            <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/panghutx/CDN@1.0/logo-fly.jpg"></div>
+            <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/panghutx/CDN/man.jpg"></div>
           
           <div class='cover-body'>
   <div class='top'>
@@ -546,7 +546,7 @@ type：事件类型字符串，比如 clic...
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-09-16</time>
         
@@ -599,7 +599,7 @@ element.getAttribute(‘属性’) ：获取自定义属性值
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-09-13</time>
         
@@ -649,7 +649,7 @@ element.getAttribute(‘属性’) ：获取自定义属性值
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-08-19</time>
         
@@ -698,7 +698,7 @@ element.getAttribute(‘属性’) ：获取自定义属性值
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-08-16</time>
         
@@ -751,7 +751,7 @@ JavaScript（es6前）中的作用域有两种：
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-08-15</time>
         
@@ -805,7 +805,7 @@ JavaScript（es6前）中的作用域有两种：
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-08-15</time>
         
@@ -863,7 +863,7 @@ JavaScript（es6前）中的作用域有两种：
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-08-14</time>
         
@@ -938,7 +938,7 @@ prompt(info)
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-08-12</time>
         
@@ -982,7 +982,7 @@ prompt(info)
     
       
         <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'/>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'/>
         </a>
       
     
@@ -1150,8 +1150,8 @@ prompt(info)
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Thu Oct 07 2021 23:05:18 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-10-07 日</div>
+            <div id="last-update" style="display: none;">Fri Oct 08 2021 11:18:54 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-10-08 日</div>
           
         </div>
         
@@ -1201,7 +1201,7 @@ prompt(info)
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-10-07 日';
+            document.getElementById('last-update-show').innerHTML = '2021-10-08 日';
           }
         </script>
         
@@ -1229,14 +1229,14 @@ prompt(info)
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>

@@ -108,7 +108,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -411,9 +411,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  search' style="display: ;">
+        <div id="full" class='cover-wrapper  search' style="display: none;">
           
-            <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/panghutx/CDN@1.0/logo-fly.jpg"></div>
+            <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/panghutx/CDN/man.jpg"></div>
           
           <div class='cover-body'>
   <div class='top'>
@@ -520,7 +520,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-04-08</time>
         
@@ -574,7 +574,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-04-07</time>
         
@@ -627,7 +627,7 @@ select元素下拉列表， option 元素定义待选择的选项,selected 属�
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-04-06</time>
         
@@ -674,7 +674,7 @@ select元素下拉列表， option 元素定义待选择的选项,selected 属�
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-04-02</time>
         
@@ -721,7 +721,7 @@ select元素下拉列表， option 元素定义待选择的选项,selected 属�
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-03-31</time>
         
@@ -775,7 +775,7 @@ select元素下拉列表， option 元素定义待选择的选项,selected 属�
       <div>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'></a>
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
         
         <time>2021-03-29</time>
         
@@ -834,7 +834,7 @@ select元素下拉列表， option 元素定义待选择的选项,selected 属�
     
       
         <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/panghutx/CDN/logo-dog.jpg'/>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'/>
         </a>
       
     
@@ -1002,8 +1002,8 @@ select元素下拉列表， option 元素定义待选择的选项,selected 属�
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Thu Oct 07 2021 23:05:18 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-10-07 日</div>
+            <div id="last-update" style="display: none;">Fri Oct 08 2021 11:18:54 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-10-08 日</div>
           
         </div>
         
@@ -1053,7 +1053,7 @@ select元素下拉列表， option 元素定义待选择的选项,selected 属�
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-10-07 日';
+            document.getElementById('last-update-show').innerHTML = '2021-10-08 日';
           }
         </script>
         
@@ -1081,14 +1081,14 @@ select元素下拉列表， option 元素定义待选择的选项,selected 属�
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
