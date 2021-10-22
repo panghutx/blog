@@ -524,6 +524,65 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title" >
+      <a href="/2021/10/22/c-array/">
+        再识数组
+      </a>
+    </h2>
+  
+  <div class='md'>
+    
+      
+        
+创建数组时，数组的长度必须用常量表达式进行定义，较好的方法是用宏来定义数组。
+
+12#define N 10;int arr[N];
+
+但在C99中的变长数组，也可以使用非常量表达式。
+
+
+关于字符数组的初始化，使用方法2初始化数组会在末尾自动创建\0。
+
+12char ch1[] = &#123; &#x27;p&#x27;,&#x27;a&#x27;,&#x27;n&#x27;,&#x...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
+        
+        <time>2021-10-22</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/10/22/c-array/'>
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow">
+  
+  
+  
+  
+    
+    <h2 class="article-title" >
       <a href="/2021/10/06/bug/">
         敲代码时的各种错误
       </a>
@@ -1014,64 +1073,6 @@ JavaScript（es6前）中的作用域有两种：
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/08/14/js-exercise/">
-        js练习Ⅰ：循环、数组、函数
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        🙂循环
-一行打印★★★★★
-
-12345var str = &#x27;&#x27;;for (var i = 1;i&lt;=5;i++) &#123;    str = str + &#x27;★&#x27;; //追加字符串&#125;     console.log(str);
-
-
-倒序打印★ 第一行9个，第九行1个
-
-
-12345678var str = &#x27;&#x27;...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
-        
-        <time>2021-08-14</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/08/14/js-exercise/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1193,7 +1194,7 @@ JavaScript（es6前）中的作用域有两种：
           <li><a class="flat-box"
             title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
             id="categoriesE5ADA6E4B9A0"
-            ><div class='name'>学习</div><div class='badge'>(36)</div></a></li>
+            ><div class='name'>学习</div><div class='badge'>(37)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E6%97%A5%E5%B8%B8/" href="/categories/%E6%97%A5%E5%B8%B8/"
@@ -1222,7 +1223,7 @@ JavaScript（es6前）中的作用域有两种：
 
 
     <div class='content'>
-      <a href="/tags/JavaScript/" style="font-size: 22px; color: #636363">JavaScript</a> <a href="/tags/c/" style="font-size: 16px; color: #8b8b8b">c</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/html/" style="font-size: 16px; color: #8b8b8b">html</a> <a href="/tags/linux/" style="font-size: 20px; color: #707070">linux</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 16px; color: #8b8b8b">英语</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 18px; color: #7e7e7e">阅读</a>
+      <a href="/tags/JavaScript/" style="font-size: 22px; color: #636363">JavaScript</a> <a href="/tags/c/" style="font-size: 18px; color: #7e7e7e">c</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/html/" style="font-size: 16px; color: #8b8b8b">html</a> <a href="/tags/linux/" style="font-size: 20px; color: #707070">linux</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 16px; color: #8b8b8b">英语</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 18px; color: #7e7e7e">阅读</a>
     </div>
   </section>
 
@@ -1247,7 +1248,7 @@ JavaScript（es6前）中的作用域有两种：
       
         <div class="webinfo-item">
           <div>文章数目</div>
-          <div>50 篇</div>
+          <div>51 篇</div>
         </div>
       
 
@@ -1276,8 +1277,8 @@ JavaScript（es6前）中的作用域有两种：
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sat Oct 09 2021 15:27:23 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-10-09 日</div>
+            <div id="last-update" style="display: none;">Fri Oct 22 2021 20:46:16 GMT+0800 (中国标准时间)</div>
+            <div id="last-update-show">2021-10-22 日</div>
           
         </div>
         
@@ -1327,7 +1328,7 @@ JavaScript（es6前）中的作用域有两种：
           try {
             document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
           } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-10-09 日';
+            document.getElementById('last-update-show').innerHTML = '2021-10-22 日';
           }
         </script>
         
