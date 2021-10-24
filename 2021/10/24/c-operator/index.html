@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -24,7 +22,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2021/7 - 胖虎同学|生活学习类个人博客</title>
+  <title>c语言：操作符误区总结 - 胖虎同学|生活学习类个人博客</title>
+  
+    <meta name="keywords" content="c">
   
 
   
@@ -108,7 +108,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <body>
     
 
-<header id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+<header id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -411,7 +411,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  search' style="display: ;">
+        <div id="full" class='cover-wrapper post search' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/panghutx/CDN/man.jpg"></div>
           
@@ -483,191 +483,306 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/07/26/flex/">
-        移动web开发——flex布局
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        
-flex 是 flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性，任何一个容器都可以指定为 flex 布局。
-当我们为父盒子设为 flex 布局以后，子元素的 float、clear 和 vertical-align 属性将失效。
-给父盒子添加flex属性，来控制子盒子的位置和排列方式
 
-父项常见属性
-flex-direction：设置主轴的方向
-justi...
-      
-    
-  </div>
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title">
+        c语言：操作符误区总结
+      </h1>
+      <div class='new-meta-box'>
         
           
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg">
+    <p>胖虎</p>
+  </a>
+</div>
+
+          
         
-        <time>2021-07-26</time>
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </a>
+  </div>
+
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年10月24日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="c语言：操作符误区总结" data-path="/2021/10/24/c-operator/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  
+  <ul>
+<li>左移操作符：<code>&lt;&lt;</code></li>
+</ul>
+<blockquote>
+<p> 左边丢弃，右边补0</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">2</span>;</span><br><span class="line">	<span class="comment">//把a的二进制位向左移动一位</span></span><br><span class="line">	<span class="keyword">int</span> b = a &lt;&lt; <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;b = %d\n&quot;</span>, b);<span class="comment">//输出为4</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li>右移操作符：<code>&gt;&gt;</code></li>
+</ul>
+<blockquote>
+<p>1.算术右移：右边丢弃，左边补原符号位</p>
+<p> 2.逻辑右移：右边丢弃，左边补0</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">-3</span>;</span><br><span class="line">	<span class="keyword">int</span> b = a &gt;&gt; <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, b); <span class="comment">//输出为-2</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<blockquote>
+<p>负数在内存中存放的是二进制的补码。</p>
+<p>原码：直接根据数值写出的二进制序列</p>
+<p>反码：符号位不变，其他位按位取反</p>
+<p>补码：反码+1</p>
+</blockquote>
+<p>以-3为例：</p>
+<p>原码：10000000000000000000000000000011</p>
+<p>反码：11111111111111111111111111111100</p>
+<p>补码：11111111111111111111111111111101</p>
+<hr>
+<ul>
+<li>异或：<code>^</code></li>
+</ul>
+<blockquote>
+<p>同为0，异为1</p>
+</blockquote>
+<p>练习：a=3，b=5，交换a、b两个数的值</p>
+<p>方法1：创建中间变量</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">5</span>;</span><br><span class="line">	<span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">	temp = a;</span><br><span class="line">	a = b;</span><br><span class="line">	b = temp;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;a=%d,b=%d&quot;</span>, a, b); <span class="comment">//a=5,b=3</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法2：加减运算（数值太大可能溢出）</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">5</span>;</span><br><span class="line">	a = a + b;</span><br><span class="line">	b = a - b; </span><br><span class="line">	a = a - b;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;a=%d,b=%d&quot;</span>, a, b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法三：异或运算</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> a = <span class="number">3</span>;</span><br><span class="line">	<span class="keyword">int</span> b = <span class="number">5</span>;</span><br><span class="line">	a = a ^ b;</span><br><span class="line">	b = a ^ b; </span><br><span class="line">	a = a ^ b;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;a=%d,b=%d&quot;</span>, a,b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>同值异或值为0，任何值异或0都是值本身。a^a=0     0^a=a</p>
+<hr>
+<p>单目运算符：</p>
+<p><code>sizeof</code>也是单目运算符，可以计算变量所占空间的大小，单位是字节。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> arr[<span class="number">5</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(a));<span class="comment">//4    </span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>));<span class="comment">//4   </span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(arr));<span class="comment">//20  sizeof(数组名)</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span> [<span class="number">5</span>]));<span class="comment">//20  sizeof(数组类型)</span></span><br></pre></td></tr></table></figure>
+
+<p><code>sizeof</code>()，括号内可以说变量名，也可以是变量类型，如果是变量名可以去掉小括号，如<code>sizeof a</code></p>
+<p>思考一下下面这段代码，两次输出是什么？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> s = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(s = a + <span class="number">2</span>));</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, s);</span><br></pre></td></tr></table></figure>
+
+<p>输出结果是2、5。s的类型是short，sizeof(short)结果必然是2，而<strong>sizeof括号里的表达式不参与运算</strong>，所以s仍未5。</p>
+<p>前置和后置：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = a++;<span class="comment">//后置++，先使用，再++</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a);<span class="comment">//11</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, b);<span class="comment">//10</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = ++a;<span class="comment">//前置++，先++，后使用</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a);<span class="comment">//11</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, b);<span class="comment">//11</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>指针大小永远是4字节或8字节</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test1</span><span class="params">(<span class="keyword">int</span> arr[])</span><span class="comment">//相当于int *arr</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(arr));<span class="comment">//4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test2</span><span class="params">(<span class="keyword">char</span> ch[])</span><span class="comment">//相当于char *arr</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(ch));<span class="comment">//4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> arr[<span class="number">10</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">char</span> ch[<span class="number">10</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(arr));<span class="comment">//40</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="keyword">sizeof</span>(ch));<span class="comment">//10</span></span><br><span class="line">	test1(arr);</span><br><span class="line">	test2(arr);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>结构成员访问操作符：<code>.</code> <code>-&gt;</code></p>
+<blockquote>
+<p>. 结构体.成员名 </p>
+<p>-&gt; 结构体指针-&gt;成员名</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">students</span></span></span><br><span class="line"><span class="class">&#123;</span>   <span class="comment">//结构体的成员（变量）</span></span><br><span class="line">	<span class="keyword">char</span> name[<span class="number">10</span>];</span><br><span class="line">	<span class="keyword">int</span> age;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">students</span> <span class="title">a</span> =</span> &#123; <span class="string">&quot;胖虎&quot;</span>,<span class="number">20</span> &#125;;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">students</span> *<span class="title">pb</span> =</span> &amp;a; <span class="comment">//说明pb是struct students类型的指针</span></span><br><span class="line">	<span class="comment">//结构体变量名.成员名</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;姓名：%s，年龄：%d\n&quot;</span>, a.name,a.age);</span><br><span class="line">	<span class="comment">//结构体指针-&gt;成员名</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;姓名：%s，年龄：%d&quot;</span>, pb-&gt;name,pb-&gt;age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20211024214557.png" class="lazyload" data-srcset="https://gitee.com/panghutx/tuchuang/raw/master/20211024214557.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="image-20211024164538183"></p>
+<hr>
+<p>整型提升：</p>
+<p>C的整型算术运算总是至少以缺省整型类型的精度来进行的。 为了获得这个精度，表达式中的字符和短整型操作数在使用之前被转换为普通整型，这种转换称为整型提升。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">char</span> a = <span class="number">3</span>;</span><br><span class="line">	<span class="comment">//0000000000000000000000000000011   (int a)</span></span><br><span class="line">	<span class="comment">//00000011  --a</span></span><br><span class="line">	<span class="comment">//0000000000000000000000000000011   (a的整型提升)</span></span><br><span class="line">	<span class="keyword">char</span> b = <span class="number">127</span>;</span><br><span class="line">	<span class="comment">//0000000000000000000000001111111   (int b)</span></span><br><span class="line">	<span class="comment">//01111111   --b</span></span><br><span class="line">	<span class="comment">//0000000000000000000000001111111   (b的整型提升)</span></span><br><span class="line">	<span class="comment">//0000000000000000000000010000010   int c</span></span><br><span class="line">	<span class="comment">//10000010   --c</span></span><br><span class="line">	<span class="comment">//1111111111111111111111110000010  补码 (c的整型提升)</span></span><br><span class="line">	<span class="comment">//1000000000000000000000001111101  反码</span></span><br><span class="line">	<span class="comment">//1000000000000000000000001111110  原码</span></span><br><span class="line">	<span class="keyword">char</span> c = a + b;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, c);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>整形提升是按照变量的数据类型的符号位来提升的</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//负数的整形提升</span></span><br><span class="line"><span class="keyword">char</span> c1 = <span class="number">-1</span>;</span><br><span class="line">变量c1的二进制位(补码)中只有<span class="number">8</span>个比特位：</span><br><span class="line"><span class="number">1111111</span></span><br><span class="line">因为 <span class="keyword">char</span> 为有符号的 <span class="keyword">char</span></span><br><span class="line">所以整形提升的时候，高位补充符号位，即为<span class="number">1</span></span><br><span class="line">提升之后的结果是：</span><br><span class="line"><span class="number">11111111111111111111111111111111</span></span><br><span class="line"><span class="comment">//正数的整形提升</span></span><br><span class="line"><span class="keyword">char</span> c2 = <span class="number">1</span>;</span><br><span class="line">变量c2的二进制位(补码)中只有<span class="number">8</span>个比特位：</span><br><span class="line"><span class="number">00000001</span></span><br><span class="line">因为 <span class="keyword">char</span> 为有符号的 <span class="keyword">char</span></span><br><span class="line">所以整形提升的时候，高位补充符号位，即为<span class="number">0</span></span><br><span class="line">提升之后的结果是：</span><br><span class="line"><span class="number">00000000000000000000000000000001</span></span><br><span class="line"><span class="comment">//无符号整形提升，高位补0</span></span><br></pre></td></tr></table></figure>
+
+<p>总结：char和short类型，在参与表达式运算时达不到整型长度，会发生整型提升。</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2021/07/26/flex/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://blog.wangyouwu.cn/2021/10/24/c-operator/>https://blog.wangyouwu.cn/2021/10/24/c-operator/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-10-24T21:46:38+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年10月24日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/07/25/viewport/">
-        移动web开发
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/c/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>c</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        meta标签为使网站在移动端有理想的阅读宽度，需添加meta标签。
-meta标签的目的：使布局视口的宽度与理想视口的宽度一致，简单理解就是设备有多宽，我们布局的视口就多宽。
-1&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=no,maxi...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.wangyouwu.cn/2021/10/24/c-operator/&title=c语言：操作符误区总结 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.wangyouwu.cn/2021/10/24/c-operator/&title=c语言：操作符误区总结 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.wangyouwu.cn/2021/10/24/c-operator/&title=c语言：操作符误区总结 - 胖虎同学|生活学习类个人博客&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
-        
-        <time>2021-07-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/07/25/viewport/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2021/07/21/summer/">
-        暑假，目的论，自卑情结
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        7月7日回到家，8.26号返校，不知不觉已经在家呆14天了，还有一个月就大二了……
-正如李宗盛《给自己的歌》中写道：“等你发现时间是贼了，它早已偷光你的选择”。想到第一次去学校的场景，现在还历历在目，一年的时间已经溜走，大学已完成了1/4，大学中能做的选择也已被偷走了1/4。
-沉湎于过去毫无意义，过去已经不属于我了，我拥有的只有现在。我的人生就取决于当下。
-《被讨厌的勇气》里有这样一段：
 
-...
+
+        
       
-    
+    </div>
   </div>
+
+
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'></a>
-        
-        <time>2021-07-21</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a>
-        
-      </div>
+  
+
+  
+    <div class="prev-next">
       
-        <div>
-          <a class='readmore' href='/2021/07/21/summer/'>
-            阅读全文
-          </a>
-        </div>
+      
+        <a class='next' href='/2021/10/22/c-array/'>
+          <p class='title'>c语言：数组误区总结<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+创建数组时，数组的长度必须用常量表达式进行定义，较好的方法是用宏来定义数组。
+
+12#define N 10;int arr[N];
+
+但在C99中的变长数组，也可以使用非常量表达式。
+
+
+关...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -675,243 +790,14 @@ meta标签的目的：使布局视口的宽度与理想视口的宽度一致，�
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">胖虎同学|生活学习类个人博客</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:2367897284@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/panghutx/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%88%86%E4%BA%AB/" href="/categories/%E5%88%86%E4%BA%AB/"
-            id="categoriesE58886E4BAAB"
-            ><div class='name'>分享</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE5ADA6E4B9A0"
-            ><div class='name'>学习</div><div class='badge'>(38)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E5%B8%B8/" href="/categories/%E6%97%A5%E5%B8%B8/"
-            id="categoriesE697A5E5B8B8"
-            ><div class='name'>日常</div><div class='badge'>(11)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/JavaScript/" style="font-size: 22px; color: #636363">JavaScript</a> <a href="/tags/c/" style="font-size: 20px; color: #707070">c</a> <a href="/tags/css/" style="font-size: 24px; color: #555">css</a> <a href="/tags/html/" style="font-size: 16px; color: #8b8b8b">html</a> <a href="/tags/linux/" style="font-size: 20px; color: #707070">linux</a> <a href="/tags/yaml/" style="font-size: 14px; color: #999">yaml</a> <a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 16px; color: #8b8b8b">英语</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 18px; color: #7e7e7e">阅读</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget shadow desktop mobile">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目</div>
-          <div>52 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2020/03/28'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Sun Oct 24 2021 21:48:51 GMT+0800 (中国标准时间)</div>
-            <div id="last-update-show">2021-10-24 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2021-10-24 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
 
   
 
 
 </aside>
+
 
 
 		  
@@ -920,21 +806,21 @@ meta标签的目的：使布局视口的宽度与理想视口的宽度一致，�
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="c语言：操作符误区总结";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   // header 这里无论是否开启pjax都需要
   var l_header=document.getElementById("l_header");
   
-  l_header.classList.remove("show");
+  l_header.classList.add("show");
   
   
     // cover
     var cover_wrapper=document.querySelector('.cover-wrapper');
     
-    cover_wrapper.id="half";
-    cover_wrapper.style.display="";
+    cover_wrapper.id="none";
+    cover_wrapper.style.display="none";
     
   
 </script>
