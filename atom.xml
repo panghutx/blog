@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>胖虎同学|生活学习类个人博客</title>
+  <title>胖虎同学</title>
   
   <subtitle>生活学习类个人博客</subtitle>
-  <link href="https://blog.wangyouwu.cn/atom.xml" rel="self"/>
+  <link href="https://youngsay.cn/atom.xml" rel="self"/>
   
-  <link href="https://blog.wangyouwu.cn/"/>
+  <link href="https://youngsay.cn/"/>
   <updated>2022-01-09T22:36:14.155Z</updated>
-  <id>https://blog.wangyouwu.cn/</id>
+  <id>https://youngsay.cn/</id>
   
   <author>
-    <name>胖虎</name>
+    <name>胖虎同学</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>2021年度总结</title>
-    <link href="https://blog.wangyouwu.cn/2022/01/01/2021/"/>
-    <id>https://blog.wangyouwu.cn/2022/01/01/2021/</id>
+    <link href="https://youngsay.cn/2022/01/01/2021/"/>
+    <id>https://youngsay.cn/2022/01/01/2021/</id>
     <published>2022-01-01T09:24:01.000Z</published>
     <updated>2022-01-09T22:36:14.155Z</updated>
     
@@ -38,15 +38,15 @@
     
     
     
-    <category term="日常" scheme="https://blog.wangyouwu.cn/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
   </entry>
   
   <entry>
     <title>Vue笔记：指令</title>
-    <link href="https://blog.wangyouwu.cn/2021/11/06/vue1/"/>
-    <id>https://blog.wangyouwu.cn/2021/11/06/vue1/</id>
+    <link href="https://youngsay.cn/2021/11/06/vue1/"/>
+    <id>https://youngsay.cn/2021/11/06/vue1/</id>
     <published>2021-11-06T11:25:01.000Z</published>
     <updated>2021-11-06T12:44:34.013Z</updated>
     
@@ -65,17 +65,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="Vue.js" scheme="https://blog.wangyouwu.cn/tags/Vue-js/"/>
+    <category term="Vue.js" scheme="https://youngsay.cn/tags/Vue-js/"/>
     
   </entry>
   
   <entry>
     <title>Python笔记：条件、循环及其他语句</title>
-    <link href="https://blog.wangyouwu.cn/2021/11/03/python5/"/>
-    <id>https://blog.wangyouwu.cn/2021/11/03/python5/</id>
+    <link href="https://youngsay.cn/2021/11/03/python5/"/>
+    <id>https://youngsay.cn/2021/11/03/python5/</id>
     <published>2021-11-03T11:25:01.000Z</published>
     <updated>2021-11-05T11:40:51.533Z</updated>
     
@@ -92,17 +92,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="Python" scheme="https://blog.wangyouwu.cn/tags/Python/"/>
+    <category term="Python" scheme="https://youngsay.cn/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>ECMAScript 6入门</title>
-    <link href="https://blog.wangyouwu.cn/2021/10/31/es6/"/>
-    <id>https://blog.wangyouwu.cn/2021/10/31/es6/</id>
+    <link href="https://youngsay.cn/2021/10/31/es6/"/>
+    <id>https://youngsay.cn/2021/10/31/es6/</id>
     <published>2021-10-31T04:25:01.000Z</published>
     <updated>2021-10-31T12:55:55.085Z</updated>
     
@@ -120,17 +120,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="JavaScript" scheme="https://blog.wangyouwu.cn/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://youngsay.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>c语言：操作符误区总结</title>
-    <link href="https://blog.wangyouwu.cn/2021/10/24/c-operator/"/>
-    <id>https://blog.wangyouwu.cn/2021/10/24/c-operator/</id>
+    <link href="https://youngsay.cn/2021/10/24/c-operator/"/>
+    <id>https://youngsay.cn/2021/10/24/c-operator/</id>
     <published>2021-10-24T14:31:01.000Z</published>
     <updated>2021-10-24T13:46:38.800Z</updated>
     
@@ -150,17 +150,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="c" scheme="https://blog.wangyouwu.cn/tags/c/"/>
+    <category term="c" scheme="https://youngsay.cn/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>c语言：数组误区总结</title>
-    <link href="https://blog.wangyouwu.cn/2021/10/22/c-array/"/>
-    <id>https://blog.wangyouwu.cn/2021/10/22/c-array/</id>
+    <link href="https://youngsay.cn/2021/10/22/c-array/"/>
+    <id>https://youngsay.cn/2021/10/22/c-array/</id>
     <published>2021-10-22T12:31:01.000Z</published>
     <updated>2021-10-24T13:44:39.185Z</updated>
     
@@ -177,17 +177,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="c" scheme="https://blog.wangyouwu.cn/tags/c/"/>
+    <category term="c" scheme="https://youngsay.cn/tags/c/"/>
     
   </entry>
   
   <entry>
     <title>敲代码时的各种错误</title>
-    <link href="https://blog.wangyouwu.cn/2021/10/06/bug/"/>
-    <id>https://blog.wangyouwu.cn/2021/10/06/bug/</id>
+    <link href="https://youngsay.cn/2021/10/06/bug/"/>
+    <id>https://youngsay.cn/2021/10/06/bug/</id>
     <published>2021-10-06T08:31:01.000Z</published>
     <updated>2021-10-09T03:13:17.846Z</updated>
     
@@ -201,15 +201,15 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
   
   <entry>
     <title>WebApiⅢ：事件、事件对象</title>
-    <link href="https://blog.wangyouwu.cn/2021/09/16/js-shijian/"/>
-    <id>https://blog.wangyouwu.cn/2021/09/16/js-shijian/</id>
+    <link href="https://youngsay.cn/2021/09/16/js-shijian/"/>
+    <id>https://youngsay.cn/2021/09/16/js-shijian/</id>
     <published>2021-09-16T09:45:54.000Z</published>
     <updated>2021-09-16T13:07:35.955Z</updated>
     
@@ -224,17 +224,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="JavaScript" scheme="https://blog.wangyouwu.cn/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://youngsay.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>WebApiⅡ：自定义属性、节点</title>
-    <link href="https://blog.wangyouwu.cn/2021/09/13/js-node/"/>
-    <id>https://blog.wangyouwu.cn/2021/09/13/js-node/</id>
+    <link href="https://youngsay.cn/2021/09/13/js-node/"/>
+    <id>https://youngsay.cn/2021/09/13/js-node/</id>
     <published>2021-09-13T13:45:54.000Z</published>
     <updated>2021-09-16T09:05:23.331Z</updated>
     
@@ -248,17 +248,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="JavaScript" scheme="https://blog.wangyouwu.cn/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://youngsay.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>《认知觉醒》：真正的成长不是懂得多少道理，而是做出多少改变</title>
-    <link href="https://blog.wangyouwu.cn/2021/09/05/read-renzhi/"/>
-    <id>https://blog.wangyouwu.cn/2021/09/05/read-renzhi/</id>
+    <link href="https://youngsay.cn/2021/09/05/read-renzhi/"/>
+    <id>https://youngsay.cn/2021/09/05/read-renzhi/</id>
     <published>2021-09-05T10:49:01.000Z</published>
     <updated>2021-09-05T10:16:09.983Z</updated>
     
@@ -275,17 +275,17 @@
     
     
     
-    <category term="日常" scheme="https://blog.wangyouwu.cn/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="阅读" scheme="https://blog.wangyouwu.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    <category term="阅读" scheme="https://youngsay.cn/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>【第三期】我爱记单词😎</title>
-    <link href="https://blog.wangyouwu.cn/2021/09/01/word3/"/>
-    <id>https://blog.wangyouwu.cn/2021/09/01/word3/</id>
+    <link href="https://youngsay.cn/2021/09/01/word3/"/>
+    <id>https://youngsay.cn/2021/09/01/word3/</id>
     <published>2021-09-01T10:07:01.000Z</published>
     <updated>2021-09-09T09:18:02.631Z</updated>
     
@@ -303,17 +303,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="英语" scheme="https://blog.wangyouwu.cn/tags/%E8%8B%B1%E8%AF%AD/"/>
+    <category term="英语" scheme="https://youngsay.cn/tags/%E8%8B%B1%E8%AF%AD/"/>
     
   </entry>
   
   <entry>
     <title>《你的第一本哲学书》读书分享</title>
-    <link href="https://blog.wangyouwu.cn/2021/08/20/read-allmeans/"/>
-    <id>https://blog.wangyouwu.cn/2021/08/20/read-allmeans/</id>
+    <link href="https://youngsay.cn/2021/08/20/read-allmeans/"/>
+    <id>https://youngsay.cn/2021/08/20/read-allmeans/</id>
     <published>2021-08-20T12:49:01.000Z</published>
     <updated>2021-08-20T10:20:50.694Z</updated>
     
@@ -327,17 +327,17 @@
     
     
     
-    <category term="日常" scheme="https://blog.wangyouwu.cn/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="阅读" scheme="https://blog.wangyouwu.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    <category term="阅读" scheme="https://youngsay.cn/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>《穷爸爸 富爸爸》读书分享</title>
-    <link href="https://blog.wangyouwu.cn/2021/08/20/read-richdad/"/>
-    <id>https://blog.wangyouwu.cn/2021/08/20/read-richdad/</id>
+    <link href="https://youngsay.cn/2021/08/20/read-richdad/"/>
+    <id>https://youngsay.cn/2021/08/20/read-richdad/</id>
     <published>2021-08-20T07:49:01.000Z</published>
     <updated>2021-08-20T07:41:44.535Z</updated>
     
@@ -351,17 +351,17 @@
     
     
     
-    <category term="日常" scheme="https://blog.wangyouwu.cn/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="阅读" scheme="https://blog.wangyouwu.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    <category term="阅读" scheme="https://youngsay.cn/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>《被讨厌的勇气》读书分享</title>
-    <link href="https://blog.wangyouwu.cn/2021/08/20/read-courage/"/>
-    <id>https://blog.wangyouwu.cn/2021/08/20/read-courage/</id>
+    <link href="https://youngsay.cn/2021/08/20/read-courage/"/>
+    <id>https://youngsay.cn/2021/08/20/read-courage/</id>
     <published>2021-08-20T03:49:01.000Z</published>
     <updated>2021-08-20T07:36:54.446Z</updated>
     
@@ -376,17 +376,17 @@
     
     
     
-    <category term="日常" scheme="https://blog.wangyouwu.cn/categories/%E6%97%A5%E5%B8%B8/"/>
+    <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
-    <category term="阅读" scheme="https://blog.wangyouwu.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    <category term="阅读" scheme="https://youngsay.cn/tags/%E9%98%85%E8%AF%BB/"/>
     
   </entry>
   
   <entry>
     <title>WebApiⅠ：操作元素</title>
-    <link href="https://blog.wangyouwu.cn/2021/08/19/WebApi1/"/>
-    <id>https://blog.wangyouwu.cn/2021/08/19/WebApi1/</id>
+    <link href="https://youngsay.cn/2021/08/19/WebApi1/"/>
+    <id>https://youngsay.cn/2021/08/19/WebApi1/</id>
     <published>2021-08-19T12:45:54.000Z</published>
     <updated>2021-08-19T00:28:54.782Z</updated>
     
@@ -400,17 +400,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="JavaScript" scheme="https://blog.wangyouwu.cn/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://youngsay.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>【第二期】我爱记单词🙄</title>
-    <link href="https://blog.wangyouwu.cn/2021/08/18/work2/"/>
-    <id>https://blog.wangyouwu.cn/2021/08/18/work2/</id>
+    <link href="https://youngsay.cn/2021/08/18/work2/"/>
+    <id>https://youngsay.cn/2021/08/18/work2/</id>
     <published>2021-08-18T13:07:01.000Z</published>
     <updated>2021-09-01T10:39:13.390Z</updated>
     
@@ -430,17 +430,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="英语" scheme="https://blog.wangyouwu.cn/tags/%E8%8B%B1%E8%AF%AD/"/>
+    <category term="英语" scheme="https://youngsay.cn/tags/%E8%8B%B1%E8%AF%AD/"/>
     
   </entry>
   
   <entry>
     <title>js基础Ⅳ：内置对象</title>
-    <link href="https://blog.wangyouwu.cn/2021/08/16/js4/"/>
-    <id>https://blog.wangyouwu.cn/2021/08/16/js4/</id>
+    <link href="https://youngsay.cn/2021/08/16/js4/"/>
+    <id>https://youngsay.cn/2021/08/16/js4/</id>
     <published>2021-08-16T08:26:54.000Z</published>
     <updated>2021-08-16T09:27:47.012Z</updated>
     
@@ -454,17 +454,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="JavaScript" scheme="https://blog.wangyouwu.cn/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://youngsay.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>js基础Ⅲ：作用域和对象</title>
-    <link href="https://blog.wangyouwu.cn/2021/08/15/js3/"/>
-    <id>https://blog.wangyouwu.cn/2021/08/15/js3/</id>
+    <link href="https://youngsay.cn/2021/08/15/js3/"/>
+    <id>https://youngsay.cn/2021/08/15/js3/</id>
     <published>2021-08-15T11:26:54.000Z</published>
     <updated>2021-08-15T11:44:30.732Z</updated>
     
@@ -478,17 +478,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="JavaScript" scheme="https://blog.wangyouwu.cn/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://youngsay.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>js基础Ⅱ：数组和函数</title>
-    <link href="https://blog.wangyouwu.cn/2021/08/15/js2/"/>
-    <id>https://blog.wangyouwu.cn/2021/08/15/js2/</id>
+    <link href="https://youngsay.cn/2021/08/15/js2/"/>
+    <id>https://youngsay.cn/2021/08/15/js2/</id>
     <published>2021-08-15T03:26:54.000Z</published>
     <updated>2021-08-15T03:28:24.258Z</updated>
     
@@ -502,17 +502,17 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="JavaScript" scheme="https://blog.wangyouwu.cn/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://youngsay.cn/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>js练习Ⅰ：循环、数组、函数</title>
-    <link href="https://blog.wangyouwu.cn/2021/08/14/js-exercise/"/>
-    <id>https://blog.wangyouwu.cn/2021/08/14/js-exercise/</id>
+    <link href="https://youngsay.cn/2021/08/14/js-exercise/"/>
+    <id>https://youngsay.cn/2021/08/14/js-exercise/</id>
     <published>2021-08-14T13:45:54.000Z</published>
     <updated>2021-08-15T03:12:53.907Z</updated>
     
@@ -529,10 +529,10 @@
     
     
     
-    <category term="学习" scheme="https://blog.wangyouwu.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="JavaScript" scheme="https://blog.wangyouwu.cn/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://youngsay.cn/tags/JavaScript/"/>
     
   </entry>
   
