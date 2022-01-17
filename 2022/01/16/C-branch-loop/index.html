@@ -1,0 +1,261 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>【C语言】分支和循环语句常见问题 | 胖虎同学</title><meta name="keywords" content="c"><meta name="author" content="胖虎同学"><meta name="copyright" content="胖虎同学"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="分支语句if-else语句12345678910111213#include &lt;stdio.h&gt;int main()&amp;#123;    int a &#x3D; 0;    int b &#x3D; 2;    if (a &#x3D;&#x3D; 1)        if (b &#x3D;&#x3D; 2)            printf(&quot;hello\n&quot;);    else        printf(&amp;quot">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【C语言】分支和循环语句常见问题">
+<meta property="og:url" content="https://youngsay.cn/2022/01/16/C-branch-loop/index.html">
+<meta property="og:site_name" content="胖虎同学">
+<meta property="og:description" content="分支语句if-else语句12345678910111213#include &lt;stdio.h&gt;int main()&amp;#123;    int a &#x3D; 0;    int b &#x3D; 2;    if (a &#x3D;&#x3D; 1)        if (b &#x3D;&#x3D; 2)            printf(&quot;hello\n&quot;);    else        printf(&amp;quot">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2022-01-16T06:33:41.000Z">
+<meta property="article:modified_time" content="2022-01-17T01:32:06.844Z">
+<meta property="article:author" content="胖虎同学">
+<meta property="article:tag" content="c">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/fav.png"><link rel="canonical" href="https://youngsay.cn/2022/01/16/C-branch-loop/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【C语言】分支和循环语句常见问题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-01-17 09:32:06'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="//at.alicdn.com/t/font_3131436_y923pkc0jd.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="胖虎同学" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">胖虎同学</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">【C语言】分支和循环语句常见问题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-01-16T06:33:41.000Z" title="发表于 2022-01-16 14:33:41">2022-01-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-01-17T01:32:06.844Z" title="更新于 2022-01-17 09:32:06">2022-01-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span></div></div></div><article class="post-content" id="article-container"><h1 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h1><h2 id="if-else语句"><a href="#if-else语句" class="headerlink" title="if-else语句"></a>if-else语句</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (a == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> (b == <span class="number">2</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;hello\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;panghu\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出结果：</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (a == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> (b == <span class="number">2</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;hello\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;胖虎\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;panghu\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//输出结果：panghu</span></span><br></pre></td></tr></table></figure>
+
+<p>观察上面两段代码，输出结果分别是什么？</p>
+<p>由此可知：else的匹配规则：else总是与<strong>离它最近的未匹配的</strong>if匹配，与缩进无关。</p>
+<h2 id="switch-case语句"><a href="#switch-case语句" class="headerlink" title="switch-case语句"></a>switch-case语句</h2><p>switch()括号内是整形表达式。</p>
+<p>case后接整型常量表达式。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span> , &amp;i);</span><br><span class="line"><span class="keyword">switch</span> (i) &#123;</span><br><span class="line"><span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line"><span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line"><span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line"><span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line"><span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;工作日\n&quot;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="number">6</span>:</span><br><span class="line"><span class="keyword">case</span> <span class="number">7</span>:</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;休息日\n&quot;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;输入错误&quot;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p>思考下面代码，输出结果是什么？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">switch</span> (n)</span><br><span class="line">   &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            m++;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            n++;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">            <span class="keyword">switch</span> (n)</span><br><span class="line">           &#123;<span class="comment">//switch允许嵌套使用</span></span><br><span class="line">             <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    n++;</span><br><span class="line">             <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    m++;</span><br><span class="line">                    n++;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">           &#125;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">            m++;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">   &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;m = %d, n = %d\n&quot;</span>, m, n);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//5 3</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h1><h2 id="continue比较"><a href="#continue比较" class="headerlink" title="continue比较"></a>continue比较</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="number">10</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">5</span>)</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, i); </span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>观察上端代码，打印结果是什么？</p>
+<p>结果为1234，然后死循环。</p>
+<p><code>continue</code>是结束本次循环，进入下次循环。当i=5时进入if语句，然后跳出，然后再进入，以此往复。</p>
+<p>再看下面的代码：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">5</span>)</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果是12346789，与while循环相比，这次遇到continue跳出本次循环后能够让<code>i</code>自增，不会进入死循环。</p>
+<h2 id="getchar-和putchar"><a href="#getchar-和putchar" class="headerlink" title="getchar()和putchar()"></a><code>getchar()</code>和<code>putchar()</code></h2><p>缓存区问题：</p>
+<pre><code>char arr[20] = &#123; 0 &#125;;
+printf(&quot;请输入密码\n&quot;);
+scanf(&quot;%s&quot; , arr);
+printf(&quot;请确认密码 Y/N\n&quot;);
+int ch = getchar();
+if (&#39;Y&#39; == ch) &#123;
+    printf(&quot;确认成功\n&quot;);
+&#125;
+else &#123;
+    printf(&quot;确认失败\n&quot;);
+&#125;
+</code></pre>
+<p>当我输入1234时，还没等确认，直接提示确认失败。</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20220117092528.png" alt="image-20220115154137025"></p>
+<p>原因是当我输入1234后会按回车换行，也就是<code>\n</code>，此时缓存区会存在<code>\n</code>，<code>getchar()</code>会从缓存区取出<code>\n</code>，ch=<code>\n</code>，不等于Y，弹出确认失败。</p>
+<p>如何解决这种问题？</p>
+<p><strong>方法1：</strong>在<code>scanf</code>语句后面加上<code>getchar()</code>来取出<code>\n</code>，这样ch再访问缓存区就为空了。但这样也有弊端，例如当我输入1234 abcd时又出现错误了。</p>
+<p><img src="https://gitee.com/panghutx/tuchuang/raw/master/20220117092537.png" alt="image-20220115154856069"></p>
+<p>原因是输入格式%s只读取空格之前的内容，而<code>getchar()</code>只能读取一个字符，所以ch再次读取时发现缓存区还有其他字符且不是Y，提示确认失败·。</p>
+<p><strong>方法2：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> arr[<span class="number">20</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;请输入密码\n&quot;</span>);</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span> , arr);</span><br><span class="line"><span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> ((tmp = getchar()) != <span class="string">&#x27;\n&#x27;</span>) &#123;</span><br><span class="line">    ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;请确认密码 Y/N\n&quot;</span>);</span><br><span class="line"><span class="keyword">int</span> ch = getchar();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="string">&#x27;Y&#x27;</span> == ch) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;确认成功\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;确认失败\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用while循环，多次读取，直到缓存区为空，跳出循环。</p>
+<h2 id="赋值和判断"><a href="#赋值和判断" class="headerlink" title="赋值和判断"></a>赋值和判断</h2><p>观察下面代码，该代码循环几次？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> k = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>, k = <span class="number">0</span>; k = <span class="number">0</span>; i++, k++)</span><br><span class="line">	k++;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p>循环0次。为什么呢？原因是判断部分写成了k=0，<code>=</code>为赋值，使得条件为假，不进入for循环，代码执行0次。</p>
+<h2 id="循环的应用："><a href="#循环的应用：" class="headerlink" title="循环的应用："></a>循环的应用：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//非递归求5的阶乘</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> rst = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">	rst = rst * i;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, rst);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//求1!+2!+……+5！之和</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> rst = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">	rst = rst * i;</span><br><span class="line">	sum += rst;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, sum);</span><br></pre></td></tr></table></figure>
+
+<h2 id="strcmp"><a href="#strcmp" class="headerlink" title="strcmp()"></a><code>strcmp()</code></h2><p>C 库函数 <strong>int strcmp(const char *str1, const char *str2)</strong> 把 <strong>str1</strong> 所指向的字符串和 <strong>str2</strong> 所指向的字符串进行比较。</p>
+<p>该函数返回值如下：</p>
+<ul>
+<li>如果返回值小于 0，则表示 str1 小于 str2。</li>
+<li>如果返回值大于 0，则表示 str1 大于 str2。</li>
+<li>如果返回值等于 0，则表示 str1 等于 str2。</li>
+</ul>
+<p>因此比较两个字符串值是否相同时，不能用<code>==</code>，应该用<code>strcmp()</code>函数。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">char</span> str1[<span class="number">15</span>];</span><br><span class="line">   <span class="keyword">char</span> str2[<span class="number">15</span>];</span><br><span class="line">   <span class="keyword">int</span> ret;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">   <span class="built_in">strcpy</span>(str1, <span class="string">&quot;abcdef&quot;</span>);</span><br><span class="line">   <span class="built_in">strcpy</span>(str2, <span class="string">&quot;ABCDEF&quot;</span>);</span><br><span class="line"> </span><br><span class="line">   ret = <span class="built_in">strcmp</span>(str1, str2);</span><br><span class="line"> </span><br><span class="line">   <span class="keyword">if</span>(ret &lt; <span class="number">0</span>)</span><br><span class="line">   &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;str1 小于 str2&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">else</span> <span class="keyword">if</span>(ret &gt; <span class="number">0</span>) </span><br><span class="line">   &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;str1 大于 str2&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">else</span> </span><br><span class="line">   &#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;str1 等于 str2&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">return</span>(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="rand-和srand"><a href="#rand-和srand" class="headerlink" title="rand()和srand()"></a><code>rand()</code>和<code>srand()</code></h2><p><code>rand()</code>:Generates a pseudorandom number. 生成一个伪随机值</p>
+<p><strong>int</strong> <strong>rand(</strong> <strong>void</strong> <strong>);</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,rand());</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, rand());</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, rand());</span><br></pre></td></tr></table></figure>
+
+<p>运行上段代码，会发现每次运行结果都一样，这不是我们理想中的随机值。</p>
+<p>Use the <a href="_crt_srand.htm">srand</a> function to seed the  pseudorandom-number generator before calling <strong>rand</strong>.</p>
+<p>我们可以用<code>srand()</code>来使伪随机值变化。Sets a random starting point.</p>
+<p><strong>void</strong> <strong>srand(</strong> <strong>unsigned</strong> <strong>int</strong> <em>seed</em>  <strong>);</strong></p>
+<p>我们可以用时间作为参数，只要每次播种的时间不同，那么生成的种子就不同，最终的随机数也就不同。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">    a = rand();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, a);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/2043.html">C语言随机数生成教程，C语言rand和srand用法详解 (biancheng.net)</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">胖虎同学</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://youngsay.cn/2022/01/16/C-branch-loop/">https://youngsay.cn/2022/01/16/C-branch-loop/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://youngsay.cn" target="_blank">胖虎同学</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/c/">c</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/01/14/Java-class-object/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【JavaSE】类和对象</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2021/10/22/c-array/" title="c语言：数组误区总结"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-22</div><div class="title">c语言：数组误区总结</div></div></a></div><div><a href="/2021/08/09/c-date-type/" title="c语言：数据类型"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-09</div><div class="title">c语言：数据类型</div></div></a></div><div><a href="/2021/08/10/c-function/" title="c语言：函数"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-08-10</div><div class="title">c语言：函数</div></div></a></div><div><a href="/2021/05/08/c-100/" title="每日一道c语言"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-08</div><div class="title">每日一道c语言</div></div></a></div><div><a href="/2021/10/24/c-operator/" title="c语言：操作符误区总结"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-10-24</div><div class="title">c语言：操作符误区总结</div></div></a></div><div><a href="/2022/01/08/C-prime-knowledge/" title="【C语言】基础语法的简单概括"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-08</div><div class="title">【C语言】基础语法的简单概括</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://cdn.jsdelivr.net/gh/panghutx/CDN/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">胖虎同学</div><div class="author-info__description">永远年轻，永远热泪盈眶</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/panghutx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/panghutx" target="_blank" title="Github"><i class="iconfont icon-github-fill"></i></a><a class="social-icon" href="https://space.bilibili.com/397467755?spm_id_from=333.1007.0.0" target="_blank" title="Bilibili"><i class="iconfont icon-bilibili-line"></i></a><a class="social-icon" href="mailto:2367897284@qq.com" target="_blank" title="Email"><i class="iconfont icon-email"></i></a><a class="social-icon" href="https://youngsay.cn/atom.xml" target="_blank" title="RSS"><i class="iconfont icon-rss"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">分支语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#if-else%E8%AF%AD%E5%8F%A5"><span class="toc-text">if-else语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch-case%E8%AF%AD%E5%8F%A5"><span class="toc-text">switch-case语句</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">循环语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#continue%E6%AF%94%E8%BE%83"><span class="toc-text">continue比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#getchar-%E5%92%8Cputchar"><span class="toc-text">getchar()和putchar()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%8B%E5%80%BC%E5%92%8C%E5%88%A4%E6%96%AD"><span class="toc-text">赋值和判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A"><span class="toc-text">循环的应用：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#strcmp"><span class="toc-text">strcmp()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rand-%E5%92%8Csrand"><span class="toc-text">rand()和srand()</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/16/C-branch-loop/" title="【C语言】分支和循环语句常见问题">【C语言】分支和循环语句常见问题</a><time datetime="2022-01-16T06:33:41.000Z" title="发表于 2022-01-16 14:33:41">2022-01-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/14/Java-class-object/" title="【JavaSE】类和对象">【JavaSE】类和对象</a><time datetime="2022-01-14T03:40:41.000Z" title="发表于 2022-01-14 11:40:41">2022-01-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/12/Java-array/" title="【JavaSE】数组的定义和使用">【JavaSE】数组的定义和使用</a><time datetime="2022-01-12T14:40:41.000Z" title="发表于 2022-01-12 22:40:41">2022-01-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/08/C-prime-knowledge/" title="【C语言】基础语法的简单概括">【C语言】基础语法的简单概括</a><time datetime="2022-01-08T01:33:41.000Z" title="发表于 2022-01-08 09:33:41">2022-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/01/2021/" title="2021年度总结">2021年度总结</a><time datetime="2022-01-01T09:24:01.000Z" title="发表于 2022-01-01 17:24:01">2022-01-01</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s4.ax1x.com/2022/01/11/7eSCIU.png')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 胖虎同学</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'nKtN81THEqdpFPQP6484D0Dw-gzGzoHsz',
+      appKey: 'Elo90cRADuj3PvXaL8PiKkMG',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'en',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div></div></body></html>
