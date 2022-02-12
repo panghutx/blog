@@ -39,7 +39,7 @@
   lightbox: 'fancybox',
   Snackbar: undefined,
   source: {
-    jQuery: 'https://cdn.staticfile.org/jquery/1.10.0/jquery.js',
+    jQuery: 'http://libs.baidu.com/jquery/2.0.0/jquery.min.js',
     justifiedGallery: {
       js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
       css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
@@ -222,7 +222,7 @@
   }
 
   if (typeof Valine === 'function') initValine() 
-  else getScript('https://cdn.staticfile.org/valine/1.0.3/Valine.min.js').then(initValine)
+  else getScript('https://unpkg.com/valine@1.4.16/dist/Valine.min.js').then(initValine)
 }
 
 if ('Valine' === 'Valine' || !false) {
