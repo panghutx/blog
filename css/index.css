@@ -1406,7 +1406,7 @@ canvas:not(#ribbon-canvas),
   }
 }
 :root {
-  --global-font-size: HarmonyOS_Regular;
+  --global-font-size: 14px;
   --global-bg: #fff;
   --font-color: #4c4948;
   --hr-border: #a4d8fa;
@@ -1447,7 +1447,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: HarmonyOS_Medium;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
