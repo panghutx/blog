@@ -6,7 +6,7 @@
   <link href="https://youngsay.cn/atom.xml" rel="self"/>
   
   <link href="https://youngsay.cn/"/>
-  <updated>2022-03-28T08:42:48.050Z</updated>
+  <updated>2022-03-29T15:32:00.849Z</updated>
   <id>https://youngsay.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客一周年啦</title>
+    <link href="https://youngsay.cn/2022/03/29/anniversary1/"/>
+    <id>https://youngsay.cn/2022/03/29/anniversary1/</id>
+    <published>2022-03-29T15:31:01.000Z</published>
+    <updated>2022-03-29T15:32:00.849Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天是3月29日，博客第一篇博文是在去年3月29日，不知不觉博客已经一年了。</p><p>一年前的今天，是大一下返校的前一天，今天，是大二下开学的第五周，一年后的今天，是大三下，不知道是在准备考研还是忙着就业。</p><p>一年后的事，一年后再说，活在当下，珍惜现在。突如其来的疫情已经持续三年了，都忘了没有疫情的生活是啥样了，三年多少人因为疫情失去了生命。上周让人悲痛的客机坠毁事件，航班人员全部遇难，向遇难者默哀。真是不知道明天和意外哪个会先来，生命无常，活着就好。</p><p>今天早上腾讯云连发了多条消息，原来是学生机和域名都快过期了。学生机是1核2G，每年108，我也不打算续费了。昨天看了橙梓的服务器迁移计划，我又心动了，今天买了五年2核2G4M的服务器，330元，我用处不大，只是觉得挺便宜的，下次续费就是2027年了，这下不用担心到期了。</p><p>下午忙活半天把hexo部署到了服务器，这下速度应该快了些，博客至少还能再活五年。五年后，我要发篇博客:博客五周年啦!</p><p>五年后的事，五年后再说吧。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;今天是3月29日，博客第一篇博文是在去年3月29日，不知不觉博客已经一年了。&lt;/p&gt;
+&lt;p&gt;一年前的今天，是大一下返校的前一天，今天，是大二下开学的第五周，一年后的今天，是大三下，不知道是在准备考研还是忙着就业。&lt;/p&gt;
+&lt;p&gt;一年后的事，一年后再说，活在当下，珍惜现在。突</summary>
+      
+    
+    
+    
+    <category term="生活" scheme="https://youngsay.cn/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+    <category term="感悟" scheme="https://youngsay.cn/tags/%E6%84%9F%E6%82%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>常用的字符串处理函数</title>
@@ -511,35 +537,6 @@
     
     
     <category term="Vue.js" scheme="https://youngsay.cn/tags/Vue-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Python笔记：条件、循环及其他语句</title>
-    <link href="https://youngsay.cn/2021/11/03/python5/"/>
-    <id>https://youngsay.cn/2021/11/03/python5/</id>
-    <published>2021-11-03T11:25:01.000Z</published>
-    <updated>2021-11-05T11:40:51.533Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Python基础教程（第三版）第5章：条件、循环及其他语句</p></blockquote><h3 id="print">print()</h3><p><code>end='' </code>  //不换行</p><p><code>sep=''</code>  //自定义分隔符</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;my name is&quot;</span>,end=<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;panghu&quot;</span>) //打印结果：my name <span class="keyword">is</span> panghu</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;I&quot;</span>,<span class="string">&quot;love&quot;</span>,<span class="string">&quot;you&quot;</span>,sep=<span class="string">&quot;!&quot;</span>) //I!love!you</span><br></pre></td></tr></table></figure><h3 id="import">import</h3><p>当你确定要导入模块中的一切时，可使用<code>from somemodule import *</code>如果有两个模块，都包某一函数时，可使用<code>as</code></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math <span class="keyword">as</span> foobar</span><br><span class="line"><span class="built_in">print</span>(foobar.sqrt(<span class="number">4</span>)) //<span class="number">2.0</span></span><br></pre></td></tr></table></figure><h3 id="序列解包">序列解包</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">values=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span></span><br><span class="line">x,y,z=values</span><br><span class="line"><span class="built_in">print</span>(values) //(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(z) //<span class="number">3</span></span><br></pre></td></tr></table></figure><p>*元素符：分配多余的值</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">values=<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span></span><br><span class="line">x,*y,z=values</span><br><span class="line"><span class="built_in">print</span>(x) // <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(y) //[<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(z) //<span class="number">4</span></span><br></pre></td></tr></table></figure><h3 id="条件语句中的布尔值">条件语句中的布尔值</h3><p>在Python的条件语句中，不止<code>False``0</code>表示假，<code>None</code>  <code>&quot;&quot;</code> <code>()</code> <code>[]</code> <code>&#123;&#125;</code>都表示假</p><h3 id="循环中的else子句">循环中的else子句</h3><p>python中的<strong>break</strong>、<strong>continue</strong>和c语言中的功能一样。</p><p><strong>break</strong> 语句可以跳出 for 和 while 的循环体。</p><p><strong>continue</strong> 语句被用来跳过当前循环块中的剩余语句，然后继续进行下一轮循环。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">5</span></span><br><span class="line"><span class="keyword">while</span> n &gt; <span class="number">0</span>:</span><br><span class="line">    n -= <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="built_in">print</span>(n)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;循环结束。&#x27;</span>)</span><br></pre></td></tr></table></figure><p>输出结果为</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">3</span><br><span class="line">循环结束。</span><br></pre></td></tr></table></figure><p>当将break换成continue时，输出结果是</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">3</span><br><span class="line">1</span><br><span class="line">0</span><br><span class="line">循环结束。</span><br></pre></td></tr></table></figure><p>以上和c语言没什么不同，python循环语句有一点与c不同。</p><p>循环语句可以有else 子句，它在穷尽列表(以for循环)或条件变为 false (以while循环)导致循环终止时被执行，但循环被 break 终止时不执行。</p><p>打印100以内的素数：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">num=[];</span><br><span class="line">i=<span class="number">2</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,<span class="number">100</span>):</span><br><span class="line">    j=<span class="number">2</span></span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>,i):</span><br><span class="line">        <span class="keyword">if</span>(i%j==<span class="number">0</span>):</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        num.append(i)</span><br><span class="line"><span class="built_in">print</span>(num)</span><br></pre></td></tr></table></figure><h3 id="比较运算符">比较运算符</h3><p><code>x is y</code> x和y是同一个对象</p><p><code>x is not y</code> x和y是不同的对象</p><p><code>x in y</code> x是容器（如序列）y的成员</p><p><code>x not in y</code> x不是容器（如序列）y的成员</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x=y=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">z=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line"><span class="built_in">print</span>(x==z) //<span class="literal">True</span></span><br><span class="line"><span class="built_in">print</span>(x <span class="keyword">is</span> z) // <span class="literal">False</span></span><br></pre></td></tr></table></figure><p>==用来检查两个对象是否相等，而is用来检查两个对象是否相同（是同一个对象）。</p><h3 id="遍历字典">遍历字典</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">&#x27;x&#x27;</span>: <span class="number">1</span>, <span class="string">&#x27;y&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;z&#x27;</span>: <span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> d:</span><br><span class="line"> <span class="built_in">print</span>(key, <span class="string">&#x27;corresponds to&#x27;</span>, d[key])</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> d.items():</span><br><span class="line"> <span class="built_in">print</span>(key, <span class="string">&#x27;corresponds to&#x27;</span>, value)</span><br></pre></td></tr></table></figure><h3 id="zip">zip()</h3><p>一个很有用的并行迭代工具是内置函数zip，它将两个序列“缝合”起来，并返回一个由元组组成的序列。返回值是一个适合迭代的对象，要查看其内容，可使用list将其转换为列表。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name=[<span class="string">&quot;panghu&quot;</span>,<span class="string">&quot;daxiong&quot;</span>,<span class="string">&quot;jiqimao&quot;</span>]</span><br><span class="line">age=[<span class="number">20</span>,<span class="number">21</span>,<span class="number">22</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">zip</span>(name,age))) //[(<span class="string">&#x27;panghu&#x27;</span>, <span class="number">20</span>), (<span class="string">&#x27;daxiong&#x27;</span>, <span class="number">21</span>), (<span class="string">&#x27;jiqimao&#x27;</span>, <span class="number">22</span>)]</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;Python基础教程（第三版）第5章：条件、循环及其他语句&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;print&quot;&gt;print()&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;end=&#39;&#39; &lt;/code&gt;  //不换行&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sep=</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="Python" scheme="https://youngsay.cn/tags/Python/"/>
     
   </entry>
   
