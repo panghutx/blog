@@ -6,7 +6,7 @@
   <link href="https://youngsay.cn/atom.xml" rel="self"/>
   
   <link href="https://youngsay.cn/"/>
-  <updated>2022-06-03T04:13:58.587Z</updated>
+  <updated>2022-06-04T14:22:53.531Z</updated>
   <id>https://youngsay.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>时间复杂度和空间复杂度</title>
+    <link href="https://youngsay.cn/2022/06/04/algorithm-complexity/"/>
+    <id>https://youngsay.cn/2022/06/04/algorithm-complexity/</id>
+    <published>2022-06-04T13:40:41.000Z</published>
+    <updated>2022-06-04T14:22:53.531Z</updated>
+    
+    <content type="html"><![CDATA[<p>如何衡量一个算法的好坏？我们可以从时间和空间两个方面入手，也就是时间复杂度和空间复杂度。</p><p>无论是时间复杂度还是空间复杂度，都采用<strong>大O的渐进表示法</strong>。只保留最高阶项，且最高阶项的系数为1.例如一个算法的执行次数是2N^2+M+3,那么该算法的时间复杂度是O（N^2)。</p><h3 id="时间复杂度">时间复杂度</h3><p>时间复杂度的衡量标准也就是算法的执行次数。我们下面用几段代码来练习一下算法时间复杂度的计算。</p><ul><li>冒泡排序的时间复杂度</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> end = array.length; end &gt; <span class="number">0</span>; end--) &#123;</span><br><span class="line"><span class="keyword">boolean</span> sorted = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; end; i++) &#123;</span><br><span class="line"><span class="keyword">if</span> (array[i - <span class="number">1</span>] &gt; array[i]) &#123;</span><br><span class="line">Swap(array, i - <span class="number">1</span>, i);</span><br><span class="line">sorted = <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (sorted == <span class="keyword">true</span>) &#123;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>假设有N个元素，最坏的情况下需要走N-1趟，每趟排序end-1次。例如有5个元素，N-5，那么需要走4趟，每趟排列次数分别为4,3,2,1。刚好构成等差数列，可以用等差数列求和公式计算执行次数,也就是<code>[(N*（N-1))]/2</code>。</p><p>按照大O的渐进表示法，时间复杂度是O（N^2)。</p><ul><li>二分查找的时间复杂度</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> end = array.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (begin &lt;= end) &#123;</span><br><span class="line">    <span class="keyword">int</span> mid = begin + ((end-begin) / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span> (array[mid] &lt; value)</span><br><span class="line">    begin = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (array[mid] &gt; value)</span><br><span class="line">    end = mid - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>二份查找的好处是每次能去掉一半，第一次是去掉一半还剩一半，第二次去掉一半还剩1/4，第三次去掉一半还剩1/8……如下图所示：</p><p><img src="https://cos.youngsay.cn/blog/202206042220754.png" alt="image-20220604213754161"></p><p>所以二分查找的时间复杂度是O（logN）</p><ul><li>递归求阶乘的时间复杂度</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> N &lt; <span class="number">2</span> ? N : factorial(N-<span class="number">1</span>) * N;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>递归算法的时间复杂度 = 递归的次数 * 每次递归执行的次数</p><p>递归求阶乘算法递归次数为N，每次递归执行1次，所以时间复杂度是O（N）。</p><ul><li>递归求斐波那契数列</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fibonacci</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> N &lt; <span class="number">2</span> ? N : fibonacci(N-<span class="number">1</span>)+fibonacci(N-<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>递归次数，也就是层数为N的二叉树最多的结点个数，(2^N) - 1。</p><p>所以时间复杂度是O（2^N)。</p><h3 id="空间复杂度">空间复杂度</h3><p>空间复杂度的衡量标准是临时占用的存储空间大小。随着计算机的发展，存储空间越来越大，空间复杂度也就不必太过关注。</p><ul><li>递归求阶乘的空间复杂度</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> N &lt; <span class="number">2</span> ? N : factorial(N-<span class="number">1</span>)*N;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>递归了N次，开辟了N个栈帧，每个栈帧占用常数的存储空间，所以该算法的空间复杂度是O（N）。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;如何衡量一个算法的好坏？我们可以从时间和空间两个方面入手，也就是时间复杂度和空间复杂度。&lt;/p&gt;
+&lt;p&gt;无论是时间复杂度还是空间复杂度，都采用&lt;strong&gt;大O的渐进表示法&lt;/strong&gt;。只保留最高阶项，且最高阶项的系数为1.例如一个算法的执行次数是2N^2+M+3,</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="数据结构和算法" scheme="https://youngsay.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>【JavaSE】认识String类</title>
@@ -496,33 +521,6 @@
     
     
     <category term="c" scheme="https://youngsay.cn/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2021年度总结</title>
-    <link href="https://youngsay.cn/2022/01/01/2021/"/>
-    <id>https://youngsay.cn/2022/01/01/2021/</id>
-    <published>2022-01-01T09:24:01.000Z</published>
-    <updated>2022-01-23T12:07:34.465Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>2022年来了，我又长大了一岁。</p><p>过去这一年，有快乐有失落，有收获有遗憾。</p><p>伤感的话不再说，遗憾的事不再提，新的一年继续好好生活。</p></blockquote><p>等等，在好好生活之前还是写一下年终总结吧，虽然今天已经是2022年……</p><p>回顾过去的这一年，**每一天都很平常，有时很快乐，有时会难过，也许有成长，难免有遗憾。**就在这平凡的一天又一天中，平凡的我又长大了一岁。</p><p>我没有写日记的习惯，很多事过去了就过去了，也许以后就再也不会想起。比如现在我想写一个年度总结，我不知道写些什么。好在有这样一个博客，或多或少能留存一些当时的记忆。</p><ul><li>2021年3月29日，新博客建成，发布第一篇博客：  <a href="https://www.youngsay.cn/2021/03/29/go-school/">新学期，新博客，新开始!</a></li></ul><p>在此之前也搭建过其他博客，总是写着写着感觉没啥意思，最终都删库跑路了。这是我持续时间最长的博客，我会一直让它活下去（希望别被打脸）。</p><p>回看第一篇博客，感慨万千。当时写到“我想学计算机相关专业，但无奈被调剂到了应用物理”，现在我已经是计算机科学与技术专业的学生了，2021/9/17 收到了转专业成功的消息，这个可以算是今年很开心的一件事。当时我提到“一直对编程感兴趣，尤其是前端”，现在我已经俩月没学前端了，2021/11/6 发的vue那篇笔记应该是我最后一次学习前端，也是刚开始接触vue。现在专业课开了Python和C语言，所以就把js先搁置了。最初学的时候就不扎实，现在再回看当时的笔记已经很陌生了。</p><ul><li>2021年6月2号，在听讲座后不久，发布了：  <a href="https://blog.wangyouwu.cn/2021/06/02/new/">讲座，机会，关系!</a></li></ul><p>这是听完学长讲座后不久写的一篇博客。学长是我原来学院信科专业的学生，考上了北理工研究生，讲座期间在字节跳动实习，现在怎样我也不知道了。当时我还加了他的微信，至今也没发过消息……学长的讲座对我影响很大，在听完他讲座后的一段时间学习很积极，但劲头持续时间不长（捂脸）。</p><ul><li>2021年7月21日，放暑假两周后发布： <a href="https://blog.wangyouwu.cn/2021/07/21/summer">暑假，目的论，自卑情结</a></li></ul><p>这篇博客是看了《被人讨厌的勇气》的读后感，对我有些许启发。我惰性很强，自制力很差，如果我再胸无大志的话，便是个完完全全快乐的人。但我又有燕雀之志（虽无鸿鹄之志，但也有些小追求），所以有时会很焦虑，只能做半个快乐的人。我因为自制力差，经常沉迷于网络而浪费很多时间，但我又有些追求，时而积极，时而消极。积极时我经常为过去的消极而懊悔，为失去了的宝贵时间而焦虑，但积极一阵后便又迎来了消极，周而复始，反反复复。</p><ul><li>2021年9月6日：大二上开学，2021年12月24日，本学期结束。</li></ul><p>这学期自我感觉良好，比以往更加充实快乐。</p><p>回顾这一年，当时的很多想法已经变了，当时的很多困惑现在已不再困惑，当时认为天大的事现在看来也许都不叫事。最后引用余华的一句话来结束本篇博客，“<strong>没有什么比时间更具有说服力了，因为时间无需通知我们就可以改变一切</strong>”。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;2022年来了，我又长大了一岁。&lt;/p&gt;
-&lt;p&gt;过去这一年，有快乐有失落，有收获有遗憾。&lt;/p&gt;
-&lt;p&gt;伤感的话不再说，遗憾的事不再提，新的一年继续好好生活。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;等等，在好好生活之前还是写一下年终总结吧，虽然</summary>
-      
-    
-    
-    
-    <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
-    
     
   </entry>
   
