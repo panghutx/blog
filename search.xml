@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>【JavaWeb】Servlet上传文件</title>
+      <link href="/2022/06/08/Java-uploadFile/"/>
+      <url>/2022/06/08/Java-uploadFile/</url>
+      
+        <content type="html"><![CDATA[<p>Servlet支持上传文件操作，在HttpServletRequest类中，通过Part对象的getPart方法便可以获取请求中指定name的文件。</p><p>上传文件分为两个部分，前端部分和后端部分，关于文件操作，这两个部分都很简单，代码量很少。</p><p>各文件路径如下：</p><p><img src="https://cos.youngsay.cn/blog/202206082140961.png" alt="maven各文件路径"></p><p><strong>前端页面</strong>：创建一个html文件，通过form表单的action属性，与后端Servlet相关联，method属性指定方法，上传文件通常为post，通过enctype属性指定编码方式，上传文件为multipart/form-data。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;file&quot;</span> method=<span class="string">&quot;post&quot;</span> enctype=<span class="string">&quot;multipart/form-data&quot;</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">&quot;file&quot;</span> name=<span class="string">&quot;myFile&quot;</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;提交&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><p><strong>后端部分</strong>：创建一个上传文件的类Upload，继承HttpServlet，@WebServlet()注解内容与前端页面form表单的action路径相同(此处有<code>/</code>)，此外还需要<code>@MultipartConfig</code>注解,缺少该注解将无法正确读取文件。 通过Part对象的getPart()方法获取文件，方法内参数为前端界面input中类型为file格式的name属性值。通过write方法可以将文件写入磁盘，方法内参数为磁盘路径。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MultipartConfig</span></span><br><span class="line"><span class="meta">@WebServlet(&quot;/file&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Upload</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        resp.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">        Part part = req.getPart(<span class="string">&quot;myFile&quot;</span>);</span><br><span class="line">        System.out.println(part.getContentType());</span><br><span class="line">        System.out.println(part.getName());</span><br><span class="line">        System.out.println(part.getSize());</span><br><span class="line">        part.write(<span class="string">&quot;d:/myFile.png&quot;</span>);</span><br><span class="line">        resp.getWriter().write(<span class="string">&quot;上传成功&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaWeb </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>时间复杂度和空间复杂度</title>
       <link href="/2022/06/04/algorithm-complexity/"/>
       <url>/2022/06/04/algorithm-complexity/</url>
