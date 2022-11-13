@@ -1447,7 +1447,7 @@ body {
   background: var(--global-bg);
   color: var(--font-color);
   font-size: var(--global-font-size);
-  font-family: HarmonyOS_Medium;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   line-height: 2;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
@@ -1473,7 +1473,7 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: url(https://s1.ax1x.com/2022/08/05/vnsfPK.jpg);
+  background: url(https://cos.youngsay.cn/blog/202211132006881.jpg);
   background-attachment: local;
   background-position: center;
   -webkit-background-size: cover;
