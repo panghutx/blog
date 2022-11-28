@@ -6,7 +6,7 @@
   <link href="https://youngsay.cn/atom.xml" rel="self"/>
   
   <link href="https://youngsay.cn/"/>
-  <updated>2022-11-22T06:49:57.565Z</updated>
+  <updated>2022-11-28T13:18:47.781Z</updated>
   <id>https://youngsay.cn/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL数据库：索引</title>
+    <link href="https://youngsay.cn/2022/11/28/MySQL-index/"/>
+    <id>https://youngsay.cn/2022/11/28/MySQL-index/</id>
+    <published>2022-11-28T13:04:41.000Z</published>
+    <updated>2022-11-28T13:18:47.781Z</updated>
+    
+    <content type="html"><![CDATA[<p>索引是一种用于快速查找和检索数据的数据结构，类似于图书的目录，通过索引可以更快地找到对应的数据。</p><h3 id="索引的优缺点">索引的优缺点</h3><p>优点：</p><ul><li>提高了查找的效率</li><li>通过创建唯一性索引，确保了每一行数据的唯一性。</li></ul><p>缺点：</p><ul><li>索引使用物理文件存储，带来了空间的消耗。</li><li>创建和维护索引需要耗费时间。当数据发生更改时，索引也会动态修改，降低SQL执行效率。</li></ul><h3 id="索引SQL">索引SQL</h3><h4 id="查看索引">查看索引</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> 索引名 <span class="keyword">from</span> 表名(列名);</span><br></pre></td></tr></table></figure><p><img src="https://cos.youngsay.cn/blog/202211282118307.png" alt="image-20221128161811672"></p><h4 id="创建索引">创建索引</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> index 索引名 <span class="keyword">on</span> 表名(列名);</span><br></pre></td></tr></table></figure><p><img src="https://cos.youngsay.cn/blog/202211282118347.png" alt="image-20221128162120786"></p><h4 id="删除索引">删除索引</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">drop</span> index 索引名 <span class="keyword">on</span> 表名</span><br></pre></td></tr></table></figure><p><img src="https://cos.youngsay.cn/blog/202211282118794.png" alt="image-20221128162440340"></p><h3 id="索引底层的数据结构">索引底层的数据结构</h3><p>索引是一种查找更快的数据结果。</p><p>数组和链表的查找都需要遍历，最先淘汰。</p><p>二叉搜索树最坏情况下会变成单支树，查找的时间复杂度变为O(N)，淘汰。</p><p>AVL树和红黑树使得左右子树高度相对平衡，但数据量太大时，树的高度过高，比较次数过多，即磁盘IO过多，淘汰。</p><p>哈希表查找的时间复杂度是O(1)，是不是可以作为索引的数据结构了呢？NO！哈希表不支持顺序和范围查找，而SQL要经常进行排序和</p><p>范围查询，淘汰。</p><p><strong>目前大多数数据库采用B树或B+树作为索引结构</strong>，在MySQL中，MyISAM 引擎和 InnoDB 引擎都是使用 B+树 作为索引结构。</p><p>B树称为多路平衡查找树，B+树是在B树基础上的变现，二者都是多叉平衡树。</p><h4 id="B树">B树</h4><p><img src="https://cos.youngsay.cn/blog/202211282118366.png" alt="image-20221128203706890"></p><h4 id="B-树">B+树</h4><p><img src="https://cos.youngsay.cn/blog/202211282118609.png" alt="image-20221128203611266"></p><h4 id="区别和联系">区别和联系</h4><ul><li><p>B树N个值，划分为N+1个结点；B+树N个值，划分为N个结点。</p></li><li><p>B树叶子结点相互独立;B+树叶子结点是链式结构，指向相邻结点。</p></li><li><p>B树每个结点既存放key，又存放data；B+树只有叶子结点既存放key，又存放data，其他结点只存key。</p></li><li><p>B树的查找过程是对每个关键字二分查找，可能没有到叶子结点就检索到了；B+树更加稳定，每次查找都是从根节点开始，到叶子结点结束。</p></li></ul><h4 id="索引为什么要用B-树">索引为什么要用B+树</h4><ul><li>每次都是从根节点到叶子结点，IO次数都差不多，查询效率稳定。</li><li>磁盘IO请求数少，查询速度快。</li><li>叶子结点采用链式存储结构，方便数据范围查询。</li><li>非叶子结点只存储key，占用空间小，甚至可以缓存到内存中。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;索引是一种用于快速查找和检索数据的数据结构，类似于图书的目录，通过索引可以更快地找到对应的数据。&lt;/p&gt;
+&lt;h3 id=&quot;索引的优缺点&quot;&gt;索引的优缺点&lt;/h3&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提高了查找的效率&lt;/li&gt;
+&lt;li&gt;通过创建唯一性索引，确保了每一行数据</summary>
+      
+    
+    
+    
+    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="索引" scheme="https://youngsay.cn/tags/%E7%B4%A2%E5%BC%95/"/>
+    
+    <category term="MySQL" scheme="https://youngsay.cn/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>socket套接字网络编程</title>
@@ -493,31 +524,6 @@
       
     <summary type="html">&lt;h3 id=&quot;sizeof-的坑🕳&quot;&gt;sizeof()的坑🕳&lt;/h3&gt;
 &lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span c</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="c" scheme="https://youngsay.cn/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>浮点数在内存中的存储</title>
-    <link href="https://youngsay.cn/2022/03/04/C-IEEE754/"/>
-    <id>https://youngsay.cn/2022/03/04/C-IEEE754/</id>
-    <published>2022-03-04T03:31:01.000Z</published>
-    <updated>2022-03-31T06:27:28.961Z</updated>
-    
-    <content type="html"><![CDATA[<p>观察下面的代码，输出结果是什么呢？</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> n = <span class="number">9</span>;</span><br><span class="line"><span class="keyword">float</span> *pFloat = (<span class="keyword">float</span> *)&amp;n;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;n的值为：%d\n&quot;</span>,n);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;*pFloat的值为：%f\n&quot;</span>,*pFloat);</span><br><span class="line">*pFloat = <span class="number">9.0</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;num的值为：%d\n&quot;</span>,n);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;*pFloat的值为：%f\n&quot;</span>,*pFloat);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><img src="https://panghu-1256092140.cos.ap-beijing.myqcloud.com/%20tuchuang-master/20220331140728.png" alt="打印结果"></p><p>以整数存储，以整数取出，结果相同；以浮点数存储，以浮点数取出，结果也相同。</p><p>以整数存储，以浮点数取出，结果不同；以浮点数存储，以整数取出，结果也不同。</p><p>由此可见，<strong>整数和浮点数在内存中的存储是不同的</strong>。</p><p>下面我们看一下浮点数的存储规则，浮点数在内存中的表示是由IEEE（电气与电子工程协会）规定好的。</p><p>任何一个二进制浮点数，可以表示成</p><p><img src="https://panghu-1256092140.cos.ap-beijing.myqcloud.com/%20tuchuang-master/20220331141200.png" alt="image-20220304192024795"></p><p>(-1)^S表示符号位，s为0浮点数是正数，s为-1浮点数是负数；M表示有效数字，范围在[1,2);2^E表示指数位。</p><p>这样看很难理解，我们举例说明。</p><p><code>float a = -5.0f</code>，浮点数-5.0，用二进制表示为-101.0，写成科学计数法的形式：-1.010*2^2，s=1，M=1.010，E=2</p><p>表示好之后，我们将它存入内存。IEEE 754规定，对于32位的单精度浮点数，最高位是符号位S，占1位，然后是指数位E，占8位，最后是有效数字M，占23位；对于双精度浮点数，占位分别为1，11，52，我们这里主要介绍float的存储。</p><p>![单精度浮点数在内存中的存储](<img src="!%5B%5D(https://panghu-1256092140.cos.ap-beijing.myqcloud.com/%20tuchuang-master/20220331141200.png)20220304184553.png" alt=""></p><p>关于存储，E和M有一些特殊规定：</p><p>M范围是[1，2），所以保存时干脆省略1，比如-5.0的M是1.010，保存时直接写成010，后面再加20个0，凑够23位。即01000000000000000000.</p><p>E是无符号整数，但科学计数法E可能有负数，所以存入内存时，8位E加上127，11位E加上1023加以修正，比如-5.0的E是2，保存时加上127就是129，即10000001.</p><p>所以浮点数-5.0在内存中的存储是11000000101000000000000000000，用16进制表示就是0xc0a00000</p><p><img src="https://panghu-1256092140.cos.ap-beijing.myqcloud.com/tuchuang-master/20220304184600.png" alt="-5.0的地址"></p><p>以上是关于浮点数存储的规则，下面是从内存中取出的规则。如何取出，分3种情况，全看E。</p><p>①E不全为0或不全为1时，怎样存储的，就怎样取出。存储时M省略了1，取出是再加上1，存储时E加了127修正，取出时再减去127。</p><p>②E全为0，E=1-127=-126，M不再加上1，而是还原成0.xxxxx；</p><p>③E全为1，这时，如果有效数字M全为0，表示±无穷大（正负取决于符号位s）</p><p>关于E取出的规则，简单了解下就好。</p><p>我们了解了IEEE标准之后，知道了浮点数在内存中的存储规则，下面来看一下上面那段代码。</p><p>第一个printf语句打印的是整数，整数存储，整数打印，结果当然是9；</p><p>第二个printf语句是以浮点数打印，结果是0.000000，以整数存储，以浮点数取出，结果必然不同。9以整数存储，二进制就是00000000000000000000000000001001，S=0，E=00000000，M=00000000000000000001001，以浮点数取出，因为E全为0，所以取出时E=1-127=-126，M忽略1，还原成0.00000000000000000001001，所以结果就是(-1)^0 * 0.00000000000000000001001 * 2^-126,也就是0.000000.</p><p>第三个printf语句是以整数打印，以浮点数存储，以整数取出，结果必然不同。9.0以浮点数存储，二进制就是1001.0，科学计数法表示为1.0010*2^3,其中S=1，E=3，M=1.0010，根据存储规则，存入内存中时，E=3+127=130，即10000010，M忽略1，结果为0010，凑够23位，即00100000000000000000000，占位比S:E:M=1:8:23,最终结果是01000001000100000000000000000000。以浮点数存储后，以整型打印，会将其视为整数，最高位是符号位0，正数原码反码补码一样，最终结果是1,091,567,616</p><p>第四个printf语句打印的是浮点数，以浮点数存储，以浮点数打印，结果是9.0；</p><p>好了，说了这么多，一言以蔽之：整数和浮点数在内存中的存储规则不同，导致输出结果不同。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;观察下面的代码，输出结果是什么呢？&lt;/p&gt;
-&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;</summary>
       
     
     
