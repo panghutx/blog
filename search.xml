@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>MySQL数据库：事务</title>
+      <link href="/2022/11/29/MySQL-transaction/"/>
+      <url>/2022/11/29/MySQL-transaction/</url>
+      
+        <content type="html"><![CDATA[<h3 id="事务的概念">事务的概念</h3><p><strong>事务</strong>是逻辑上的一组操作，能够将各SQL语句打包执行，<strong>要么全都执行，要么全都不执行</strong>。</p><p>想象我们在操作数据库时，数据库突然挂了，或者多个线程写入数据库时覆盖了彼此的更改……一系列操作都会导致数据库数据的不一致性，基于这些问题，数据库有了事务这一机制。</p><p>拿转账举例，A想要向B转账500元，该操作分为两步：</p><ul><li>A的账户减少500元</li><li>B的账户增加500元</li></ul><p>事务会将这两步打包在一起执行，要么全都执行，要么全都不执行。不会出现A的账户少了500，而B账户没有增加500的情况。</p><h3 id="如何使用事务">如何使用事务</h3><p>①开启事务</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">start</span> transaction;</span><br></pre></td></tr></table></figure><p>②执行多条SQL语句</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- A账户减少500</span></span><br><span class="line">update accout <span class="keyword">set</span> money<span class="operator">=</span>money<span class="number">-500</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line"><span class="comment">-- B账户增加500</span></span><br><span class="line">update accout <span class="keyword">set</span> money<span class="operator">=</span>money<span class="operator">+</span><span class="number">500</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;B&#x27;</span>;</span><br></pre></td></tr></table></figure><p>③回滚或提交：rollback/commit;</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">commit</span>;</span><br></pre></td></tr></table></figure><p>说明：rollback即是全部失败，commit即是全部成功。</p><h3 id="事务的特性">事务的特性</h3><p>关系型数据库（例如：<code>MySQL</code>、<code>SQL Server</code>、<code>Oracle</code> 等）事务都有四大特性：</p><p>原子性</p><p><strong>原子性</strong>：事务为执行的最小单元，不可再划分，要么全都执行，要么全都不执行。</p><p><strong>一致性</strong>：事务执行前后的数据要保持一致，结果不能出现异常。拿转账举例，转账前后两个账户的总额是不变的。</p><p><strong>持久性</strong>：事务带来的影响是持久的，不会因为数据库故障而产生任何影响。</p><p><strong>隔离性</strong>：并发访问数据库时，各事务之间的数据库是独立的，一个用户的事务不会被其他事务所干扰。</p><p>只有保证事务的原子性、持久性和隔离性，才能保证事务的一致性，所以说原子性、持久性和隔离性是事务的手段，一致性是目的。</p><h3 id="并发事务带来的问题">并发事务带来的问题</h3><p><strong>脏读</strong>：一个事务正在访问数据库并对数据进行修改，而该修改并未提交到数据库，另一个进行此时访问数据库读取数据。而这里访问的数据只是一个中间的数据，不一定是最终的结果，这里读到的数据就是一个“脏数据”，基于“脏数据”做出的操作可能是错误的。</p><p><strong>不可重复读</strong>：在一个事务内多次读取同一数据。在多次读取数据之间，另一个事务访问并修改了该数据，那么再次读取该数据时，发现与之前读取到的数据不一样。在一个事务内两次读取到的数据不一样，称为不可重复读。</p><p><strong>幻读</strong>:一个事务(T1)读取了几行数据，此时另一个事务(T2)插入了一些数据。事务T1再次读取该数据发现多了一些原本不存在的数据，这就是幻读。幻读是不可重复读的特殊情况，不可重复读强调的是数据的更改，幻读强调的是数据的增加。</p><h3 id="事务隔离级别">事务隔离级别</h3><p>SQL标准定义了四个隔离级别，隔离级别越高，并行化就越低。</p><ul><li>read-uncommitted：读取未提交。最低的隔离级别。允许读取未提交的数据，可能导致脏读、不可重复读、幻读。</li><li>read-committed：读取已提交。不能读取未提交的数据，即事务在修改数据时另一个事务不能执行读操作。可以防止脏读，不能避免不可重复读、幻读。</li><li>repeatable-read：可重复读。事务在读取数据时，其他事务不能修改正在读取的数据。因此对同一数据的多次修改结果都是一致的，可以防止脏读、不可重复读，不能避免幻读。</li><li>serializable：串行化。最高的隔离级别。各事务串行执行，相互之间不存在干扰，可以防止脏读、不可重复读和幻读。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+            <tag> 事务 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MySQL数据库：索引</title>
       <link href="/2022/11/28/MySQL-index/"/>
       <url>/2022/11/28/MySQL-index/</url>
