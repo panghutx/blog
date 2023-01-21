@@ -6,7 +6,7 @@
   <link href="https://youngsay.cn/atom.xml" rel="self"/>
   
   <link href="https://youngsay.cn/"/>
-  <updated>2022-11-29T05:41:07.010Z</updated>
+  <updated>2023-01-21T08:14:45.850Z</updated>
   <id>https://youngsay.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2022年终总结</title>
+    <link href="https://youngsay.cn/2023/01/21/2022/"/>
+    <id>https://youngsay.cn/2023/01/21/2022/</id>
+    <published>2023-01-21T07:15:15.000Z</published>
+    <updated>2023-01-21T08:14:45.850Z</updated>
+    
+    <content type="html"><![CDATA[<p>时间过得真快啊，今天就是大年三十了，一年又这样过去了。</p><p>没什么可写的，但又想写点什么，毕竟好久没写记录自己的日常了，连”个站商店“也把我网站删除了。</p><blockquote><p>《个站商店》给你发了单独的邮件，</p><p>hi 胖虎同学 ：</p><p>很抱歉，你的网站《胖虎同学》未能通过『个站商店』的审核，主要原因是内容非原创，多是技术类或者转载类，这类网站一般比较少人看。等你整改后，欢迎再来哦！</p><p>———— 祝生活愉快！ 邮件来自《个站商店》 2023-01-18 12:51:59</p></blockquote><p>今年也和往年一样，疫情，开学，放假……</p><p>2月28日，开学，开学没几天，疫情严重，在校上网课。5月25日，请假离校，提前过上暑假生活……</p><p>9月5号开始返校，已经是大三的老家伙了，因家里疫情被延期返校，13日回校。开学没几天，疫情严重，在校上网课。11月26日，请假离校，提前过上寒假生活……</p><p>除了开学放假外，今年有两件事可以说说。一件好事，一件坏事。</p><h3 id="实习">实习</h3><p>一件好事就是找到了实习。12月，我开始准备找实习的事，很幸运在12月30日拿到了实习offer。</p><p>1月5号，去公司报到，开始实习生活。1月21也就是今天，回家过年。实习找的比较晚，只工作了11天，而这一周人都走的差不多了，基本上就是摸鱼，所以只工作了5天。</p><p>在这段时间里，感觉挺快乐，是我之前没有体会到的新生活。总的下来有两点体会。</p><p>第一点就是社交能力差，除了导师和一个人很好的哥外，和其他人都没说过什么话。有什么问题也不太好意思问，只是自己在那里瞎琢磨。</p><p>第二点就是过的有些空虚了，在公司没事做时没有自己学习新知识，而是摸鱼，想着干饭、下班。在家没事做时也没有花太多时间学习，而是刷手机、聊天。</p><p>新的一年希望先从这两点改变，与同事多沟通，多学习，过的充实、有意义一些，少做些没用的事。</p><h3 id="生病">生病</h3><p>一件坏事就是生病了。大便痛、有时候有血，断断续续可能快一年了。之前看了下医生，说是内痔，拿了点药，不太管用，也一直就没管了。身体不好就比较影响心情，有时候想起来就比较烦。可能过完年要做个肠镜看看吧，哎，太麻烦了。</p><p>其实还有一件烦心事是我的博客评论不能发邮件提醒了，一直也没时间管，有时候想起来就比较烦，哎，太麻烦了。</p><p>其实还有一件烦心事是我的电脑前几天蓝屏重做的系统，现在只是凑活用，一些环境、软件一直也没时间配置安装，比如我现在没办法发这篇博客。哎，太麻烦了。</p><p>过年了，烦心事都会过去的，新的一年全是好事，好事，好事，最后，祝大家新年快乐！</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;时间过得真快啊，今天就是大年三十了，一年又这样过去了。&lt;/p&gt;
+&lt;p&gt;没什么可写的，但又想写点什么，毕竟好久没写记录自己的日常了，连”个站商店“也把我网站删除了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;《个站商店》给你发了单独的邮件，&lt;/p&gt;
+&lt;p&gt;hi 胖虎同学 ：&lt;/</summary>
+      
+    
+    
+    
+    <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="年终总结" scheme="https://youngsay.cn/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL数据库：事务</title>
@@ -38,9 +66,9 @@
     <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="MySQL" scheme="https://youngsay.cn/tags/MySQL/"/>
-    
     <category term="事务" scheme="https://youngsay.cn/tags/%E4%BA%8B%E5%8A%A1/"/>
+    
+    <category term="MySQL" scheme="https://youngsay.cn/tags/MySQL/"/>
     
   </entry>
   
@@ -69,9 +97,9 @@
     <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="索引" scheme="https://youngsay.cn/tags/%E7%B4%A2%E5%BC%95/"/>
-    
     <category term="MySQL" scheme="https://youngsay.cn/tags/MySQL/"/>
+    
+    <category term="索引" scheme="https://youngsay.cn/tags/%E7%B4%A2%E5%BC%95/"/>
     
   </entry>
   
@@ -508,33 +536,6 @@
     
     <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>常用的字符串处理函数</title>
-    <link href="https://youngsay.cn/2022/03/28/C-string/"/>
-    <id>https://youngsay.cn/2022/03/28/C-string/</id>
-    <published>2022-03-28T08:31:01.000Z</published>
-    <updated>2022-03-28T08:42:48.050Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="字符串处理类">字符串处理类</h2><h3 id="strlen"><code>strlen</code></h3><h4 id="简单介绍">简单介绍</h4><p><code>size_t strlen ( const char * str );</code></p><p>Geting string length.</p><p>参数：str，返回值：字符串长度</p><p>字符串以<code>\0</code>作为结束标志，返回<code>\0</code>之前的字符个数。返回值是<code>size_t</code>（无符号）。</p><h4 id="模拟实现">模拟实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1：计时器</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">My_strlen1</span><span class="params">(<span class="keyword">char</span>* ps)</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (*ps) &#123;</span><br><span class="line">count++;</span><br><span class="line">ps++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方法2：指针相减</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">My_strlen2</span><span class="params">(<span class="keyword">char</span>* ps)</span> </span>&#123;</span><br><span class="line"><span class="keyword">char</span>* start = ps;</span><br><span class="line"><span class="keyword">while</span> (*ps) &#123;</span><br><span class="line">ps++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> ps - start;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方法3：递归</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">My_strlen3</span><span class="params">(<span class="keyword">char</span>* ps)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (*ps == <span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>+My_strlen3(ps+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="strcpy"><code>strcpy</code></h3><h4 id="简单介绍-2">简单介绍</h4><p><code>char * strcpy ( char * destination, const char * source );</code></p><p>Copies the C string pointed by <em>source</em> into the array pointed by <em>destination</em>, including the terminating null character (and stopping at that point).</p><p>以<code>\0</code>结束，且将<code>\0</code>拷贝到目标空间</p><h4 id="模拟实现-2">模拟实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">My_strcpy</span><span class="params">(<span class="keyword">char</span>* des, <span class="keyword">char</span>* src)</span> </span>&#123;</span><br><span class="line"><span class="keyword">char</span>* rst = des;</span><br><span class="line"><span class="keyword">while</span> (*src) &#123;</span><br><span class="line">*des = *src;</span><br><span class="line">des++;</span><br><span class="line">src++;</span><br><span class="line">&#125;</span><br><span class="line">*des = *src;</span><br><span class="line"><span class="keyword">return</span> rst;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//改进</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">My_strcpy1</span><span class="params">(<span class="keyword">char</span>* des, <span class="keyword">char</span>* src)</span> </span>&#123;</span><br><span class="line"><span class="keyword">char</span>* rst = des;</span><br><span class="line"><span class="keyword">while</span> (*des++ = *src++) &#123;</span><br><span class="line">;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> rst;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="strcat"><code>strcat</code></h3><h4 id="简单介绍-3">简单介绍</h4><p><code>char * strcat ( char * destination, const char * source );</code></p><p>Concatenate strings.</p><h4 id="模拟实现-3">模拟实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">My_strcat</span><span class="params">(<span class="keyword">char</span>* des, <span class="keyword">char</span>* src)</span> </span>&#123;</span><br><span class="line"><span class="keyword">char</span>* ret = des;</span><br><span class="line"><span class="comment">//找到des的&#x27;\0&#x27;</span></span><br><span class="line"><span class="keyword">while</span> (*des) &#123;</span><br><span class="line">des++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//字符串拷贝</span></span><br><span class="line"><span class="keyword">while</span> (*des++ = *src++) &#123;</span><br><span class="line">;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="strcmp-2"><code>strcmp</code></h3><h4 id="简单介绍-4">简单介绍</h4><p><code>int strcmp ( const char * str1, const char * str2 );</code></p><p>Compare two strings.</p><h4 id="模拟实现-4">模拟实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">My_strcmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str1, <span class="keyword">const</span> <span class="keyword">char</span>* str2)</span> </span>&#123;</span><br><span class="line"><span class="keyword">while</span> (*str1 == *str2) &#123;</span><br><span class="line"><span class="keyword">if</span> (*str1 == <span class="string">&#x27;\0&#x27;</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">str1++;</span><br><span class="line">str2++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (*str1 &gt; *str2) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="strstr"><code>strstr</code></h3><h4 id="简单介绍-5">简单介绍</h4><p><code>const char * strstr ( const char * str1, const char * str2 );</code></p><h4 id="模拟实现-5">模拟实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">const</span> <span class="keyword">char</span>* <span class="title">My_strstr</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* str1, <span class="keyword">const</span> <span class="keyword">char</span>* str2)</span> </span>&#123;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* ps1 = str1;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* ps2 = str2;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span>* cur = str1;</span><br><span class="line"><span class="keyword">while</span> (*ps1) &#123;</span><br><span class="line">ps1 = cur;</span><br><span class="line"><span class="keyword">while</span> (*ps1 == *ps2 &amp;&amp; *ps1 &amp;&amp; *ps2) &#123;</span><br><span class="line">ps1++;</span><br><span class="line">ps2++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (*ps2 == <span class="string">&#x27;\0&#x27;</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> cur;</span><br><span class="line">&#125;</span><br><span class="line">cur++;</span><br><span class="line">ps2 = str2;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//*ps1和*ps2不相等时，要重新找ps2在ps1中的位置，ps2复原，ps1继续找下一位（也就是cur的下一位）。</span></span><br></pre></td></tr></table></figure><h2 id="内存操作类">内存操作类</h2><h3 id="memcpy"><code>memcpy</code></h3><h4 id="简单介绍-6">简单介绍</h4><p><code>void * memcpy ( void * destination, const void * source, size_t num );</code></p><p>Copy block of memory.</p><h4 id="模拟实现-6">模拟实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span>* <span class="title">My_memcpy</span><span class="params">(<span class="keyword">void</span>* des, <span class="keyword">void</span>* src, <span class="keyword">size_t</span> count)</span> </span>&#123;</span><br><span class="line"><span class="keyword">void</span>* ret = des;</span><br><span class="line"><span class="keyword">while</span> (count--) &#123;</span><br><span class="line">*(<span class="keyword">char</span>*)des = *(<span class="keyword">char</span>*)src;</span><br><span class="line">des = (<span class="keyword">char</span>*)des + <span class="number">1</span>;</span><br><span class="line">src = (<span class="keyword">char</span>*)src + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="memmove"><code>memmove</code></h3><h4 id="简单介绍-7">简单介绍</h4><p><code>void * memmove ( void * destination, const void * source, size_t num );  </code></p><p>Move block of memory,allowing the <em>destination</em> and <em>source</em> to overlap.</p><h4 id="模拟实现-7">模拟实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span>* <span class="title">My_memmove</span><span class="params">(<span class="keyword">void</span>* des, <span class="keyword">void</span>* src, <span class="keyword">size_t</span> count)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (des &lt; src) &#123;</span><br><span class="line"><span class="comment">//从前向后拷贝</span></span><br><span class="line"><span class="keyword">while</span> (count--) &#123;</span><br><span class="line">*(<span class="keyword">char</span>*)des = *(<span class="keyword">char</span>*)src;</span><br><span class="line">des = (<span class="keyword">char</span>*)des + <span class="number">1</span>;</span><br><span class="line">src = (<span class="keyword">char</span>*)src + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line"><span class="comment">//从后向前拷贝</span></span><br><span class="line">des = (<span class="keyword">char</span>*)des + count - <span class="number">1</span>;</span><br><span class="line">src = (<span class="keyword">char</span>*)src + count - <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span> (count--) &#123;</span><br><span class="line">*(<span class="keyword">char</span>*)des = *(<span class="keyword">char</span>*)src;</span><br><span class="line">des = (<span class="keyword">char</span>*)des - <span class="number">1</span>;</span><br><span class="line">src = (<span class="keyword">char</span>*)src - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;字符串处理类&quot;&gt;字符串处理类&lt;/h2&gt;
-&lt;h3 id=&quot;strlen&quot;&gt;&lt;code&gt;strlen&lt;/code&gt;&lt;/h3&gt;
-&lt;h4 id=&quot;简单介绍&quot;&gt;简单介绍&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;size_t strlen ( const char * str );&lt;/c</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="c" scheme="https://youngsay.cn/tags/c/"/>
     
   </entry>
   
