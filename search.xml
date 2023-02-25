@@ -64,9 +64,9 @@
       
         <tags>
             
-            <tag> MySQL </tag>
-            
             <tag> 事务 </tag>
+            
+            <tag> MySQL </tag>
             
         </tags>
       
@@ -91,9 +91,9 @@
       
         <tags>
             
-            <tag> 索引 </tag>
-            
             <tag> MySQL </tag>
+            
+            <tag> 索引 </tag>
             
         </tags>
       
