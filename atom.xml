@@ -6,7 +6,7 @@
   <link href="https://youngsay.cn/atom.xml" rel="self"/>
   
   <link href="https://youngsay.cn/"/>
-  <updated>2023-10-03T05:51:04.209Z</updated>
+  <updated>2023-11-05T02:15:38.437Z</updated>
   <id>https://youngsay.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在路上</title>
+    <link href="https://youngsay.cn/2023/11/05/%E5%9C%A8%E8%B7%AF%E4%B8%8A/"/>
+    <id>https://youngsay.cn/2023/11/05/%E5%9C%A8%E8%B7%AF%E4%B8%8A/</id>
+    <published>2023-11-05T02:11:01.000Z</published>
+    <updated>2023-11-05T02:15:38.437Z</updated>
+    
+    <content type="html"><![CDATA[<p>时隔一个月，又回家了。在家睡觉就是舒服、踏实，在学校每天入睡困难，一两点睡觉是常事，回到家躺上床没十分钟就睡着了，真是家到病除。</p><p>这次回家呆几天，收拾收拾东西，下周又要去实习了。之前博客说过，我今年年初去实习了。实习期间认识了不少小伙伴，这些小伙伴都拿到了大厂offer，有些还不止一个。只有我，整个秋招只拿到一个小厂offer。我也知道，不要只问收获，不问耕耘。我也知道，不要和他人比较，做好自己。我也知道，我不知道。</p><p>秋招可以说是结束了，金九银十过去了，目前只拿到一个小厂offer。我有不错的实习经历，有时也自认为有不错的能力（在面试顺利时），对这样的结果还是不甘心。所以我决定再去实习一段时间，期望能有更好的结果。</p><p>读书少，词不达意，有许多话想说，却又不知如何表达。“也许我要的太多，但我不想你难过。也许应该简单活着，快乐痛苦不说。”在路上，在路上。</p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=5264287&auto=1&height=66"></iframe>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;时隔一个月，又回家了。在家睡觉就是舒服、踏实，在学校每天入睡困难，一两点睡觉是常事，回到家躺上床没十分钟就睡着了，真是家到病除。&lt;/p&gt;
+&lt;p&gt;这次回家呆几天，收拾收拾东西，下周又要去实习了。之前博客说过，我今年年初去实习了。实习期间认识了不少小伙伴，这些小伙伴都拿到了大厂</summary>
+      
+    
+    
+    
+    <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>该怎么办</title>
@@ -500,32 +523,6 @@
     
     
     <category term="数据结构和算法" scheme="https://youngsay.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【JavaSE】认识String类</title>
-    <link href="https://youngsay.cn/2022/06/03/Java-String/"/>
-    <id>https://youngsay.cn/2022/06/03/Java-String/</id>
-    <published>2022-06-03T03:40:41.000Z</published>
-    <updated>2022-06-08T13:43:16.312Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="创建一个Sting">创建一个Sting</h3><p>String有三种构造方法，分别为直接赋值、new String方法构造和字符串数组构造。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line">String str1=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">String str2=<span class="keyword">new</span> String(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line"><span class="comment">//方法3</span></span><br><span class="line"><span class="keyword">char</span>[] arr=&#123;<span class="string">&#x27;h&#x27;</span>,<span class="string">&#x27;e&#x27;</span>,<span class="string">&#x27;l&#x27;</span>,<span class="string">&#x27;l&#x27;</span>,<span class="string">&#x27;o&#x27;</span>&#125;;</span><br><span class="line">String str3=<span class="keyword">new</span> String(arr);</span><br></pre></td></tr></table></figure><p>String是一种引用类型，内部并不存储字符串本身。</p><h3 id="Sting的存储结构">Sting的存储结构</h3><p>观察下段代码，输出结果是什么？</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">String str1=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line">String str11=<span class="string">&quot;hello&quot;</span>;</span><br><span class="line">String str2=<span class="keyword">new</span> String(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">String str22=<span class="keyword">new</span> String(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">String str3=<span class="string">&quot;world&quot;</span>;</span><br><span class="line">System.out.println(str1==str11); <span class="comment">//true</span></span><br><span class="line">System.out.println(str2==str22); <span class="comment">//false</span></span><br></pre></td></tr></table></figure><p>输出结果分别为true、false。</p><p>之所以出现这样的结果，是字符串的存储方式不同。字符串str1和str11这样的创建方式是将数据存放在字符串常量池，在常量池中，同一个数只有一份。字符串常量池在JVM中是StringTable类，实际是一个固定大小的HashTable。str2和str22是将数据存放在堆上，每new一次就会在堆上开辟一块空间。</p><p>下面这幅图是String内部存储结构的简单示意图。</p><p><img src="https://cos.youngsay.cn/blog/202206031208205.png" alt="Sting内部存储结构"></p><p>总结：String类中两种对象实例化的区别：</p><ul><li>直接赋值：只会开辟一块堆内存空间，并且该字符串对象可以自动保存在对象池中以供下次使用。</li><li>构造方法：会开辟两块堆内存空间，不会自动保存在对象池中，<strong>可以使用intern()方法手工入池</strong>。</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str2=<span class="keyword">new</span> String(<span class="string">&quot;hello&quot;</span>).intern();</span><br></pre></td></tr></table></figure><h3 id="Sting的不可变性">Sting的不可变性</h3><p>字符串Sting是不可变的，所以每次字符串“+”加号拼接时都会产生一个新的对象，并不是在原对象的基础上拼接。</p><p>JDK中，String类由final修饰，value字符数组也由final修饰。</p><ul><li>String类被final修饰，表明该类不能被继承。</li><li>value被修饰被final修饰，只是表明不能再引用其他数组，但是引用空间中的值仍能被修改。</li></ul><p>所以，final并不是String对象不可变的原因。</p><p>如何理解 String 类型值的不可变？</p><p><a href="https://www.zhihu.com/question/20618891/answer/114125846">https://www.zhihu.com/question/20618891/answer/114125846</a></p><p>String对象不可变，使用加号进行字符串拼接效率是很低的，每次都会创建一个新对象，中间还会有很多临时变量。可以使用StringBuffer和StingBuilder来进行字符串的修改。</p><h3 id="StringBuffer和StringBuilder"><code>StringBuffer</code>和<code>StringBuilder</code></h3><p>String、StringBuffer、StringBuilder的区别:</p><ul><li>String的内容不可修改，StringBuffer与StringBuilder的内容可以修改.</li><li>StringBuffer与StringBuilder大部分功能是相似的。StringBuffer采用同步处理，属于线程安全操作；而StringBuilder未采用同步处理，属于线程不安全操作。</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符串拼接</span></span><br><span class="line">String str=<span class="string">&quot;panghu&quot;</span>;</span><br><span class="line">String str1 = str + <span class="string">&quot;tx&quot;</span>;</span><br><span class="line"><span class="comment">//字符串拼接</span></span><br><span class="line">StringBuffer sb = <span class="keyword">new</span> StringBuffer(<span class="string">&quot;panghu&quot;</span>);</span><br><span class="line">sb.append(<span class="string">&quot;tx&quot;</span>);</span><br><span class="line"><span class="comment">//转化</span></span><br><span class="line"><span class="comment">//String----&gt;StringBuffer</span></span><br><span class="line">StringBuffer sb1=<span class="keyword">new</span> StringBuffer();</span><br><span class="line">System.out.println(sb1.append(str));</span><br><span class="line"><span class="comment">//StringBuffer---&gt;String</span></span><br><span class="line">String ss= sb.toString();</span><br><span class="line">System.out.println(ss);</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;创建一个Sting&quot;&gt;创建一个Sting&lt;/h3&gt;
-&lt;p&gt;String有三种构造方法，分别为直接赋值、new String方法构造和字符串数组构造。&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="JavaSE" scheme="https://youngsay.cn/tags/JavaSE/"/>
     
   </entry>
   
