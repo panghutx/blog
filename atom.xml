@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>胖虎同学</title>
   
-  <subtitle>生活学习类个人博客</subtitle>
+  <subtitle>积极有时，消极有时</subtitle>
   <link href="https://youngsay.cn/atom.xml" rel="self"/>
   
   <link href="https://youngsay.cn/"/>
-  <updated>2023-11-05T02:15:38.437Z</updated>
+  <updated>2023-11-18T12:18:43.070Z</updated>
   <id>https://youngsay.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>将博客搬至CSDN</title>
+    <link href="https://youngsay.cn/2023/11/18/move/"/>
+    <id>https://youngsay.cn/2023/11/18/move/</id>
+    <published>2023-11-18T02:11:01.000Z</published>
+    <updated>2023-11-18T12:18:43.070Z</updated>
+    
+    <content type="html"><![CDATA[<p>将博客搬至CSDN</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;将博客搬至CSDN&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>在路上</title>
@@ -498,31 +521,6 @@
     
     
     <category term="JavaWeb" scheme="https://youngsay.cn/tags/JavaWeb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>时间复杂度和空间复杂度</title>
-    <link href="https://youngsay.cn/2022/06/04/algorithm-complexity/"/>
-    <id>https://youngsay.cn/2022/06/04/algorithm-complexity/</id>
-    <published>2022-06-04T13:40:41.000Z</published>
-    <updated>2022-06-04T14:22:53.531Z</updated>
-    
-    <content type="html"><![CDATA[<p>如何衡量一个算法的好坏？我们可以从时间和空间两个方面入手，也就是时间复杂度和空间复杂度。</p><p>无论是时间复杂度还是空间复杂度，都采用<strong>大O的渐进表示法</strong>。只保留最高阶项，且最高阶项的系数为1.例如一个算法的执行次数是2N^2+M+3,那么该算法的时间复杂度是O（N^2)。</p><h3 id="时间复杂度">时间复杂度</h3><p>时间复杂度的衡量标准也就是算法的执行次数。我们下面用几段代码来练习一下算法时间复杂度的计算。</p><ul><li>冒泡排序的时间复杂度</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] array)</span> </span>&#123;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> end = array.length; end &gt; <span class="number">0</span>; end--) &#123;</span><br><span class="line"><span class="keyword">boolean</span> sorted = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; end; i++) &#123;</span><br><span class="line"><span class="keyword">if</span> (array[i - <span class="number">1</span>] &gt; array[i]) &#123;</span><br><span class="line">Swap(array, i - <span class="number">1</span>, i);</span><br><span class="line">sorted = <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (sorted == <span class="keyword">true</span>) &#123;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>假设有N个元素，最坏的情况下需要走N-1趟，每趟排序end-1次。例如有5个元素，N-5，那么需要走4趟，每趟排列次数分别为4,3,2,1。刚好构成等差数列，可以用等差数列求和公式计算执行次数,也就是<code>[(N*（N-1))]/2</code>。</p><p>按照大O的渐进表示法，时间复杂度是O（N^2)。</p><ul><li>二分查找的时间复杂度</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> end = array.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (begin &lt;= end) &#123;</span><br><span class="line">    <span class="keyword">int</span> mid = begin + ((end-begin) / <span class="number">2</span>);</span><br><span class="line">    <span class="keyword">if</span> (array[mid] &lt; value)</span><br><span class="line">    begin = mid + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (array[mid] &gt; value)</span><br><span class="line">    end = mid - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>二份查找的好处是每次能去掉一半，第一次是去掉一半还剩一半，第二次去掉一半还剩1/4，第三次去掉一半还剩1/8……如下图所示：</p><p><img src="https://cos.youngsay.cn/blog/202206042220754.png" alt="image-20220604213754161"></p><p>所以二分查找的时间复杂度是O（logN）</p><ul><li>递归求阶乘的时间复杂度</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> N &lt; <span class="number">2</span> ? N : factorial(N-<span class="number">1</span>) * N;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>递归算法的时间复杂度 = 递归的次数 * 每次递归执行的次数</p><p>递归求阶乘算法递归次数为N，每次递归执行1次，所以时间复杂度是O（N）。</p><ul><li>递归求斐波那契数列</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fibonacci</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> N &lt; <span class="number">2</span> ? N : fibonacci(N-<span class="number">1</span>)+fibonacci(N-<span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>递归次数，也就是层数为N的二叉树最多的结点个数，(2^N) - 1。</p><p>所以时间复杂度是O（2^N)。</p><h3 id="空间复杂度">空间复杂度</h3><p>空间复杂度的衡量标准是临时占用的存储空间大小。随着计算机的发展，存储空间越来越大，空间复杂度也就不必太过关注。</p><ul><li>递归求阶乘的空间复杂度</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">factorial</span><span class="params">(<span class="keyword">int</span> N)</span> </span>&#123;</span><br><span class="line"><span class="keyword">return</span> N &lt; <span class="number">2</span> ? N : factorial(N-<span class="number">1</span>)*N;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>递归了N次，开辟了N个栈帧，每个栈帧占用常数的存储空间，所以该算法的空间复杂度是O（N）。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;如何衡量一个算法的好坏？我们可以从时间和空间两个方面入手，也就是时间复杂度和空间复杂度。&lt;/p&gt;
-&lt;p&gt;无论是时间复杂度还是空间复杂度，都采用&lt;strong&gt;大O的渐进表示法&lt;/strong&gt;。只保留最高阶项，且最高阶项的系数为1.例如一个算法的执行次数是2N^2+M+3,</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="数据结构和算法" scheme="https://youngsay.cn/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%92%8C%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
