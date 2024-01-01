@@ -6,7 +6,7 @@
   <link href="https://youngsay.cn/atom.xml" rel="self"/>
   
   <link href="https://youngsay.cn/"/>
-  <updated>2023-12-19T13:58:52.952Z</updated>
+  <updated>2024-01-01T03:07:25.816Z</updated>
   <id>https://youngsay.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2023年终总结</title>
+    <link href="https://youngsay.cn/2024/01/01/2023/"/>
+    <id>https://youngsay.cn/2024/01/01/2023/</id>
+    <published>2024-01-01T03:03:15.000Z</published>
+    <updated>2024-01-01T03:07:25.816Z</updated>
+    
+    <content type="html"><![CDATA[<p>一年又过去了，这是博客的第三个年终总结。</p><p>回看了前两年的年终总结，都是那样普通平常，而且前两年赶上了疫情，要么延期开学，要么封校，要么提前放假。与博友们的丰富多彩的生活相比，我就像白活了一样。</p><p>今年与往年有些不同，有了新的身份——实习生，活跃地点也由家和学校转移到了公司、出租屋。</p><p>1-4月，开启人生第一份实习，新鲜又陌生，期待又恐惧。</p><p>5月，担心挂科重回学校，4门必修课，大半学期没听课，最后考的还不错。所以说要活在当下，不要透支烦恼，你所想的种种麻烦大都不会发生，即便发生也都会顺利解决。</p><p>8-10月，秋招。秋招并不顺利，我想这是心态的问题，心态差，做什么都无济于事了。每天只是麻木的做着测评、笔试、面试，事后没有复盘、反思。看似很努力，其实只将一件事重复了一次又一次。</p><p>9月，大四开学，学校组织去外地实训，度过快乐、难忘的两周。一起去海边、聚餐、熬夜看鬼片，这才是大学生活。</p><p>11月，秋招不顺利，二次实习。</p><p>2024年了，虚岁24岁了，我不敢想。</p><p>还记得小学英语课上一个小插曲，老师问大家里的梦想是什么，我说想做policeman，老师听成了postman（其实postman还挺符合我的，现在听到postman，脑子里只有那个调试接口的软件），到现在还印象深刻。当时为什么说policeman，我好像没有过当警察的梦想，可能有过却被我忘了，可能是刚好想起这个单词。</p><p>上高中之后，我的目标渐渐清晰，我想做一个程序员，当时对码农概念还比较单一，只是想做出属于自己的网站，也不懂什么前端、后端，网上找到一些便宜甚至免费的虚拟主机，再找到一些现成的源码，上传上去，就能访问了。当时搭过各种博客（wordpress、emlog、typecho…）、影视网站、论坛（Flarunm、Discuz），甚至还有刷钻的网站。捣鼓这些玩意，就浪费了一天又一天的时间，一无所获却倾尽所有。</p><p>再后来才接触到前端，看到自己写的东西能展示在页面上，乐在其中。上了大学，又接触到了后端。从只会写一些简单的页面，到前后端交互，能写一些逻辑，不知道当时自己有多快乐。</p><p>到了大三、大四，有了就业的压力，好像已经忘了最初的目标。不再沉浸在编程的快乐，而是苦于八股文、算法、找工作…想想初学编程的时候，只是单纯喜欢，没有想过什么钱多钱少，什么大厂小厂，一个小功能实现了，我都能乐一天了。现在呢，想要更好的工作，想要更高的工资，永远不知足。</p><p>与过去的自己相比，我已经成长了。从搬源码，到写一些简单的静态页面，到能够前后端交互，虽然这些并不难，但对比以前的自己，已经进步了。从想做一个码农，到成为了一个码农，我的目标已经实现了。<strong>如果我是当初的我，我一定会非常高兴。即使我是现在的我，也没理由不高兴，对吗？</strong></p><p>2024，保持热爱，找寻自我。不再羡慕他人的精彩，为自己的成长喝彩。人生，才刚刚开始。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;一年又过去了，这是博客的第三个年终总结。&lt;/p&gt;
+&lt;p&gt;回看了前两年的年终总结，都是那样普通平常，而且前两年赶上了疫情，要么延期开学，要么封校，要么提前放假。与博友们的丰富多彩的生活相比，我就像白活了一样。&lt;/p&gt;
+&lt;p&gt;今年与往年有些不同，有了新的身份——实习生，活跃地点</summary>
+      
+    
+    
+    
+    <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    
+    <category term="年终总结" scheme="https://youngsay.cn/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>练习时长1个月</title>
@@ -487,32 +513,6 @@
       
       
     <summary type="html">&lt;p&gt;页面渲染，所谓渲染就是将数据和页面相结合，根据用户传送的数据不同，页面渲染后的内容也不同。页面渲染可以在服务器端完成，也可以在客户端完成。&lt;strong&gt;服务器渲染&lt;/strong&gt;是将用户传来的数据在服务器端拼接成HTML后传给客户端，而&lt;strong&gt;客户端渲染&lt;/st</summary>
-      
-    
-    
-    
-    <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="JavaWeb" scheme="https://youngsay.cn/tags/JavaWeb/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【JavaWeb】Servlet上传文件</title>
-    <link href="https://youngsay.cn/2022/06/08/Java-uploadFile/"/>
-    <id>https://youngsay.cn/2022/06/08/Java-uploadFile/</id>
-    <published>2022-06-08T13:40:41.000Z</published>
-    <updated>2022-06-08T13:46:44.727Z</updated>
-    
-    <content type="html"><![CDATA[<p>Servlet支持上传文件操作，在HttpServletRequest类中，通过Part对象的getPart方法便可以获取请求中指定name的文件。</p><p>上传文件分为两个部分，前端部分和后端部分，关于文件操作，这两个部分都很简单，代码量很少。</p><p>各文件路径如下：</p><p><img src="https://cos.youngsay.cn/blog/202206082140961.png" alt="maven各文件路径"></p><p><strong>前端页面</strong>：创建一个html文件，通过form表单的action属性，与后端Servlet相关联，method属性指定方法，上传文件通常为post，通过enctype属性指定编码方式，上传文件为multipart/form-data。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;file&quot;</span> method=<span class="string">&quot;post&quot;</span> enctype=<span class="string">&quot;multipart/form-data&quot;</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">&quot;file&quot;</span> name=<span class="string">&quot;myFile&quot;</span>&gt;</span><br><span class="line">&lt;input type=<span class="string">&quot;submit&quot;</span> value=<span class="string">&quot;提交&quot;</span>&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure><p><strong>后端部分</strong>：创建一个上传文件的类Upload，继承HttpServlet，@WebServlet()注解内容与前端页面form表单的action路径相同(此处有<code>/</code>)，此外还需要<code>@MultipartConfig</code>注解,缺少该注解将无法正确读取文件。 通过Part对象的getPart()方法获取文件，方法内参数为前端界面input中类型为file格式的name属性值。通过write方法可以将文件写入磁盘，方法内参数为磁盘路径。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@MultipartConfig</span></span><br><span class="line"><span class="meta">@WebServlet(&quot;/file&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Upload</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        resp.setContentType(<span class="string">&quot;text/html;charset=utf-8&quot;</span>);</span><br><span class="line">        Part part = req.getPart(<span class="string">&quot;myFile&quot;</span>);</span><br><span class="line">        System.out.println(part.getContentType());</span><br><span class="line">        System.out.println(part.getName());</span><br><span class="line">        System.out.println(part.getSize());</span><br><span class="line">        part.write(<span class="string">&quot;d:/myFile.png&quot;</span>);</span><br><span class="line">        resp.getWriter().write(<span class="string">&quot;上传成功&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Servlet支持上传文件操作，在HttpServletRequest类中，通过Part对象的getPart方法便可以获取请求中指定name的文件。&lt;/p&gt;
-&lt;p&gt;上传文件分为两个部分，前端部分和后端部分，关于文件操作，这两个部分都很简单，代码量很少。&lt;/p&gt;
-&lt;p&gt;各文件</summary>
       
     
     
