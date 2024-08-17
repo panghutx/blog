@@ -6,7 +6,7 @@
   <link href="https://youngsay.cn/atom.xml" rel="self"/>
   
   <link href="https://youngsay.cn/"/>
-  <updated>2024-07-23T14:33:08.121Z</updated>
+  <updated>2024-08-17T13:51:59.740Z</updated>
   <id>https://youngsay.cn/</id>
   
   <author>
@@ -17,14 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://youngsay.cn/2024/07/23/graduate/"/>
-    <id>https://youngsay.cn/2024/07/23/graduate/</id>
-    <published>2024-07-23T14:33:08.121Z</published>
-    <updated>2024-07-23T14:33:08.121Z</updated>
+    <title>打工人的一周</title>
+    <link href="https://youngsay.cn/2024/08/17/graduate/"/>
+    <id>https://youngsay.cn/2024/08/17/graduate/</id>
+    <published>2024-08-17T13:51:15.000Z</published>
+    <updated>2024-08-17T13:51:59.740Z</updated>
+    
+    <content type="html"><![CDATA[<p>不知不觉，正式工作一个半月了。</p><p>一开始工作，属于自己的时间更少了，一天平均十二多个小时呆在公司。晚上只有一点儿时间属于自己，沉浸在仅有的这点时间里，久久不肯入睡，真想静止在此刻。</p><p>很快，时间来到了凌晨一两点，真的要去睡觉了，因为明天还要工作。好像刚刚进入梦乡，窗外发出一声巨响，垃圾车在倾倒垃圾，那是在每天早晨七点。半睡半醒，八点多了，睁开了沉重的眼皮，迈着沉重的步伐，又要去上班了。上班，时间过得很慢，仿佛静止在此刻。</p><p>忙碌了五天，终于来到了周末。一周最开心的是周五晚上，它离周一那么远。短暂开心过后是无尽的空虚，周末无所事事，一觉睡到了中午，点个外卖，很快又到了晚上，再点个外卖。吃完这两顿外卖，一天就过去了，吃完这四顿外卖，周末就过去了，周一又来了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;不知不觉，正式工作一个半月了。&lt;/p&gt;
+&lt;p&gt;一开始工作，属于自己的时间更少了，一天平均十二多个小时呆在公司。晚上只有一点儿时间属于自己，沉浸在仅有的这点时间里，久久不肯入睡，真想静止在此刻。&lt;/p&gt;
+&lt;p&gt;很快，时间来到了凌晨一两点，真的要去睡觉了，因为明天还要工作。好像</summary>
+      
     
     
     
+    <category term="日常" scheme="https://youngsay.cn/categories/%E6%97%A5%E5%B8%B8/"/>
     
     
   </entry>
@@ -243,9 +254,9 @@
     <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="MySQL" scheme="https://youngsay.cn/tags/MySQL/"/>
-    
     <category term="事务" scheme="https://youngsay.cn/tags/%E4%BA%8B%E5%8A%A1/"/>
+    
+    <category term="MySQL" scheme="https://youngsay.cn/tags/MySQL/"/>
     
   </entry>
   
@@ -274,9 +285,9 @@
     <category term="学习" scheme="https://youngsay.cn/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="索引" scheme="https://youngsay.cn/tags/%E7%B4%A2%E5%BC%95/"/>
-    
     <category term="MySQL" scheme="https://youngsay.cn/tags/MySQL/"/>
+    
+    <category term="索引" scheme="https://youngsay.cn/tags/%E7%B4%A2%E5%BC%95/"/>
     
   </entry>
   
